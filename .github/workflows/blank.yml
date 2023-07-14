@@ -1,4 +1,10 @@
-- name: Install Task
-  uses: arduino/setup-task@v1
-  with:
-    version: 2.6.1
+on:
+  push:
+    branches:
+    - main
+jobs:
+  my_job:
+    name: Install Task
+    uses: arduino/setup-task@v1
+    with:
+      version: 2.6.1
