@@ -7,9 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Install Task
         uses: arduino/setup-task@v1
         with:
-          version: 2.6.1
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
