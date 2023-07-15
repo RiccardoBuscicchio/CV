@@ -42,11 +42,9 @@ jobs:
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
 
-      - name: Activate Conda environment
-        run: source activate buildcv
 
       - name: Run Python script
-        run: python makeCV.py --connected --testing
+        run: conda run --name buildcv bash -c "python makeCV.py --connected --testing"
 
       - name: Prepare LaTeX files
         run: |
@@ -71,9 +69,6 @@ jobs:
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
       
-      - name: Activate Conda environment
-        run: conda activate buildcv
-
       - name: Set up TeX Live
         uses: xu-cheng/texlive-action/full@v1
         with:
@@ -82,4 +77,4 @@ jobs:
       - name: Run LaTeX
         run: |
           cp build/* .
-          python make_CV.py --compiling
+          conda run --name buildcv bash -c "python makeCV.py --compiling"
