@@ -27,7 +27,7 @@ jobs:
         run: conda env create --name buildcv --file environment.yml
 
       - name: Set up TeX Live
-        uses: xu-cheng/texlive-action@v2
+        uses: xu-cheng/texlive-action/full@v1
         with:
           tex-packages: pdftex
 
@@ -70,11 +70,11 @@ jobs:
         run: conda activate buildcv
 
       - name: Set up TeX Live
-        uses: xu-cheng/texlive-action@v2
+        uses: xu-cheng/texlive-action/full@v1
         with:
           tex-packages: pdftex
 
       - name: Run LaTeX
         run: |
-          cp build/*
+          cp build/* .
           python make_CV.py --compiling
