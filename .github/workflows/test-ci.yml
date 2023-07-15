@@ -11,7 +11,7 @@ on:
       - test-ci
 
 jobs:
-  make_CV:
+  setup_environment:
     runs-on: ubuntu-latest
 
     steps:
@@ -64,9 +64,8 @@ jobs:
             path: build/
 
   run_latex:
-    needs: run_script
-
     runs-on: ubuntu-latest
+    needs: run_script
 
     steps:
       - name: Checkout repository
@@ -75,9 +74,6 @@ jobs:
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
       
-      - name: Initialize shell environment
-        run: echo "conda init $(basename "${SHELL}")" >> $GITHUB_ENV
-
       - name: Activate Conda environment
         run: conda activate buildcv
 
