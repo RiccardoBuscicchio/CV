@@ -586,10 +586,10 @@ def publishgithub():
 
 
 if __name__ == "__main__":
-
-    connected = True
-    testing = False
-    compiling = True
+    parser = argparse.ArgumentParser(description="My Script")
+    parser.add_argument("--connected", action="store_true", help="Set connected to True")
+    parser.add_argument("--testing", action="store_true", help="Set testing to True")
+    parser.add_argument("--compiling", action="store_true", help="Set compiling to True")
     
     if connected:
         # Set testing=True to avoid API limit
@@ -599,7 +599,7 @@ if __name__ == "__main__":
         parsetalks(talks)
         metricspapers(papers)
         metricstalks(talks)
-        buildbib()
+        #buildbib()
         #citationspreadsheet(papers)
 
 #    replacekeys()
