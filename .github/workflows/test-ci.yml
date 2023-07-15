@@ -51,8 +51,14 @@ jobs:
       - name: Prepare LaTeX files
         run: |
           # Move generated files to a separate directory
-          mkdir latex_files
+          mkdir build/
           mv *tex *.bib build/
+
+      - name: Upload artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: artifacts
+            path: build/
 
   run_latex:
     needs: run_script
@@ -65,6 +71,9 @@ jobs:
 
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
+      
+      - name: Initialize shell environment
+        run: echo "conda init $(basename "${SHELL}")" >> $GITHUB_ENV
 
       - name: Activate Conda environment
         run: conda activate buildcv
