@@ -55,8 +55,8 @@ jobs:
           mv *tex *.bib build/
 
       - name: Upload artifacts
-          uses: actions/upload-artifact@v2
-          with:
+        uses: actions/upload-artifact@v2
+        with:
             name: artifacts
             path: build/
 
