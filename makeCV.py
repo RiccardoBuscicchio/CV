@@ -39,13 +39,8 @@ def checkinternet():
         connected = False
     return connected
 
-def ads_citations(papers,testing=False):
-
-    print('Get citations from ADS')
-
-    with open('./adstoken.txt') as f:
-        token = f.read().strip()
-
+def ads_citations(papers,testing=False, token=None):
+    
     tot = len(np.concatenate([papers[k]['data'] for k in papers]))
     with tqdm(total=tot) as pbar:
         for k in papers:
@@ -590,12 +585,13 @@ if __name__ == "__main__":
     parser.add_argument("--connected", action="store_true", help="Set connected to True")
     parser.add_argument("--testing", action="store_true", help="Set testing to True")
     parser.add_argument("--compiling", action="store_true", help="Set compiling to True")
+    parser.add_argument("--token", type=str, help="ADS authentication token")
     
     args = parser.parse_args()
     
     if args.connected:
         # Set testing=True to avoid API limit
-        papers = ads_citations(papers,testing=args.testing)
+        papers = ads_citations(papers,testing=args.testing, token=args.token)
         papers = inspire_citations(papers,testing=args.testing)
         parsepapers(papers)
         parsetalks(talks)

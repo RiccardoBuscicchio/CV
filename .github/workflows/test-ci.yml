@@ -32,7 +32,7 @@ jobs:
           tex-packages: pdftex
 
       - name: Run Python script
-        run: conda run --name buildcv bash -c "python makeCV.py --connected --testing"
+        run: conda run --name buildcv bash -c "python makeCV.py --connected --testing --token ${{ secrets.ADS_TOKEN }}"
 
       - name: Run LaTeX
         run: conda run --name buildcv bash -c "python makeCV.py --compiling"
