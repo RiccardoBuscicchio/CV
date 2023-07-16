@@ -2,7 +2,6 @@
 import numpy as np 
 import json
 import skywalker 
-#import ads
 from tqdm import tqdm 
 import copy
 import sys
@@ -16,7 +15,7 @@ import html
 from database import papers, talks
 from datetime import datetime
 import shutil
-#from github_release import gh_release_create
+import argparse
 import warnings
 
 
@@ -28,7 +27,7 @@ def hindex(citations):
     return sum(x >= i + 1 for i, x in enumerate(sorted(  list(citations), reverse=True)))
 
 def pdflatex(filename):
-    os.system('pdflatex '+filename+' >/dev/null')
+    os.system('pdflatex -interaction=nonstopmode -halt-on-error '+filename+' >/dev/null')
 
 def checkinternet():
     url = "http://www.google.com"
@@ -40,13 +39,8 @@ def checkinternet():
         connected = False
     return connected
 
-def ads_citations(papers,testing=False):
-
-    print('Get citations from ADS')
-
-    with open('./adstoken.txt') as f:
-        token = f.read().strip()
-
+def ads_citations(papers,testing=False, token=None):
+    
     tot = len(np.concatenate([papers[k]['data'] for k in papers]))
     with tqdm(total=tot) as pbar:
         for k in papers:
@@ -586,24 +580,28 @@ def publishgithub():
 
 
 if __name__ == "__main__":
-
-    connected = True
-    testing = False
-    compiling = True
     
-    if connected:
+    parser = argparse.ArgumentParser(description="My Script")
+    parser.add_argument("--connected", action="store_true", help="Set connected to True")
+    parser.add_argument("--testing", action="store_true", help="Set testing to True")
+    parser.add_argument("--compiling", action="store_true", help="Set compiling to True")
+    parser.add_argument("--token", type=str, help="ADS authentication token")
+    
+    args = parser.parse_args()
+    
+    if args.connected:
         # Set testing=True to avoid API limit
-        papers = ads_citations(papers,testing=testing)
-        papers = inspire_citations(papers,testing=testing)
+        papers = ads_citations(papers,testing=args.testing, token=args.token)
+        papers = inspire_citations(papers,testing=args.testing)
         parsepapers(papers)
         parsetalks(talks)
         metricspapers(papers)
         metricstalks(talks)
-        buildbib()
+        #buildbib()
         #citationspreadsheet(papers)
 
 #    replacekeys()
-    if compiling:
+    if args.compiling:
         builddocs()
 
 #    if connected and not testing:
