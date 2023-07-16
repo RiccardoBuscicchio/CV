@@ -14,10 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    steps:
-    - name: Set up LaTeX
-      uses: docker://blang/latex:ubuntu
-      
+    steps:      
     - name: Checkout repository
       uses: actions/checkout@v2
 
@@ -32,13 +29,31 @@ jobs:
     - name: Run Python script
       run: conda run --name buildcv bash -c "python makeCV.py --connected --testing --token ${{ secrets.ADS_TOKEN }}"
 
-    - name: Run LaTeX
-      run: conda run --name buildcv bash -c "python makeCV.py --compiling"
+    - name: LaTeX CV
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: CV.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
 
+    - name: LaTeX publist
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: publist.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+
+    - name: LaTeX publist
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: talklist.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+        
     - name: Prepare LaTeX files
       run: |
         mkdir pdfs/
-        mv *pdf pdfs/
+        mv CV.pdf publist.pdf talklist.pdf pdfs/
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
