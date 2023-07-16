@@ -2,6 +2,6 @@
 ![main](https://github.com/RiccardoBuscicchio/CV/actions/workflows/main.yml/badge.svg?branch=main)
 
 Products:
-- [Latest CV](http://github.com/RiccardoBuscicchio/CV/blob/build/CV.pdf)
-- [Latest publication list](http://github.com/RiccardoBuscicchio/CV/blob/build/publist.pdf)
-- [Latest talk list](http://github.com/RiccardoBuscicchio/CV/blob/build/talklist.pdf)
+- Latest CV: [view](http://github.com/RiccardoBuscicchio/CV/blob/build/CV.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build/CV.pdf)
+- Latest publication list: [view](http://github.com/RiccardoBuscicchio/CV/blob/build/publist.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build/publist.pdf)
+- Latest talk list: [view](http://github.com/RiccardoBuscicchio/CV/blob/build/talklist.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build/talklist.pdf) 
