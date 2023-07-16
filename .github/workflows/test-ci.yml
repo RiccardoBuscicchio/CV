@@ -1,4 +1,4 @@
-name: Conda Workflow
+name: CV workflow
 
 on:
   push:
@@ -11,42 +11,38 @@ on:
       - test-ci
 
 jobs:
-  setup_environment:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Set up LaTeX
+      uses: docker://blang/latex:ubuntu
+      
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Conda
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          auto-update-conda: true
+    - name: Set up Conda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
 
-      - name: Create Conda environment
-        run: conda env create --name buildcv --file environment.yml
+    - name: Create Conda environment
+      run: conda env create --name buildcv --file environment.yml
 
-      - name: Set up TeX Live
-        uses: xu-cheng/texlive-action/full@v1
+    - name: Run Python script
+      run: conda run --name buildcv bash -c "python makeCV.py --connected --testing --token ${{ secrets.ADS_TOKEN }}"
 
-      - name: Install TeX Live packages
-        run: sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-latex-extra
+    - name: Run LaTeX
+      run: conda run --name buildcv bash -c "python makeCV.py --compiling"
 
-      - name: Run Python script
-        run: conda run --name buildcv bash -c "python makeCV.py --connected --testing --token ${{ secrets.ADS_TOKEN }}"
+    - name: Prepare LaTeX files
+      run: |
+        mkdir pdfs/
+        mv *pdf pdfs/
 
-      - name: Run LaTeX
-        run: conda run --name buildcv bash -c "python makeCV.py --compiling"
-
-      - name: Prepare LaTeX files
-        run: |
-          # Move generated files to a separate directory
-          mkdir pdfs/
-          mv *pdf pdfs/
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-            name: artifacts
-            path: pdfs/
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifacts
+        path: pdfs/
 

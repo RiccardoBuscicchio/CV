@@ -27,7 +27,7 @@ def hindex(citations):
     return sum(x >= i + 1 for i, x in enumerate(sorted(  list(citations), reverse=True)))
 
 def pdflatex(filename):
-    os.system('pdflatex '+filename+' >/dev/null')
+    os.system('pdflatex -interaction=nonstopmode -halt-on-error '+filename+' >/dev/null')
 
 def checkinternet():
     url = "http://www.google.com"

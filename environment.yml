@@ -1,4 +1,4 @@
-name: curriculum
+name: buildcv
 channels:
   - conda-forge
   - defaults
@@ -105,4 +105,4 @@ dependencies:
       - skywalker==0.0.18
       - tables==3.8.0
       - tqdm==4.65.0
-prefix: /home/riccardo/Software/anaconda3/envs/curriculum
+prefix: /home/riccardo/Software/anaconda3/envs/builcv
