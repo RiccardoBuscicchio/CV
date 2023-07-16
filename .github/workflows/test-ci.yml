@@ -60,4 +60,30 @@ jobs:
       with:
         name: artifacts
         path: pdfs/
+  
+  deploy:
+    # Edit here if compiling multiple papers
+    needs: [build]
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: pdfs
+      
+      - name: move
+        run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
+        
+      - name: deploy on orphan branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./github_deploy
+          publish_branch: build
+          force_orphan: true
 
