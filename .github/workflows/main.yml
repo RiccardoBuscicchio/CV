@@ -30,7 +30,10 @@ jobs:
 
     - name: Run Python script
       run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }}"
-
+      
+    - name: Run Python script for short CV
+      run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }} --short"
+      
     - name: LaTeX CV
       uses: dante-ev/latex-action@latest
       with:
@@ -51,11 +54,18 @@ jobs:
         root_file: talklist.tex
         compiler: pdflatex
         args: -interaction=nonstopmode -shell-escape
+    
+    - name: LaTeX talklist
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: CVshort.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
         
     - name: Prepare LaTeX files
       run: |
         mkdir pdfs/
-        mv CV.pdf publist.pdf talklist.pdf pdfs/
+        mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
