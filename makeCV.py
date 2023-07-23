@@ -585,7 +585,7 @@ if __name__ == "__main__":
     parser.add_argument("--testing", action="store_true", help="Set testing to True")
     parser.add_argument("--compiling", action="store_true", help="Set compiling to True")
     parser.add_argument("--token", type=str, help="ADS authentication token")
-    parser.add_argument("--short", action="store_true, help="Set short to true (build the short version of the CV)")
+    parser.add_argument("--short", action="store_true", help="Set short to true (build the short version of the CV)")
     
     args = parser.parse_args()
     
