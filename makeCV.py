@@ -589,7 +589,7 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    if args.connected:
+    if args.connected and not args.short:
         # Set testing=True to avoid API limit
         papers = ads_citations(papers,testing=args.testing, token=args.token)
         papers = inspire_citations(papers,testing=args.testing)
@@ -597,13 +597,15 @@ if __name__ == "__main__":
         parsetalks(talks)
         metricspapers(papers)
         metricstalks(talks)
+        
         #buildbib()
         #citationspreadsheet(papers)
-
+        
 #    replacekeys()
-    if args.compiling:
-        builddocs()
 
+    if args.compiling:
+        builddocs(short=args.short)
+                
 #    if connected and not testing:
 #        pushtogit()
 #        publishgithub()
