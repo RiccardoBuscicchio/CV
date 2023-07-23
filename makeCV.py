@@ -36,7 +36,7 @@ def checkinternet():
     try:
         requests.get(url, timeout=timeout)
     except (requests.ConnectionError, requests.Timeout) as exception:
-        connected = 
+        connected = False
     return connected
 
 def ads_citations(papers,testing=, token=None):
@@ -537,19 +537,6 @@ def replacekeys():
     with open('publist.bib', 'w') as f:
         f.write(publist)
 
-
-def pushtogit():
-    try:
-        comment = sys.argv[1]
-    except:
-        comment = "Generic update"
-
-    print("Push to git:", comment)
-    print(" ")
-    os.system("git add -u")
-    os.system("git commit -m '"+comment+"'")
-    os.system("git push")
-
 def parseshort():
     print("Update CVshort")
     with open('CV.tex', 'r') as f:
@@ -604,12 +591,7 @@ if __name__ == "__main__":
         
         #buildbib()
         #citationspreadsheet(papers)
-        
-#    replacekeys()
+        #replacekeys()
     
     if args.compiling:
         builddocs()
-                
-#    if connected and not testing:
-#        pushtogit()
-#        publishgithub()
