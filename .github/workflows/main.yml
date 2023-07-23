@@ -32,7 +32,7 @@ jobs:
       run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }}"
       
     - name: Run Python script for short CV
-      run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }} --short"
+      run: conda run --name buildcv bash -c "python makeCV.py --short"
       
     - name: LaTeX CV
       uses: dante-ev/latex-action@latest
