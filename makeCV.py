@@ -36,10 +36,10 @@ def checkinternet():
     try:
         requests.get(url, timeout=timeout)
     except (requests.ConnectionError, requests.Timeout) as exception:
-        connected = False
+        connected = 
     return connected
 
-def ads_citations(papers,testing=False, token=None):
+def ads_citations(papers,testing=, token=None):
     
     tot = len(np.concatenate([papers[k]['data'] for k in papers]))
     with tqdm(total=tot) as pbar:
@@ -463,7 +463,7 @@ def citationspreadsheet(papers):
     worksheet.update("B2",np.expand_dims(np.array(journalcount),1).tolist())
 
 
-def builddocs(short=false):
+def builddocs(short=False):
     print("Update CV")
     pdflatex("CV")
     print("Update CV")
@@ -472,14 +472,8 @@ def builddocs(short=false):
     pdflatex("publist")
     print("Update talklist")
     pdflatex("talklist")
-    if short:
-        print("Update CVshort")
-        with open('CV.tex', 'r') as f:
-            CV = f.read()
-        CVshort = "%".join(CV.split("%mark_CVshort")[::2])
-        with open('CVshort.tex', 'w') as f:
-            f.write(CVshort)
-        pdflatex("CVshort")
+    print("Update CVshort")
+    pdflatex("CVshort")
 
 
 def buildbib():
@@ -556,6 +550,13 @@ def pushtogit():
     os.system("git commit -m '"+comment+"'")
     os.system("git push")
 
+def parseshort():
+    print("Update CVshort")
+    with open('CV.tex', 'r') as f:
+            CV = f.read()
+    CVshort = "%".join(CV.split("%mark_CVshort")[::2])
+    with open('CVshort.tex', 'w') as f:
+        f.write(CVshort)
 
 def publishgithub():
     date = datetime.now().strftime("%Y-%m-%d-%H-%M")
@@ -589,7 +590,7 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    if args.connected and not args.short:
+    if args.connected:
         # Set testing=True to avoid API limit
         papers = ads_citations(papers,testing=args.testing, token=args.token)
         papers = inspire_citations(papers,testing=args.testing)
@@ -598,13 +599,16 @@ if __name__ == "__main__":
         metricspapers(papers)
         metricstalks(talks)
         
+    if args.short:
+        parseshort()
+        
         #buildbib()
         #citationspreadsheet(papers)
         
 #    replacekeys()
-
+    
     if args.compiling:
-        builddocs(short=args.short)
+        builddocs()
                 
 #    if connected and not testing:
 #        pushtogit()
