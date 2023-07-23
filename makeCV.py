@@ -39,7 +39,7 @@ def checkinternet():
         connected = False
     return connected
 
-def ads_citations(papers,testing=, token=None):
+def ads_citations(papers,testing=False, token=None):
     
     tot = len(np.concatenate([papers[k]['data'] for k in papers]))
     with tqdm(total=tot) as pbar:
