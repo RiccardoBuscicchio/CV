@@ -46,17 +46,6 @@ if submitted:
         })
     
     papers['submitted']['data'].append({
-        "title":    "A fast test for the identification and confirmation of massive black hole binary",
-        "author":   "M. Dotti, F. Rigamonti, S. Rinaldi, W. Del Pozzo, R. De Carli, R. Buscicchio",
-        "journal":  "\aap",
-        "link":     "",
-        "arxiv":    "",
-        "ads":      "",
-        "inspire":  "",
-        "more":     ""
-        })
-    
-    papers['submitted']['data'].append({
         "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
         "author":   "A. Klein, G. Pratten, R. Buscicchio, P. Schmidt, C. J. Moore, E. Finch, A. Bonino, L. M. Thomas, N. Williams, D. Gerosa, S. McGee, M. Nicholl, A. Vecchio",
         "journal":  "",
