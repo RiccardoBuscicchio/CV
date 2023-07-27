@@ -88,10 +88,10 @@ if published:
     papers['published']['data'].append({
         "title":    "Parameter estimation of binary black holes in the endpoint of the up-down instability",
         "author":   "V. De Renzis, D. Gerosa, M. Mould, R. Buscicchio, L. Zanga",
-        "journal":  "\prd, in press",
-        "link":     "",
+        "journal":  "\prd 108 (2023) 024024",
+        "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.024024",
         "arxiv":    "arXiv:2304.13063 [gr-qc]",
-        "ads":      "2023arXiv230413063D",
+        "ads":      "2023PhRvD.108b4024D",
         "inspire":  "DeRenzis:2023lwa",
         "more":     ""
         })
