@@ -33,17 +33,6 @@ if submitted:
         "inspire":  "Spadaro:2023muy",
         "more":     ""
         })
-
-    papers['submitted']['data'].append({
-        "title":    "Implications of pulsar timing array observations for LISA detections of massive black hole binaries",
-        "author":   "N. Steinle, H. Middleton, C. J. Moore, S. Chen, A. Klein, G. Pratten, R. Buscicchio, E. Finch, A. Vecchio",
-        "journal":  "",
-        "link":     "",
-        "arxiv":    "arXiv:2305.05955 [astro-ph.HE]",
-        "ads":      "2023arXiv230505955S",
-        "inspire":  "Steinle:2023vxs",
-        "more":     ""
-        })
     
     papers['submitted']['data'].append({
         "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
@@ -84,6 +73,17 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+ papers['submitted']['data'].append({
+        "title":    "Implications of pulsar timing array observations for LISA detections of massive black hole binaries",
+        "author":   "N. Steinle, H. Middleton, C. J. Moore, S. Chen, A. Klein, G. Pratten, R. Buscicchio, E. Finch, A. Vecchio",
+        "journal":  "\mnras (in press)",
+        "link":     "",
+        "arxiv":    "arXiv:2305.05955 [astro-ph.HE]",
+        "ads":      "2023arXiv230505955S",
+        "inspire":  "Steinle:2023vxs",
+        "more":     ""
+        })
 
     papers['published']['data'].append({
         "title":    "Parameter estimation of binary black holes in the endpoint of the up-down instability",
