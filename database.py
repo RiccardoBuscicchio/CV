@@ -74,7 +74,7 @@ if published:
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
 
-    papers['submitted']['data'].append({
+    papers['published']['data'].append({
         "title":    "Implications of pulsar timing array observations for LISA detections of massive black hole binaries",
         "author":   "N. Steinle, H. Middleton, C. J. Moore, S. Chen, A. Klein, G. Pratten, R. Buscicchio, E. Finch, A. Vecchio",
         "journal":  "\mnras (in press)",
