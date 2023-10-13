@@ -22,17 +22,6 @@ if submitted:
     papers['submitted'] = {}
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
     papers['submitted']['data'] = []
-
-    papers['submitted']['data'].append({
-        "title":    "Glitch systematics on the observation of massive black-hole binaries with LISA",
-        "author":   "A. Spadaro, R. Buscicchio, D. Vetrugno, A. Klein, D. Gerosa, S. Vitale, R. Dolesi, W. J. Weber, M. Colpi",
-        "journal":  "",
-        "link":     "",
-        "arxiv":    "arXiv:2306.03923 [gr-qc]",
-        "ads":      "2023arXiv230603923S",
-        "inspire":  "Spadaro:2023muy",
-        "more":     ""
-        })
     
     papers['submitted']['data'].append({
         "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
@@ -75,10 +64,32 @@ if published:
     papers['published']['data'] = []
 
     papers['published']['data'].append({
+        "title":    "A fast test for the identification and confirmation of massive black hole binary",
+        "author":   "M. Dotti, F. Rigamonti, S. Rinaldi, W. Del Pozzo, R. Decarli, R. Buscicchio",
+        "journal":  "\\aap (in press)",
+        "link":     "",
+        "arxiv":    "arXiv:2310.06896 [astro-ph.HE]",
+        "ads":      "2023arXiv231006896D",
+        "inspire":  "Dotti:2023bac",
+        "more":     ""
+        })
+    
+    papers['published']['data'].append({
+        "title":    "Glitch systematics on the observation of massive black-hole binaries with LISA",
+        "author":   "A. Spadaro, R. Buscicchio, D. Vetrugno, A. Klein, D. Gerosa, S. Vitale, R. Dolesi, W. J. Weber, M. Colpi",
+        "journal":  "\prd (in press)",
+        "link":     "",
+        "arxiv":    "arXiv:2306.03923 [gr-qc]",
+        "ads":      "2023arXiv230603923S",
+        "inspire":  "Spadaro:2023muy",
+        "more":     ""
+        })
+    
+    papers['published']['data'].append({
         "title":    "Implications of pulsar timing array observations for LISA detections of massive black hole binaries",
         "author":   "N. Steinle, H. Middleton, C. J. Moore, S. Chen, A. Klein, G. Pratten, R. Buscicchio, E. Finch, A. Vecchio",
-        "journal":  "\mnras (in press)",
-        "link":     "",
+        "journal":  "\mnras 525 2 (2023)",
+        "link":     "https://academic.oup.com/mnras/article/525/2/2851/7244712",
         "arxiv":    "arXiv:2305.05955 [astro-ph.HE]",
         "ads":      "2023arXiv230505955S",
         "inspire":  "Steinle:2023vxs",
@@ -121,7 +132,7 @@ if published:
     papers['published']['data'].append({
         "title":    "Detectability of a spatial correlation between stellar-mass black hole mergers and Active Galactic Nuclei in the Local Universe",
         "author":   "N. Veronesi, E.M. Rossi, S. van Velzen, R. Buscicchio",
-        "journal":  "\mnras 107 (2023) 063027",
+        "journal":  "\mnras 514 2 (2023)",
         "link":     "https://academic.oup.com/mnras/article/514/2/2092/6587069",
         "arxiv":    "arXiv:2203.05907 [astro-ph.HE]",
         "ads":      "2022MNRAS.514.2092V",
@@ -552,6 +563,14 @@ if seminars:
     talks['seminars']['label'] = 'Talks at department seminars'
     talks['seminars']['data'] = []
 
+    talks['seminars']['data'].append({
+        "title":    "LISA Global inference: modelling, statistical, and computational challenges",
+        "where":    "Department of Physics, University of Pisa, Pisa, Italy",
+        "when":     "Oct 2023",
+        "invited":  True,
+        "more":     ""
+        })
+    
     talks['seminars']['data'].append({
         "title":    "Gravitational waves in the many sources, many detectors era",
         "where":    "Institute for Mathematics and Physics, University of Stavanger, Stavanger, Norway",
