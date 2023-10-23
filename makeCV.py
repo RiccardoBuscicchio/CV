@@ -222,7 +222,7 @@ def metricspapers(papers,filename="metricspapers.tex"):
     out=[]
     out.append("\cvitem{}{\\begin{tabular}{rcl}")
     out.append("\\textcolor{mark_color}{\\textbf{Publications}}: & \hspace{0.3cm} & \\\\")
-    out.append("&\\textbf{"+str(len(papers['published']['data']))+"} & short-author papers published in major peer-reviewed journals\\\\")
+    out.append("&\\textbf{"+str(len(papers['published']['data']))+"\, } & short-author papers published in major peer-reviewed journals\\\\")
     
     first_author = []
     for k in ['submitted','published']:
@@ -231,14 +231,14 @@ def metricspapers(papers,filename="metricspapers.tex"):
                 raise ValueError("Looks like you're not an author:", p['title'])
             first_author.append( p['author'].split("R. Buscicchio")[0]=="" )
 
-    out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}~first-authored papers).\\\\")
+    out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers).\\\\")
 
     out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & collaboration papers, with substantial contribution, published in major peer-reviewed journals\\\\")
     
     if len(papers['submitted']['data'])>1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& papers in submission stage,\\\\")
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, papers in submission stage,\\\\")
     elif len(papers['submitted']['data'])==1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& paper in submission stage,")
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, paper in submission stage,")
         
 
 #    press_release = []
@@ -247,7 +247,7 @@ def metricspapers(papers,filename="metricspapers.tex"):
 #            press_release.append("press release" in p['more'])
 #    out.append("and \\textbf{"+str(np.sum(press_release))+"} papers covered by press releases).\\\\")
 
-    out.append("&\\textbf{"+str(len(papers['others']['data']))+"}& other publications (thesis, white papers, long-authorlist reviews)")
+    out.append("&\\textbf{"+str(len(papers['others']['data']))+"}& \, other publications (thesis, white papers, long-authorlist reviews)")
     out.append("\end{tabular} }")
 
 
