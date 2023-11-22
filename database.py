@@ -23,13 +23,13 @@ if submitted:
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
     papers['submitted']['data'] = []
 
-    #papers['submitted']['data'].append({
-    #    "title":    "A weakly-parametric approach to stochastic background inference in LISA",
-    #    "journal":  "",
-    #    "link":     "",
-    #    "arxiv":    "arXiv:2311. [astro-ph.HE]",
-    #    "ads":      "2022arXiv220403423K",
-    #    "inspire":  "Pozzoli:2022",
+    papers['submitted']['data'].append({
+        "title":    "A weakly-parametric approach to stochastic background inference in LISA",
+        "journal":  "",
+        "link":     "",
+        "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
+        "ads":      "",
+        "inspire":  "Pozzoli:2023lgz",
     #   "more":     ""
     #   })
     
