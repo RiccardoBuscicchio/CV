@@ -28,7 +28,7 @@ if submitted:
         "journal":  "",
         "link":     "",
         "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
-        "ads":      "",
+        "ads":      "2023arXiv231112111P",
         "inspire":  "Pozzoli:2023lgz",
         "more":     ""
         })
