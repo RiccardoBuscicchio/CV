@@ -25,6 +25,7 @@ if submitted:
 
     papers['submitted']['data'].append({
         "title":    "A weakly-parametric approach to stochastic background inference in LISA",
+        "author":   "F. Pozzoli, R. Buscicchio, C. J. Moore, A. Sesana, F. Haardt, A. Sesana",
         "journal":  "",
         "link":     "",
         "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
