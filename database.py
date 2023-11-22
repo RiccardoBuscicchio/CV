@@ -30,8 +30,8 @@ if submitted:
         "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
         "ads":      "",
         "inspire":  "Pozzoli:2023lgz",
-    #   "more":     ""
-    #   })
+        "more":     ""
+        })
     
     papers['submitted']['data'].append({
         "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
