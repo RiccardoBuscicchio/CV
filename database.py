@@ -575,6 +575,22 @@ if seminars:
     talks['seminars']['data'] = []
 
     talks['seminars']['data'].append({
+        "title":    "GRAF: Gravitational waves data and global fit",
+        "where":    "Department of Physics, University of Milano-Bicocca, Milan, Italy",
+        "when":     "Dec 2023",
+        "invited":  True,
+        "more":     ""
+        })
+
+    talks['seminars']['data'].append({
+        "title":    "LISA global inference: statistical and modelling challenges  for the Milky Way",
+        "where":    "Max Planck Institute for Astrophysics, Munchen, Germany",
+        "when":     "Nov 2023",
+        "invited":  True,
+        "more":     ""
+        })
+    
+    talks['seminars']['data'].append({
         "title":    "LISA Global inference: modelling, statistical, and computational challenges",
         "where":    "Department of Physics, University of Pisa, Pisa, Italy",
         "when":     "Oct 2023",
