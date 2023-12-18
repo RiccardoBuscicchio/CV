@@ -77,8 +77,8 @@ if published:
     papers['published']['data'].append({
         "title":    "A fast test for the identification and confirmation of massive black hole binary",
         "author":   "M. Dotti, F. Rigamonti, S. Rinaldi, W. Del Pozzo, R. Decarli, R. Buscicchio",
-        "journal":  "\\aap (in press)",
-        "link":     "",
+        "journal":  "\\aap 680 (2023) A69",
+        "link":     "https://www.aanda.org/articles/aa/abs/2023/12/aa46916-23/aa46916-23.html",
         "arxiv":    "arXiv:2310.06896 [astro-ph.HE]",
         "ads":      "2023arXiv231006896D",
         "inspire":  "Dotti:2023bac",
@@ -88,8 +88,8 @@ if published:
     papers['published']['data'].append({
         "title":    "Glitch systematics on the observation of massive black-hole binaries with LISA",
         "author":   "A. Spadaro, R. Buscicchio, D. Vetrugno, A. Klein, D. Gerosa, S. Vitale, R. Dolesi, W. J. Weber, M. Colpi",
-        "journal":  "\prd (in press)",
-        "link":     "",
+        "journal":  "\prd Phys. Rev. D 108 (2023) 123029",
+        "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.123029",
         "arxiv":    "arXiv:2306.03923 [gr-qc]",
         "ads":      "2023arXiv230603923S",
         "inspire":  "Spadaro:2023muy",
