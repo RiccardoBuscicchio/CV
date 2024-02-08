@@ -326,11 +326,11 @@ if collab:
     papers['collab']['data'].append({
         "title":    "GWTC-3: Compact Binary Coalescences Observed by LIGO and Virgo During the Second Part of the Third Observing Run",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  "\prx (accepted)", 
-        "link":     "https://journals.aps.org/prx/accepted/a507bKd6Y4d1210565cf9468ce6a1a3405730cb39", 
+        "journal":  "\prx 13 (2023) 041039", 
+        "link":     "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.13.041039", 
         "arxiv":    "arXiv:2111.03606 [gr-qc]",
-        "ads":      "2021arXiv211103606T", 
-        "inspire":  "LIGOScientific:2021djp", 
+        "ads":      "2023PhRvX..13d1039A", 
+        "inspire":  "KAGRA:2021vkt", 
         "more":     ""
     })
  
@@ -417,6 +417,17 @@ if others:
     papers['others']['label'] = 'Other publications. These include PhD thesis, and other collaboration papers.'
     papers['others']['data'] = []
 
+    papers['others']['data'].append({
+        "title":    "LISA - Laser Interferometer Space Antenna - Definition Study Report",
+        "author":   "The European Space Agency",
+        "journal":  "ESA-SCI-DIR-RP-002",
+        "link":     "https://www.cosmos.esa.int/documents/15452792/15452811/LISA_DEFINITION_STUDY_REPORT_ESA-SCI-DIR-RP-002_Public+(1).pdf/2deb7646-dccd-ae0d-75c1-b2e16df584cf?t=1707166191449",
+        "arxiv":    "",
+        "ads":      "",
+        "inspire":  "Buscicchio:2022oio",
+        "more":     ""
+        })
+    
     papers['others']['data'].append({
         "title":    "Topics in Bayesian population inference for gravitational wave astronomy",
         "author":   "R. Buscicchio",
