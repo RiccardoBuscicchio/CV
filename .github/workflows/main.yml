@@ -67,7 +67,7 @@ jobs:
         mkdir pdfs/
         mkdir texs/
         mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
-        mv preamble.tex CV.tex metricspapers.tex parsepapers.tex parsetalks.texpublist.tex talklist.tex CVshort.tex pdfs/
+        mv preamble.tex CV.tex metricspapers.tex parsepapers.tex parsetalks.tex publist.tex talklist.tex CVshort.tex pdfs/
         
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
