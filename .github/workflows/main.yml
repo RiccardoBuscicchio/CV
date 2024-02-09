@@ -65,8 +65,10 @@ jobs:
     - name: Prepare LaTeX files
       run: |
         mkdir pdfs/
+        mkdir texs/
         mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
-
+        mv CV.tex publist.tex talklist.tex CVshort.tex pdfs/
+        
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
