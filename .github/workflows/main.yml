@@ -20,9 +20,21 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Cache Conda environment
+      uses: actions/cache@v2
+      with:
+        path: |
+          ${{ env.HOME }}/.conda/pkgs/
+          ${{ env.HOME }}/.conda/envs/
+        key: conda-${{ runner.os }}-${{ hashFiles('**/environment.yml') }}
+        restore-keys: |
+          conda-${{ runner.os }}-
+
     - name: Set up conda
       uses: conda-incubator/setup-miniconda@v2
       with:
+        activate-environment: buildcv
+        environment-file: environment.yml
         auto-update-conda: true
 
     - name: Conda environment
@@ -87,6 +99,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           path: pdfs
+      
+      - run: zip -r build.zip build/
 
       - name: Create Release
         id: create_release
