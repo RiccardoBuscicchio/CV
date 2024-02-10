@@ -110,7 +110,7 @@ jobs:
             pdfs/artifacts/CV.pdf
             pdfs/artifacts/CVshort.pdf
             pdfs/artifacts/publist.pdf
-            pdfs/artifacts/talkslist.pdf
+            pdfs/artifacts/talklist.pdf
           token: ${{ secrets.GITHUB_TOKEN }}
           name: $(date +'%Y_%m_%d_%H_%M_%S')
           tag_name: $(date +'%Y_%m_%d_%H_%M_%S')
