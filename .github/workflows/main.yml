@@ -86,9 +86,6 @@ jobs:
           ./pdfs/talkslist.pdf
         token: ${{ secrets.GITHUB_TOKEN }}
         name: $(date +'%Y-%m-%d %H:%M:%S')
-
-    - name: Get the release URL
-      run: echo "Release URL: ${{ steps.create_release.outputs.upload_url }}"
   
   deploy:
     # Edit here if compiling multiple papers
