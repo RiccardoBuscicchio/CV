@@ -37,8 +37,8 @@ jobs:
         environment-file: environment.yml
         auto-update-conda: true
 
-    - name: Conda environment
-      run: conda env create --name buildcv --file environment.yml
+#    - name: Conda environment
+#      run: conda env create --name buildcv --file environment.yml
 
     - name: Run Python script
       run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }}"
