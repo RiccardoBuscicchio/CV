@@ -100,7 +100,7 @@ jobs:
         with:
           path: pdfs
       
-      - run: zip -r build.zip build/
+      - run: zip -r pdfs.zip pdfs/
 
       - name: Create Release
         id: create_release
