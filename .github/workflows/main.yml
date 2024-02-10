@@ -74,6 +74,21 @@ jobs:
       with:
         name: artifacts
         path: pdfs/
+
+    - name: Create Release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          ./pdfs/CV.pdf
+          ./pdfs/CVshort.pdf
+          ./pdfs/publist.pdf
+          ./pdfs/talkslist.pdf
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: $(date +'%Y-%m-%d %H:%M:%S')
+
+    - name: Get the release URL
+      run: echo "Release URL: ${{ steps.create_release.outputs.upload_url }}"
   
   deploy:
     # Edit here if compiling multiple papers
