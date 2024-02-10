@@ -87,33 +87,31 @@ jobs:
         name: artifacts
         path: pdfs/
 
-  release:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
+#  release:
+#    needs: [build]
+#    runs-on: ubuntu-latest
+#    steps:
+#
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#
+#      - name: Download artifacts
+#        uses: actions/download-artifact@v3
+#        with:
+#          path: pdfs
 
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v3
-        with:
-          path: pdfs
-      
-      - run: zip -r pdfs.zip pdfs/
-
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            pdfs/artifacts/CV.pdf
-            pdfs/artifacts/CVshort.pdf
-            pdfs/artifacts/publist.pdf
-            pdfs/artifacts/talklist.pdf
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: $(date +'%Y_%m_%d_%H_%M_%S')
-          tag_name: $(date +'%Y_%m_%d_%H_%M_%S')
+#      - name: Create Release
+#        id: create_release
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          files: |
+#            pdfs/artifacts/CV.pdf
+#            pdfs/artifacts/CVshort.pdf
+#            pdfs/artifacts/publist.pdf
+#            pdfs/artifacts/talklist.pdf
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          name: $(date +'%Y_%m_%d_%H_%M_%S')
+#          tag_name: $(date +'%Y_%m_%d_%H_%M_%S')
 
   deploy:
     # Edit here if compiling multiple papers
