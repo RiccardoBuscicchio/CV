@@ -82,7 +82,7 @@ jobs:
         mv preamble.tex CV.tex metricspapers.tex parsepapers.tex parsetalks.tex publist.tex talklist.tex CVshort.tex pdfs/
             
     - name: Upload artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: artifacts
         path: pdfs/
@@ -96,7 +96,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           path: pdfs
       
@@ -107,10 +107,10 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            pdfs/CV.pdf
-            pdfs/CVshort.pdf
-            pdfs/publist.pdf
-            pdfs/talkslist.pdf
+            pdfs/artifacts/CV.pdf
+            pdfs/artifacts/CVshort.pdf
+            pdfs/artifacts/publist.pdf
+            pdfs/artifacts/talkslist.pdf
           token: ${{ secrets.GITHUB_TOKEN }}
           name: $(date +'%Y_%m_%d_%H_%M_%S')
           tag_name: $(date +'%Y_%m_%d_%H_%M_%S')
