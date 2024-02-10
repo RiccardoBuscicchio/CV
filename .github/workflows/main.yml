@@ -17,16 +17,28 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:      
-    - name: Checkout repository
+    - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Set up Conda
+    - name: Cache Conda environment
+      uses: actions/cache@v2
+      with:
+        path: |
+          ${{ env.HOME }}/.conda/pkgs/
+          ${{ env.HOME }}/.conda/envs/
+        key: conda-${{ runner.os }}-${{ hashFiles('**/environment.yml') }}
+        restore-keys: |
+          conda-${{ runner.os }}-
+
+    - name: Set up conda
       uses: conda-incubator/setup-miniconda@v2
       with:
+        activate-environment: buildcv
+        environment-file: environment.yml
         auto-update-conda: true
 
-    - name: Create Conda environment
-      run: conda env create --name buildcv --file environment.yml
+#    - name: Conda environment
+#      run: conda env create --name buildcv --file environment.yml
 
     - name: Run Python script
       run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }}"
@@ -62,32 +74,45 @@ jobs:
         compiler: pdflatex
         args: -interaction=nonstopmode -shell-escape
         
-    - name: Prepare LaTeX files
+    - name: Prepare
       run: |
         mkdir pdfs/
         mkdir texs/
         mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
         mv preamble.tex CV.tex metricspapers.tex parsepapers.tex parsetalks.tex publist.tex talklist.tex CVshort.tex pdfs/
-        
+            
     - name: Upload artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: artifacts
         path: pdfs/
 
-    - name: Create Release
-      id: create_release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          ./pdfs/CV.pdf
-          ./pdfs/CVshort.pdf
-          ./pdfs/publist.pdf
-          ./pdfs/talkslist.pdf
-        token: ${{ secrets.GITHUB_TOKEN }}
-        name: $(date +'%Y_%m_%d_%H_%M_%S')
-        tag_name: $(date +'%Y_%m_%d_%H_%M_%S')
-  
+#  release:
+#    needs: [build]
+#    runs-on: ubuntu-latest
+#    steps:
+#
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#
+#      - name: Download artifacts
+#        uses: actions/download-artifact@v3
+#        with:
+#          path: pdfs
+
+#      - name: Create Release
+#        id: create_release
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          files: |
+#            pdfs/artifacts/CV.pdf
+#            pdfs/artifacts/CVshort.pdf
+#            pdfs/artifacts/publist.pdf
+#            pdfs/artifacts/talklist.pdf
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          name: $(date +'%Y_%m_%d_%H_%M_%S')
+#          tag_name: $(date +'%Y_%m_%d_%H_%M_%S')
+
   deploy:
     # Edit here if compiling multiple papers
     needs: [build]
