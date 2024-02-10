@@ -86,7 +86,7 @@ jobs:
           ./pdfs/talkslist.pdf
         token: ${{ secrets.GITHUB_TOKEN }}
         name: $(date +'%Y_%m_%d_%H_%M_%S')
-        tag: $(date +'%Y_%m_%d_%H_%M_%S')
+        tag_name: $(date +'%Y_%m_%d_%H_%M_%S')
   
   deploy:
     # Edit here if compiling multiple papers
