@@ -24,6 +24,17 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+        "title":    "LISA Definition Study Report",
+        "author":   "M. Colpi, K. Danzmann, M. Hewitson, Holley-Bockelmann, K. et al. (incl. R. Buscicchio)",
+        "journal":  "",
+        "link":     "",
+        "arxiv":    "arXiv:2402.07571 [astro-ph.CO]",
+        "ads":      "2024arXiv240207571C",
+        "inspire":  "Colpi:2024xhw",
+        "more":     ""
+        })
+
+    papers['submitted']['data'].append({
         "title":    "A weakly-parametric approach to stochastic background inference in LISA",
         "author":   "F. Pozzoli, R. Buscicchio, C. J. Moore, A. Sesana, F. Haardt, A. Sesana",
         "journal":  "",
