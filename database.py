@@ -66,24 +66,22 @@ if submitted:
         "inspire":  "LIGOScientific:2023bwz", 
         "more":     ""
         })
-    
-    papers['submitted']['data'].append({
-        "title":    "GWTC-2.1: Deep Extended Catalog of Compact Binary Coalescences Observed by LIGO and Virgo During the First Half of the Third Observing Run",
-        "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  "", 
-        "link":     "", 
-        "arxiv":    "arXiv:2108.01045 [gr-qc]" ,
-        "ads":      "2021arXiv210801045T", 
-        "inspire":  "LIGOScientific:2021usb",
-        "more":     ""
-    })
-
-
 
 if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+        "title":    "GWTC-2.1: Deep Extended Catalog of Compact Binary Coalescences Observed by LIGO and Virgo During the First Half of the Third Observing Run",
+        "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
+        "journal":  "\prd Phys. Rev. D Physical Review D 109 (2024) 022001", 
+        "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.022001", 
+        "arxiv":    "arXiv:2108.01045 [gr-qc]" ,
+        "ads":      "2024PhRvD.109b2001A", 
+        "inspire":  "LIGOScientific:2021usb",
+        "more":     ""
+    })
 
     papers['published']['data'].append({
         "title":    "A fast test for the identification and confirmation of massive black hole binary",
