@@ -73,17 +73,6 @@ if published:
     papers['published']['data'] = []
 
     papers['published']['data'].append({
-        "title":    "GWTC-2.1: Deep Extended Catalog of Compact Binary Coalescences Observed by LIGO and Virgo During the First Half of the Third Observing Run",
-        "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  "\prd Phys. Rev. D Physical Review D 109 (2024) 022001", 
-        "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.022001", 
-        "arxiv":    "arXiv:2108.01045 [gr-qc]" ,
-        "ads":      "2024PhRvD.109b2001A", 
-        "inspire":  "LIGOScientific:2021usb",
-        "more":     ""
-    })
-
-    papers['published']['data'].append({
         "title":    "A fast test for the identification and confirmation of massive black hole binary",
         "author":   "M. Dotti, F. Rigamonti, S. Rinaldi, W. Del Pozzo, R. Decarli, R. Buscicchio",
         "journal":  "\\aap 680 (2023) A69",
@@ -298,6 +287,17 @@ if collab:
     papers['collab'] = {}
     papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to.'
     papers['collab']['data'] = []
+
+    papers['collab']['data'].append({
+        "title":    "GWTC-2.1: Deep Extended Catalog of Compact Binary Coalescences Observed by LIGO and Virgo During the First Half of the Third Observing Run",
+        "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
+        "journal":  "\prd Phys. Rev. D Physical Review D 109 (2024) 022001", 
+        "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.022001", 
+        "arxiv":    "arXiv:2108.01045 [gr-qc]" ,
+        "ads":      "2024PhRvD.109b2001A", 
+        "inspire":  "LIGOScientific:2021usb",
+        "more":     ""
+    })
        
     papers['collab']['data'].append({
         "title":    "The population of merging compact binaries inferred using gravitational waves through GWTC-3",
