@@ -24,8 +24,19 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+        "title":    "Partial alignment between jets and megamasers: coherent or selective accretion?",
+        "author":   "M. Dotti, R. Buscicchio, F. Bollati, R. Decarli, W. Del Pozzo, A. Franchini",
+        "journal":  "",
+        "link":     "",
+        "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
+        "ads":      " ",
+        "inspire":  "Dotti:2024wng",
+        "more":     ""
+        })
+    
+    papers['submitted']['data'].append({
         "title":    "LISA Definition Study Report",
-        "author":   "M. Colpi, K. Danzmann, M. Hewitson, Holley-Bockelmann, K. et al. (incl. R. Buscicchio)",
+        "author":   "M. Colpi, K. Danzmann, M. Hewitson, K. Holley-Bockelmann, et al. (incl. R. Buscicchio)",
         "journal":  "",
         "link":     "",
         "arxiv":    "arXiv:2402.07571 [astro-ph.CO]",
