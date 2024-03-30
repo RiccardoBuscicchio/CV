@@ -44,17 +44,6 @@ if submitted:
         "inspire":  "Colpi:2024xhw",
         "more":     ""
         })
-
-    papers['submitted']['data'].append({
-        "title":    "A weakly-parametric approach to stochastic background inference in LISA",
-        "author":   "F. Pozzoli, R. Buscicchio, C. J. Moore, A. Sesana, F. Haardt, A. Sesana",
-        "journal":  "",
-        "link":     "",
-        "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
-        "ads":      "2023arXiv231112111P",
-        "inspire":  "Pozzoli:2023lgz",
-        "more":     ""
-        })
     
     papers['submitted']['data'].append({
         "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
@@ -82,6 +71,18 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+
+    papers['published']['data'].append({
+        "title":    "A weakly-parametric approach to stochastic background inference in LISA",
+        "author":   "F. Pozzoli, R. Buscicchio, C. J. Moore, A. Sesana, F. Haardt, A. Sesana",
+        "journal":  "\prd (in press)",
+        "link":     "",
+        "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
+        "ads":      "2023arXiv231112111P",
+        "inspire":  "Pozzoli:2023lgz",
+        "more":     ""
+        })
 
     papers['published']['data'].append({
         "title":    "A fast test for the identification and confirmation of massive black hole binary",
