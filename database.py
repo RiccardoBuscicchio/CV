@@ -468,7 +468,7 @@ if conferences:
     talks['conferences']['data'].append({
         "title":    "Statistical challenges in LISA data analysis",
         "where":    "LAUTARO joint meetig, GSSI-University of Milano-Bicocca, Milano, Italy",
-        "when":     "Sept 2023",
+        "when":     "Apr 2024",
         "invited":  True,
         "more":     ""
         })
