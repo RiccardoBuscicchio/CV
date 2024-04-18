@@ -466,6 +466,13 @@ if conferences:
     talks['conferences']['data'] = []
 
     talks['conferences']['data'].append({
+        "title":    "Statistical challenges in LISA data analysis",
+        "where":    "LAUTARO joint meetig, GSSI-University of Milano-Bicocca, Milano, Italy",
+        "when":     "Sept 2023",
+        "invited":  True,
+        "more":     ""
+        })
+    talks['conferences']['data'].append({
         "title":    "From mHz to kHz: stochastic background implications on astrophysical sources and population reconstruction",
         "where":    "LISA Astrophysics working group workshop, University of Milano-Bicocca, Milano, Italy",
         "when":     "Sept 2023",
