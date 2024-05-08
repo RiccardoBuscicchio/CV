@@ -614,6 +614,14 @@ if seminars:
     talks['seminars']['data'] = []
 
     talks['seminars']['data'].append({
+        "title":    "Statistical challenges in GW inference: an application of field theory to direct population reconstruction in LISA",
+        "where":    "APP seminar, SISSA, Trieste, Italy",
+        "when":     "May 2024",
+        "invited":  True,
+        "more":     ""
+        })
+    
+    talks['seminars']['data'].append({
         "title":    "GRAF: Gravitational waves data and global fit",
         "where":    "Department of Physics, University of Milano-Bicocca, Milan, Italy",
         "when":     "Dec 2023",
