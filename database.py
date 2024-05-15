@@ -710,3 +710,24 @@ if outreach:
         "invited": False,
         "more": ""
     })
+    talks['outreach']['data'].append({
+        "title": "Gravitational-waves in space and on Earth", 
+        "where": "Manchester Museum of Science and Industry, UK",
+        "when": "2018",
+        "invited": False,
+        "more": ""
+    })
+    talks['outreach']['data'].append({
+        "title": "An orchestra of lasers and gravitational waves", 
+        "where": "Manchester Museum of Science and Industry, UK",
+        "when": "2018",
+        "invited": False,
+        "more": ""
+    })
+    talks['outreach']['data'].append({
+        "title": "A Universe of waves", 
+        "where": "Science Caf\'e, Italy",
+        "when": "2018",
+        "invited": False,
+        "more": ""
+    })
