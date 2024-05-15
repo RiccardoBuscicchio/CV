@@ -15,7 +15,7 @@ conferences = True
 seminars = True
 lectures = False
 posters = False
-outreach = False
+outreach = True
 
 if submitted:
 
@@ -702,3 +702,11 @@ if outreach:
     talks['outreach'] = {}
     talks['outreach']['label'] = 'Outreach talks'
     talks['outreach']['data'] = []
+
+    talks['outreach']['data'].append({
+        "title": "An orchestra of lasers and gravitational waves", 
+        "where": "Pint of Science 2024, Milan",
+        "when": "May 2024",
+        "invited": False,
+        "more": ""
+    })
