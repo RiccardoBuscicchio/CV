@@ -15,7 +15,7 @@ conferences = True
 seminars = True
 lectures = False
 posters = False
-outreach = False
+outreach = True
 
 if submitted:
 
@@ -464,6 +464,30 @@ if conferences:
     talks['conferences'] = {}
     talks['conferences']['label'] = 'Talks at conferences'
     talks['conferences']['data'] = []
+    
+    talks['conferences']['data'].append({
+        "title":    "LISA stellar-mass black holes informed by the GWTC-3 population: event rates and parameters reconstruction",
+        "where":    "15th International LISA Symposium, Dublin, Ireland",
+        "when":     "Jul 2024",
+        "invited":  False,
+        "more":     ""
+        })
+
+    talks['conferences']['data'].append({
+        "title":    "LISA data analysis: from the stochastic background to the Milky Way",
+        "where":    "11th LISA Cosmology Working Group Workshop, Porto, Portugal",
+        "when":     "Jun 2024",
+        "invited":  True,
+        "more":     ""
+        })
+    
+    talks['conferences']['data'].append({
+        "title":    "An introduction to Bayesian Inference",
+        "where":    "International Pulsar Timing Array Student Week, Milan, Italy",
+        "when":     "Jun 2024",
+        "invited":  True,
+        "more":     ""
+        })
 
     talks['conferences']['data'].append({
         "title":    "Statistical challenges in LISA data analysis",
@@ -702,3 +726,40 @@ if outreach:
     talks['outreach'] = {}
     talks['outreach']['label'] = 'Outreach talks'
     talks['outreach']['data'] = []
+
+    talks['outreach']['data'].append({
+        "title": "Onde gravitazionali: ascoltare l'Universo anzich\'e solo guardarlo", 
+        "where": "University of Milano-Bicocca, Milan, Italy",
+        "when": "May 2024",
+        "invited": False,
+        "more": ""
+    })
+
+    talks['outreach']['data'].append({
+        "title": "An orchestra of lasers and gravitational waves", 
+        "where": "Pint of Science 2024, Milan, Italy",
+        "when": "May 2024",
+        "invited": False,
+        "more": ""
+    })
+    talks['outreach']['data'].append({
+        "title": "Gravitational-waves in space and on Earth", 
+        "where": "Manchester Museum of Science and Industry, UK",
+        "when": "2018",
+        "invited": False,
+        "more": ""
+    })
+    talks['outreach']['data'].append({
+        "title": "An orchestra of lasers and gravitational waves", 
+        "where": "Manchester Museum of Science and Industry, UK",
+        "when": "2018",
+        "invited": False,
+        "more": ""
+    })
+    talks['outreach']['data'].append({
+        "title": "A Universe of waves", 
+        "where": "Science Caf\'e, Italy",
+        "when": "2018",
+        "invited": False,
+        "more": ""
+    })
