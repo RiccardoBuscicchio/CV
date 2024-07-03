@@ -76,10 +76,10 @@ if published:
     papers['published']['data'].append({
         "title":    "A weakly-parametric approach to stochastic background inference in LISA",
         "author":   "F. Pozzoli, R. Buscicchio, C. J. Moore, A. Sesana, F. Haardt, A. Sesana",
-        "journal":  "\prd (in press)",
-        "link":     "",
+        "journal":  "\prd Phys. Rev. D 109, (2024) 083029",
+        "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.083029",
         "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
-        "ads":      "2023arXiv231112111P",
+        "ads":      "2024PhRvD.109h3029P",
         "inspire":  "Pozzoli:2023lgz",
         "more":     ""
         })
@@ -90,7 +90,7 @@ if published:
         "journal":  "\\aap 680 (2023) A69",
         "link":     "https://www.aanda.org/articles/aa/abs/2023/12/aa46916-23/aa46916-23.html",
         "arxiv":    "arXiv:2310.06896 [astro-ph.HE]",
-        "ads":      "2023arXiv231006896D",
+        "ads":      "2023A&A...680A..69D",
         "inspire":  "Dotti:2023bac",
         "more":     ""
         })
@@ -101,7 +101,7 @@ if published:
         "journal":  "\prd Phys. Rev. D 108 (2023) 123029",
         "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.123029",
         "arxiv":    "arXiv:2306.03923 [gr-qc]",
-        "ads":      "2023arXiv230603923S",
+        "ads":      "2023PhRvD.108l3029S",
         "inspire":  "Spadaro:2023muy",
         "more":     ""
         })
@@ -112,7 +112,7 @@ if published:
         "journal":  "\mnras 525 2 (2023)",
         "link":     "https://academic.oup.com/mnras/article/525/2/2851/7244712",
         "arxiv":    "arXiv:2305.05955 [astro-ph.HE]",
-        "ads":      "2023arXiv230505955S",
+        "ads":      "2023MNRAS.525.2851S",
         "inspire":  "Steinle:2023vxs",
         "more":     ""
         })
@@ -146,7 +146,7 @@ if published:
         "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.063027",
         "arxiv":    "arXiv:2209.01400 [gr-qc]",
         "ads":      "2023PhRvD.107f3027B",
-        "inspire":  "",
+        "inspire":  "Buscicchio:2022raf",
         "more":     ""
         })
 
