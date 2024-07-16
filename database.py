@@ -24,12 +24,23 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+        "title":    "Expected insights on type Ia supernovae from LISA's gravitational wave observations",
+        "author":   "V. Korol, R. Buscicchio, Ruediger Pakmor, Javier Morán-Fraile, Christopher J. Moore, Selma E. de Mink",
+        "journal":  "",
+        "link":     "",
+        "arxiv":    "arXiv:2407.03935 [astro-ph.HE]",
+        "ads":      "2024arXiv240703935K",
+        "inspire":  "Korol:2024dzw",
+        "more":     ""
+        })
+
+    papers['submitted']['data'].append({
         "title":    "Partial alignment between jets and megamasers: coherent or selective accretion?",
         "author":   "M. Dotti, R. Buscicchio, F. Bollati, R. Decarli, W. Del Pozzo, A. Franchini",
         "journal":  "",
         "link":     "",
         "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
-        "ads":      " ",
+        "ads":      "2024arXiv240318002D",
         "inspire":  "Dotti:2024wng",
         "more":     ""
         })
