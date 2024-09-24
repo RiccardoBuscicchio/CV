@@ -23,6 +23,17 @@ if submitted:
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
     papers['submitted']['data'] = []
 
+ papers['submitted']['data'].append({
+        "title":    "Stars or gas? Constraining the hardening processes of massive black-hole binaries with LISA",
+        "author":   "A. Spadaro, R. Buscicchio, D. Izquierdo--Villalba, D. Gerosa, A. Klein, G. Pratten",
+        "journal":  "",
+        "link":     "",
+        "arxiv":    "arXiv:2409.13011 [astro-ph.HE]",
+        "ads":      "2024arXiv240913011S",
+        "inspire":  "Spadaro:2024tve",
+        "more":     ""
+        })
+
     papers['submitted']['data'].append({
         "title":    "Expected insights on type Ia supernovae from LISA's gravitational wave observations",
         "author":   "V. Korol, R. Buscicchio, Ruediger Pakmor, Javier Morán-Fraile, Christopher J. Moore, Selma E. de Mink",
