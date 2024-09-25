@@ -23,7 +23,7 @@ if submitted:
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
     papers['submitted']['data'] = []
 
- papers['submitted']['data'].append({
+    papers['submitted']['data'].append({
         "title":    "Stars or gas? Constraining the hardening processes of massive black-hole binaries with LISA",
         "author":   "A. Spadaro, R. Buscicchio, D. Izquierdo--Villalba, D. Gerosa, A. Klein, G. Pratten",
         "journal":  "",
