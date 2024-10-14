@@ -24,6 +24,40 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
+    "author":   "M. Piarulli, R. Buscicchio, F. Pozzoli, O. Burke, M. Bonetti, A. Sesana",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
+    "ads":      "",
+    "inspire":  "Piarulli:2024yhj",
+    "more":     ""
+    })
+    
+    papers['submitted']['data'].append({
+    "title":    "Cyclostationary signals in LISA: a practical application to Milky Way satellites",
+    "author":   "F. Pozzoli, R. Buscicchio, A. Klein, V. Korol, A. Sesana, F. Haardt",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
+    "ads":      "",
+    "inspire":  "Pozzoli:2024wfe",
+    "more":     ""
+    })
+
+    papers['submitted']['data'].append({
+    "title":    "A test for LISA foreground Gaussianity and stationarity. I. Galactic white-dwarf binaries",
+    "author":   "R. Buscicchio, A. Klein, V. Korol, F. Di Renzo, C.J. Moore, D. Gerosa, A. Carzaniga",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
+    "ads":      "",
+    "inspire":  "Buscicchio:2024wwm",
+    "more":     ""
+    })
+    
+    
+    papers['submitted']['data'].append({
         "title":    "Stars or gas? Constraining the hardening processes of massive black-hole binaries with LISA",
         "author":   "A. Spadaro, R. Buscicchio, D. Izquierdo--Villalba, D. Gerosa, A. Klein, G. Pratten",
         "journal":  "",
