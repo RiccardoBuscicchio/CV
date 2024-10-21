@@ -24,12 +24,23 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "Characterization of non-Gaussian stochastic signals with heavier-tailed likelihoods",
+    "author":   "N. Karnesis, A. Sasli, R. Buscicchio, N. Stergioulas",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2410.14354 [gr-qc]",
+    "ads":      "",
+    "inspire":  "Karnesis:2024pxh",
+    "more":     ""
+    })
+    
+    papers['submitted']['data'].append({
     "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
     "author":   "M. Piarulli, R. Buscicchio, F. Pozzoli, O. Burke, M. Bonetti, A. Sesana",
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
-    "ads":      "",
+    "ads":      "2024arXiv241008862P",
     "inspire":  "Piarulli:2024yhj",
     "more":     ""
     })
@@ -40,7 +51,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
-    "ads":      "",
+    "ads":      "2024arXiv241008274P",
     "inspire":  "Pozzoli:2024wfe",
     "more":     ""
     })
@@ -51,7 +62,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
-    "ads":      "",
+    "ads":      "2024arXiv241008263B",
     "inspire":  "Buscicchio:2024wwm",
     "more":     ""
     })
