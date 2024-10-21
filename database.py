@@ -531,6 +531,14 @@ if conferences:
     talks['conferences'] = {}
     talks['conferences']['label'] = 'Talks at conferences'
     talks['conferences']['data'] = []
+
+    talks['conferences']['data'].append({
+        "title":    "Beyond Gauss? A more accurate model for LISA astrophysical noise sources",
+        "where":    "Heterogeneous Data and Large Representation Models in Science, Toulouse, France",
+        "when":     "2024/10/01",
+        "invited":  True,
+        "more":     ""
+        })
     
     talks['conferences']['data'].append({
         "title":    "LISA stellar-mass black holes informed by the GWTC-3 population: event rates and parameters reconstruction",
@@ -704,6 +712,14 @@ if seminars:
     talks['seminars']['label'] = 'Talks at department seminars'
     talks['seminars']['data'] = []
 
+    talks['conferences']['data'].append({
+        "title":    "Beyond Gauss? A more accurate model for LISA astrophysical noise sources",
+        "where":    "Kavli Institute for Cosmology Seminars, Cambridge, United Kingdom",
+        "when":     "2024/10/15",
+        "invited":  True,
+        "more":     ""
+        })
+    
     talks['seminars']['data'].append({
         "title":    "Statistical challenges in GW inference: an application of field theory to direct population reconstruction in LISA",
         "where":    "APP seminar, SISSA, Trieste, Italy",
