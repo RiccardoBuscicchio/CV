@@ -24,12 +24,23 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "Stellar-mass black-hole binaries in LISA: characteristics and complementarity with current-generation interferometers",
+    "author":   "R. Buscicchio, J. Torrado, C. Caprini, G. Nardini, M. Pieroni, N. Karnesis, A. Sesana",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2410.18171 [astro-ph.HE]",
+    "ads":      "",
+    "inspire":  "Buscicchio:2024asl",
+    "more":     ""
+    })
+
+    papers['submitted']['data'].append({
     "title":    "Characterization of non-Gaussian stochastic signals with heavier-tailed likelihoods",
     "author":   "N. Karnesis, A. Sasli, R. Buscicchio, N. Stergioulas",
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2410.14354 [gr-qc]",
-    "ads":      "",
+    "ads":      "2024arXiv241014354K",
     "inspire":  "Karnesis:2024pxh",
     "more":     ""
     })
