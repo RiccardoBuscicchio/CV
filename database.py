@@ -91,17 +91,6 @@ if submitted:
         })
 
     papers['submitted']['data'].append({
-        "title":    "Expected insights on type Ia supernovae from LISA's gravitational wave observations",
-        "author":   "V. Korol, R. Buscicchio, Ruediger Pakmor, Javier Morán-Fraile, Christopher J. Moore, Selma E. de Mink",
-        "journal":  "",
-        "link":     "",
-        "arxiv":    "arXiv:2407.03935 [astro-ph.HE]",
-        "ads":      "2024arXiv240703935K",
-        "inspire":  "Korol:2024dzw",
-        "more":     ""
-        })
-
-    papers['submitted']['data'].append({
         "title":    "Partial alignment between jets and megamasers: coherent or selective accretion?",
         "author":   "M. Dotti, R. Buscicchio, F. Bollati, R. Decarli, W. Del Pozzo, A. Franchini",
         "journal":  "",
@@ -139,6 +128,17 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['submitted']['data'].append({
+        "title":    "Expected insights on type Ia supernovae from LISA's gravitational wave observations",
+        "author":   "V. Korol, R. Buscicchio, Ruediger Pakmor, Javier Morán-Fraile, Christopher J. Moore, Selma E. de Mink",
+        "journal":  "\aap (accepted)",
+        "link":     "",
+        "arxiv":    "arXiv:2407.03935 [astro-ph.HE]",
+        "ads":      "2024arXiv240703935K",
+        "inspire":  "Korol:2024dzw",
+        "more":     ""
+        })
 
     papers['published']['data'].append({
         "title":    "A weakly-parametric approach to stochastic background inference in LISA",
@@ -370,7 +370,7 @@ if collab:
     papers['submitted']['data'].append({
         "title":    "Search for gravitational-lensing signatures in the full third observing run of the LIGO-Virgo network",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  ""\\apj 970 (2021) 191", 
+        "journal":  "\\apj 970 (2021) 191", 
         "link":     "https://iopscience.iop.org/article/10.3847/1538-4357/ad3e83", 
         "arxiv":    "arXiv:2304.08393 [gr-qc]" ,
         "ads":      "2024ApJ...970..191A", 
