@@ -544,6 +544,14 @@ if conferences:
     talks['conferences']['data'] = []
 
     talks['conferences']['data'].append({
+        "title":    "Astrophysics panelist",
+        "where":    "Gravity Shape Pisa 2024, Pisa, Italy",
+        "when":     "2024/10/24",
+        "invited":  True,
+        "more":     ""
+        })
+
+    talks['conferences']['data'].append({
         "title":    "Beyond Gauss? A more accurate model for LISA astrophysical noise sources",
         "where":    "Heterogeneous Data and Large Representation Models in Science, Toulouse, France",
         "when":     "2024/10/01",
