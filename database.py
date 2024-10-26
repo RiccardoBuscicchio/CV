@@ -134,22 +134,11 @@ if submitted:
         "more":     ""
         })
     
-    papers['submitted']['data'].append({
-        "title":    "Search for gravitational-lensing signatures in the full third observing run of the LIGO-Virgo network",
-        "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  "", 
-        "link":     "", 
-        "arxiv":    "arXiv:2304.08393 [gr-qc]" ,
-        "ads":      "2023arXiv230408393T", 
-        "inspire":  "LIGOScientific:2023bwz", 
-        "more":     ""
-        })
 
 if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
-
 
     papers['published']['data'].append({
         "title":    "A weakly-parametric approach to stochastic background inference in LISA",
@@ -378,10 +367,21 @@ if collab:
     papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to.'
     papers['collab']['data'] = []
 
+    papers['submitted']['data'].append({
+        "title":    "Search for gravitational-lensing signatures in the full third observing run of the LIGO-Virgo network",
+        "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
+        "journal":  ""\\apj 970 (2021) 191", 
+        "link":     "https://iopscience.iop.org/article/10.3847/1538-4357/ad3e83", 
+        "arxiv":    "arXiv:2304.08393 [gr-qc]" ,
+        "ads":      "2024ApJ...970..191A", 
+        "inspire":  "LIGOScientific:2023bwz", 
+        "more":     ""
+        }),
+
     papers['collab']['data'].append({
         "title":    "GWTC-2.1: Deep Extended Catalog of Compact Binary Coalescences Observed by LIGO and Virgo During the First Half of the Third Observing Run",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  "\prd Phys. Rev. D Physical Review D 109 (2024) 022001", 
+        "journal":  "\prd 109 (2024) 022001", 
         "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.022001", 
         "arxiv":    "arXiv:2108.01045 [gr-qc]" ,
         "ads":      "2024PhRvD.109b2001A", 
