@@ -132,7 +132,7 @@ if published:
     papers['submitted']['data'].append({
         "title":    "Expected insights on type Ia supernovae from LISA's gravitational wave observations",
         "author":   "V. Korol, R. Buscicchio, Ruediger Pakmor, Javier Morán-Fraile, Christopher J. Moore, Selma E. de Mink",
-        "journal":  "\aap (accepted)",
+        "journal":  "\\aap (accepted)",
         "link":     "",
         "arxiv":    "arXiv:2407.03935 [astro-ph.HE]",
         "ads":      "2024arXiv240703935K",
