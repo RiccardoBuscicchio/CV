@@ -129,7 +129,7 @@ if published:
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
 
-    papers['submitted']['data'].append({
+    papers['published']['data'].append({
         "title":    "Expected insights on type Ia supernovae from LISA's gravitational wave observations",
         "author":   "V. Korol, R. Buscicchio, Ruediger Pakmor, Javier Morán-Fraile, Christopher J. Moore, Selma E. de Mink",
         "journal":  "\\aap (accepted)",
@@ -367,7 +367,7 @@ if collab:
     papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to.'
     papers['collab']['data'] = []
 
-    papers['submitted']['data'].append({
+    papers['collab']['data'].append({
         "title":    "Search for gravitational-lensing signatures in the full third observing run of the LIGO-Virgo network",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
         "journal":  "\\apj 970 (2021) 191", 
