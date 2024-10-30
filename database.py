@@ -543,18 +543,19 @@ if conferences:
     talks['conferences']['label'] = 'Talks at conferences'
     talks['conferences']['data'] = []
 
+    
     talks['conferences']['data'].append({
-        "title":    "Astrophysics panelist",
-        "where":    "Gravity Shape Pisa 2024, Pisa, Italy",
-        "when":     "Oct 2024",
-        "invited":  True,
+        "title":    "LISA stellar-mass black holes informed by the GWTC-3 population: event rates and parameters reconstruction",
+        "where":    "LISA Astrophysics Working Group Meeting 2024, Garching, Germany",
+        "when":     "2024/11/05",
+        "invited":  False,
         "more":     ""
         })
 
     talks['conferences']['data'].append({
         "title":    "Beyond Gauss? A more accurate model for LISA astrophysical noise sources",
         "where":    "Heterogeneous Data and Large Representation Models in Science, Toulouse, France",
-        "when":     "Oct 2024",
+        "when":     "2024/10/01",
         "invited":  True,
         "more":     ""
         })
