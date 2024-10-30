@@ -840,7 +840,7 @@ if outreach:
     talks['outreach']['data'].append({
         "title": "Onde gravitazionali: ascoltare l'Universo anzich\'e solo guardarlo", 
         "where": "University of Milano-Bicocca, Milan, Italy",
-        "when": "May 2024",
+        "when": "2024",
         "invited": False,
         "more": ""
     })
@@ -848,7 +848,7 @@ if outreach:
     talks['outreach']['data'].append({
         "title": "An orchestra of lasers and gravitational waves", 
         "where": "Pint of Science 2024, Milan, Italy",
-        "when": "May 2024",
+        "when": "2024",
         "invited": False,
         "more": ""
     })
