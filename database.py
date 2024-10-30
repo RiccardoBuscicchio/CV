@@ -670,7 +670,7 @@ if conferences:
         "more": ""
     })
 
-        talks['conferences']['data'].append({
+    talks['conferences']['data'].append({
         "title": "Bayesian parameter estimation of stellar-mass black-hole binaries with LISA", 
         "where": "LISA Data Challenge meeting, (remote)",
         "when": "2021/06/17",
