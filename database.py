@@ -29,7 +29,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2410.18171 [astro-ph.HE]",
-    "ads":      "",
+    "ads":      "2024arXiv241018171B",
     "inspire":  "Buscicchio:2024asl",
     "more":     ""
     })
