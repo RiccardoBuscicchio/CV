@@ -77,12 +77,39 @@ if submitted:
     "inspire":  "Buscicchio:2024wwm",
     "more":     ""
     })
-    
+     
+    papers['submitted']['data'].append({
+    "title":    "LISA Definition Study Report",
+    "author":   "M. Colpi, K. Danzmann, M. Hewitson, K. Holley-Bockelmann, et al. (incl. R. Buscicchio)",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2402.07571 [astro-ph.CO]",
+    "ads":      "2024arXiv240207571C",
+    "inspire":  "Colpi:2024xhw",
+    "more":     ""
+    })
     
     papers['submitted']['data'].append({
+    "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
+    "author":   "A. Klein, G. Pratten, R. Buscicchio, P. Schmidt, C. J. Moore, E. Finch, A. Bonino, L. M. Thomas, N. Williams, D. Gerosa, S. McGee, M. Nicholl, A. Vecchio",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2204.03423 [astro-ph.HE]",
+    "ads":      "2022arXiv220403423K",
+    "inspire":  "Klein:2022rbf",
+    "more":     ""
+    })
+
+
+if published:
+    papers['published'] = {}
+    papers['published']['label'] = 'Papers in major peer-reviewed journals'
+    papers['published']['data'] = []
+
+     papers['submitted']['data'].append({
         "title":    "Stars or gas? Constraining the hardening processes of massive black-hole binaries with LISA",
         "author":   "A. Spadaro, R. Buscicchio, D. Izquierdo--Villalba, D. Gerosa, A. Klein, G. Pratten",
-        "journal":  "",
+        "journal":  "\prd (in press)",
         "link":     "",
         "arxiv":    "arXiv:2409.13011 [astro-ph.HE]",
         "ads":      "2024arXiv240913011S",
@@ -93,42 +120,14 @@ if submitted:
     papers['submitted']['data'].append({
         "title":    "Partial alignment between jets and megamasers: coherent or selective accretion?",
         "author":   "M. Dotti, R. Buscicchio, F. Bollati, R. Decarli, W. Del Pozzo, A. Franchini",
-        "journal":  "",
+        "journal":  "\\aap (in press)",
         "link":     "",
         "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
         "ads":      "2024arXiv240318002D",
         "inspire":  "Dotti:2024wng",
         "more":     ""
         })
-    
-    papers['submitted']['data'].append({
-        "title":    "LISA Definition Study Report",
-        "author":   "M. Colpi, K. Danzmann, M. Hewitson, K. Holley-Bockelmann, et al. (incl. R. Buscicchio)",
-        "journal":  "",
-        "link":     "",
-        "arxiv":    "arXiv:2402.07571 [astro-ph.CO]",
-        "ads":      "2024arXiv240207571C",
-        "inspire":  "Colpi:2024xhw",
-        "more":     ""
-        })
-    
-    papers['submitted']['data'].append({
-        "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
-        "author":   "A. Klein, G. Pratten, R. Buscicchio, P. Schmidt, C. J. Moore, E. Finch, A. Bonino, L. M. Thomas, N. Williams, D. Gerosa, S. McGee, M. Nicholl, A. Vecchio",
-        "journal":  "",
-        "link":     "",
-        "arxiv":    "arXiv:2204.03423 [astro-ph.HE]",
-        "ads":      "2022arXiv220403423K",
-        "inspire":  "Klein:2022rbf",
-        "more":     ""
-        })
-    
-
-if published:
-    papers['published'] = {}
-    papers['published']['label'] = 'Papers in major peer-reviewed journals'
-    papers['published']['data'] = []
-
+   
     papers['published']['data'].append({
         "title":    "Expected insights on type Ia supernovae from LISA's gravitational wave observations",
         "author":   "V. Korol, R. Buscicchio, Ruediger Pakmor, Javier Morán-Fraile, Christopher J. Moore, Selma E. de Mink",
