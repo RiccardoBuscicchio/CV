@@ -106,7 +106,7 @@ if published:
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
 
-    papers['submitted']['data'].append({
+    papers['published']['data'].append({
         "title":    "Stars or gas? Constraining the hardening processes of massive black-hole binaries with LISA",
         "author":   "A. Spadaro, R. Buscicchio, D. Izquierdo--Villalba, D. Gerosa, A. Klein, G. Pratten",
         "journal":  "\prd (in press)",
@@ -117,7 +117,7 @@ if published:
         "more":     ""
         })
 
-    papers['submitted']['data'].append({
+    papers['published']['data'].append({
         "title":    "Partial alignment between jets and megamasers: coherent or selective accretion?",
         "author":   "M. Dotti, R. Buscicchio, F. Bollati, R. Decarli, W. Del Pozzo, A. Franchini",
         "journal":  "\\aap (in press)",
