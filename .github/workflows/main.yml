@@ -18,10 +18,10 @@ jobs:
     
     steps:      
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@latest
 
     - name: Cache Conda environment
-      uses: actions/cache@v2
+      uses: actions/cache@latest
       with:
         path: |
           ${{ env.HOME }}/.conda/pkgs/
@@ -31,7 +31,7 @@ jobs:
           conda-${{ runner.os }}-
 
     - name: Set up conda
-      uses: conda-incubator/setup-miniconda@v2
+      uses: conda-incubator/setup-miniconda@latest
       with:
         activate-environment: buildcv
         environment-file: environment.yml
@@ -82,7 +82,7 @@ jobs:
         mv preamble.tex CV.tex metricspapers.tex parsepapers.tex parsetalks.tex publist.tex talklist.tex CVshort.tex pdfs/
             
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@latest
       with:
         name: artifacts
         path: pdfs/
@@ -121,10 +121,10 @@ jobs:
     steps:
     
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@latest
       
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@latest
         with:
           path: pdfs
       
@@ -132,7 +132,7 @@ jobs:
         run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
         
       - name: deploy on orphan branch
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@latest
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
