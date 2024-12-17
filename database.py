@@ -24,6 +24,17 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "Is your stochastic signal really detectable?",
+    "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
+    "ads":      "",
+    "inspire":  "Pozzoli:2024hkt",
+    "more":     ""
+    })
+
+    papers['submitted']['data'].append({
     "title":    "Stellar-mass black-hole binaries in LISA: characteristics and complementarity with current-generation interferometers",
     "author":   "R. Buscicchio, J. Torrado, C. Caprini, G. Nardini, M. Pieroni, N. Karnesis, A. Sesana",
     "journal":  "",
