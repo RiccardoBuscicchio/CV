@@ -35,17 +35,6 @@ if submitted:
     })
 
     papers['submitted']['data'].append({
-    "title":    "Stellar-mass black-hole binaries in LISA: characteristics and complementarity with current-generation interferometers",
-    "author":   "R. Buscicchio, J. Torrado, C. Caprini, G. Nardini, M. Pieroni, N. Karnesis, A. Sesana",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2410.18171 [astro-ph.HE]",
-    "ads":      "2024arXiv241018171B",
-    "inspire":  "Buscicchio:2024asl",
-    "more":     ""
-    })
-
-    papers['submitted']['data'].append({
     "title":    "Characterization of non-Gaussian stochastic signals with heavier-tailed likelihoods",
     "author":   "N. Karnesis, A. Sasli, R. Buscicchio, N. Stergioulas",
     "journal":  "",
@@ -116,6 +105,17 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    "Stellar-mass black-hole binaries in LISA: characteristics and complementarity with current-generation interferometers",
+    "author":   "R. Buscicchio, J. Torrado, C. Caprini, G. Nardini, M. Pieroni, N. Karnesis, A. Sesana",
+    "journal":  "\jcap (in press)",
+    "link":     "",
+    "arxiv":    "arXiv:2410.18171 [astro-ph.HE]",
+    "ads":      "2024arXiv241018171B",
+    "inspire":  "Buscicchio:2024asl",
+    "more":     ""
+    })
 
     papers['published']['data'].append({
         "title":    "Stars or gas? Constraining the hardening processes of massive black-hole binaries with LISA",
