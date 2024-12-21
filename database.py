@@ -131,7 +131,7 @@ if published:
     papers['published']['data'].append({
         "title":    "Partial alignment between jets and megamasers: coherent or selective accretion?",
         "author":   "M. Dotti, R. Buscicchio, F. Bollati, R. Decarli, W. Del Pozzo, A. Franchini",
-        "journal":  "\\aap (in press)",
+        "journal":  "\\aap 692 (2024) A233",
         "link":     "https://doi.org/10.1051/0004-6361/202450112",
         "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
         "ads":      "2024arXiv240318002D",
