@@ -29,30 +29,8 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
-    "ads":      "",
+    "ads":      "2024arXiv241210468P",
     "inspire":  "Pozzoli:2024hkt",
-    "more":     ""
-    })
-
-    papers['submitted']['data'].append({
-    "title":    "Characterization of non-Gaussian stochastic signals with heavier-tailed likelihoods",
-    "author":   "N. Karnesis, A. Sasli, R. Buscicchio, N. Stergioulas",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2410.14354 [gr-qc]",
-    "ads":      "2024arXiv241014354K",
-    "inspire":  "Karnesis:2024pxh",
-    "more":     ""
-    })
-    
-    papers['submitted']['data'].append({
-    "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
-    "author":   "M. Piarulli, R. Buscicchio, F. Pozzoli, O. Burke, M. Bonetti, A. Sesana",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
-    "ads":      "2024arXiv241008862P",
-    "inspire":  "Piarulli:2024yhj",
     "more":     ""
     })
     
@@ -64,6 +42,17 @@ if submitted:
     "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
     "ads":      "2024arXiv241008274P",
     "inspire":  "Pozzoli:2024wfe",
+    "more":     ""
+    })
+
+    papers['submitted']['data'].append({
+    "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
+    "author":   "M. Piarulli, R. Buscicchio, F. Pozzoli, O. Burke, M. Bonetti, A. Sesana",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
+    "ads":      "2024arXiv241008862P",
+    "inspire":  "Piarulli:2024yhj",
     "more":     ""
     })
 
@@ -105,6 +94,17 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    "Characterization of non-Gaussian stochastic signals with heavier-tailed likelihoods",
+    "author":   "N. Karnesis, A. Sasli, R. Buscicchio, N. Stergioulas",
+    "journal":  "\prd (in press)",
+    "link":     "",
+    "arxiv":    "arXiv:2410.14354 [gr-qc]",
+    "ads":      "2024arXiv241014354K",
+    "inspire":  "Karnesis:2024pxh",
+    "more":     ""
+    })
 
     papers['published']['data'].append({
     "title":    "Stellar-mass black-hole binaries in LISA: characteristics and complementarity with current-generation interferometers",
