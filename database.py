@@ -153,7 +153,7 @@ if published:
     papers['published']['data'].append({
         "title":    "A weakly-parametric approach to stochastic background inference in LISA",
         "author":   "F. Pozzoli, R. Buscicchio, C. J. Moore, A. Sesana, F. Haardt, A. Sesana",
-        "journal":  "\prd Phys. Rev. D 109, (2024) 083029",
+        "journal":  "\prd 109, (2024) 083029",
         "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.083029",
         "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
         "ads":      "2024PhRvD.109h3029P",
@@ -175,7 +175,7 @@ if published:
     papers['published']['data'].append({
         "title":    "Glitch systematics on the observation of massive black-hole binaries with LISA",
         "author":   "A. Spadaro, R. Buscicchio, D. Vetrugno, A. Klein, D. Gerosa, S. Vitale, R. Dolesi, W. J. Weber, M. Colpi",
-        "journal":  "\prd Phys. Rev. D 108 (2023) 123029",
+        "journal":  "\prd 108 (2023) 123029",
         "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.123029",
         "arxiv":    "arXiv:2306.03923 [gr-qc]",
         "ads":      "2023PhRvD.108l3029S",
