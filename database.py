@@ -99,7 +99,7 @@ if published:
     "title":    "Characterization of non-Gaussian stochastic signals with heavier-tailed likelihoods",
     "author":   "N. Karnesis, A. Sasli, R. Buscicchio, N. Stergioulas",
     "journal":  "\prd (in press)",
-    "link":     "",
+    "link":     "https://journals.aps.org/prd/accepted/e5078Q44K081113247bf65d35acfd69f64e905c08",
     "arxiv":    "arXiv:2410.14354 [gr-qc]",
     "ads":      "2024arXiv241014354K",
     "inspire":  "Karnesis:2024pxh",
