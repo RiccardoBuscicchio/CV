@@ -109,8 +109,8 @@ if published:
     papers['published']['data'].append({
     "title":    "Stellar-mass black-hole binaries in LISA: characteristics and complementarity with current-generation interferometers",
     "author":   "R. Buscicchio, J. Torrado, C. Caprini, G. Nardini, M. Pieroni, N. Karnesis, A. Sesana",
-    "journal":  "\jcap (in press)",
-    "link":     "",
+    "journal":  "\jcap 01 (2025) 084",
+    "link":     "https://doi.org/10.1088/1475-7516/2025/01/084",
     "arxiv":    "arXiv:2410.18171 [astro-ph.HE]",
     "ads":      "2024arXiv241018171B",
     "inspire":  "Buscicchio:2024asl",
