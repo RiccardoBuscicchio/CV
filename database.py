@@ -98,8 +98,8 @@ if published:
     papers['published']['data'].append({
     "title":    "Characterization of non-Gaussian stochastic signals with heavier-tailed likelihoods",
     "author":   "N. Karnesis, A. Sasli, R. Buscicchio, N. Stergioulas",
-    "journal":  "\prd (in press)",
-    "link":     "https://journals.aps.org/prd/accepted/e5078Q44K081113247bf65d35acfd69f64e905c08",
+    "journal":  "\prd 111, (2025) 022005",
+    "link":     "https://doi.org/10.1103/PhysRevD.111.022005",
     "arxiv":    "arXiv:2410.14354 [gr-qc]",
     "ads":      "2024arXiv241014354K",
     "inspire":  "Karnesis:2024pxh",
