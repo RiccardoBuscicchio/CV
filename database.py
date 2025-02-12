@@ -33,17 +33,6 @@ if submitted:
     "inspire":  "Pozzoli:2024hkt",
     "more":     ""
     })
-    
-    papers['submitted']['data'].append({
-    "title":    "Cyclostationary signals in LISA: a practical application to Milky Way satellites",
-    "author":   "F. Pozzoli, R. Buscicchio, A. Klein, V. Korol, A. Sesana, F. Haardt",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
-    "ads":      "2024arXiv241008274P",
-    "inspire":  "Pozzoli:2024wfe",
-    "more":     ""
-    })
 
     papers['submitted']['data'].append({
     "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
@@ -94,6 +83,17 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    "Cyclostationary signals in LISA: a practical application to Milky Way satellites",
+    "author":   "F. Pozzoli, R. Buscicchio, A. Klein, V. Korol, A. Sesana, F. Haardt",
+    "journal":  "\prd ,(2025) (in press)",
+    "link":     "https://journals.aps.org/prd/accepted/8d07bQdaK151483894307100302bd27180cd59d92",
+    "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
+    "ads":      "2024arXiv241008274P",
+    "inspire":  "Pozzoli:2024wfe",
+    "more":     ""
+    })
 
     papers['published']['data'].append({
     "title":    "Characterization of non-Gaussian stochastic signals with heavier-tailed likelihoods",
