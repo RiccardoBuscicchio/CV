@@ -77,7 +77,7 @@ if published:
     "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
     "author":   "M. Piarulli, R. Buscicchio, F. Pozzoli, O. Burke, M. Bonetti, A. Sesana",
     "journal":  "\prd ,(2025) (in press)",
-    "link":     "",
+    "link":     "https://journals.aps.org/prd/accepted/cf078Q79K361123cf4d86278e15ca5f50f3255f51",
     "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
     "ads":      "2024arXiv241008862P",
     "inspire":  "Piarulli:2024yhj",
