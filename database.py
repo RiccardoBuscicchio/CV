@@ -35,17 +35,6 @@ if submitted:
     })
 
     papers['submitted']['data'].append({
-    "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
-    "author":   "M. Piarulli, R. Buscicchio, F. Pozzoli, O. Burke, M. Bonetti, A. Sesana",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
-    "ads":      "2024arXiv241008862P",
-    "inspire":  "Piarulli:2024yhj",
-    "more":     ""
-    })
-
-    papers['submitted']['data'].append({
     "title":    "A test for LISA foreground Gaussianity and stationarity. I. Galactic white-dwarf binaries",
     "author":   "R. Buscicchio, A. Klein, V. Korol, F. Di Renzo, C.J. Moore, D. Gerosa, A. Carzaniga",
     "journal":  "",
@@ -83,6 +72,17 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
+    "author":   "M. Piarulli, R. Buscicchio, F. Pozzoli, O. Burke, M. Bonetti, A. Sesana",
+    "journal":  "\prd ,(2025) (in press)",
+    "link":     "",
+    "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
+    "ads":      "2024arXiv241008862P",
+    "inspire":  "Piarulli:2024yhj",
+    "more":     ""
+    })
 
     papers['published']['data'].append({
     "title":    "Cyclostationary signals in LISA: a practical application to Milky Way satellites",
