@@ -87,8 +87,8 @@ if published:
     papers['published']['data'].append({
     "title":    "Cyclostationary signals in LISA: a practical application to Milky Way satellites",
     "author":   "F. Pozzoli, R. Buscicchio, A. Klein, V. Korol, A. Sesana, F. Haardt",
-    "journal":  "\prd ,(2025) (in press)",
-    "link":     "https://journals.aps.org/prd/accepted/8d07bQdaK151483894307100302bd27180cd59d92",
+    "journal":  "\prd 111, (2025) 063005",
+    "link":     "https://doi.org/10.1103/PhysRevD.111.063005",
     "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
     "ads":      "2024arXiv241008274P",
     "inspire":  "Pozzoli:2024wfe",
