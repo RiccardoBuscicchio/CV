@@ -24,6 +24,17 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "Accelerating LISA inference with Gaussian processes",
+    "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
+    "ads":      "",
+    "inspire":  "ElGammal:2025dkz",
+    "more":     ""
+    })
+
+    papers['submitted']['data'].append({
     "title":    "Is your stochastic signal really detectable?",
     "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
     "journal":  "",
