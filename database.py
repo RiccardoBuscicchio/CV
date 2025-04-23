@@ -29,7 +29,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
-    "ads":      "",
+    "ads":      "2025arXiv250321871E",
     "inspire":  "ElGammal:2025dkz",
     "more":     ""
     })
