@@ -564,7 +564,7 @@ if conferences:
     talks['conferences']['label'] = 'Talks at conferences'
     talks['conferences']['data'] = []
 
-    
+
     talks['conferences']['data'].append({
         "title":    "LISA stellar-mass black holes informed by the GWTC-3 population: event rates and parameters reconstruction",
         "where":    "LISA Astrophysics Working Group Meeting 2024, Garching, Germany",
@@ -577,6 +577,14 @@ if conferences:
         "title":    "Astrophysics panel session",
         "where":    "GRASP: Gravity Shape Pisa 2024, Pisa, Italy",
         "when":     "2024/10/24",
+        "invited":  True,
+        "more":     ""
+        })
+
+    talks['conferences']['data'].append({
+        "title":    "Beyond Gauss? A more accurate model for LISA astrophysical noise sources",
+        "where":    "Kavli Institute for Cosmology Seminars, Cambridge, United Kingdom",
+        "when":     "2024/10/14",
         "invited":  True,
         "more":     ""
         })
@@ -785,10 +793,10 @@ if seminars:
     talks['seminars']['label'] = 'Talks at department seminars'
     talks['seminars']['data'] = []
 
-    talks['conferences']['data'].append({
-        "title":    "Beyond Gauss? A more accurate model for LISA astrophysical noise sources",
-        "where":    "Kavli Institute for Cosmology Seminars, Cambridge, United Kingdom",
-        "when":     "2024/10/14",
+    talks['seminars']['data'].append({
+        "title":    "Emergence of Milky Way structure in the first year of LISA data",
+        "where":    "Department of Physics, Pisa, Italy",
+        "when":     "2025/05/17",
         "invited":  True,
         "more":     ""
         })
