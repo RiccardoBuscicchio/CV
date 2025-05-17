@@ -566,6 +566,14 @@ if conferences:
 
 
     talks['conferences']['data'].append({
+        "title":    "Emergence of Milky Way structure in the first year of LISA data",
+        "where":    "CERN UniGe Gravitational Wave meeting, Geneva, Switzerland",
+        "when":     "2025/05/23",
+        "invited":  True,
+        "more":     ""
+        })
+    
+    talks['conferences']['data'].append({
         "title":    "LISA stellar-mass black holes informed by the GWTC-3 population: event rates and parameters reconstruction",
         "where":    "LISA Astrophysics Working Group Meeting 2024, Garching, Germany",
         "when":     "2024/11/05",
@@ -794,9 +802,17 @@ if seminars:
     talks['seminars']['data'] = []
 
     talks['seminars']['data'].append({
+    "title":    "Fast LISA inference using Gaussian processes",
+    "where":    "University of Geneva, Geneva, Switzerland",
+    "when":     "2025/05/21",
+    "invited":  True,
+    "more":     ""
+    })
+
+    talks['seminars']['data'].append({
         "title":    "Emergence of Milky Way structure in the first year of LISA data",
         "where":    "Department of Physics, Pisa, Italy",
-        "when":     "2025/05/17",
+        "when":     "2025/05/16",
         "invited":  True,
         "more":     ""
         })
