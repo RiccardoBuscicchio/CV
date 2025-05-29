@@ -60,7 +60,7 @@ if submitted:
     "title":    "LISA Definition Study Report",
     "author":   "M. Colpi, K. Danzmann, M. Hewitson, K. Holley-Bockelmann, et al. (incl. R. Buscicchio)",
     "journal":  "",
-    "link":     "",
+    "link":     "https://arxiv.org/abs/2402.07571",
     "arxiv":    "arXiv:2402.07571 [astro-ph.CO]",
     "ads":      "2024arXiv240207571C",
     "inspire":  "Colpi:2024xhw",
@@ -71,7 +71,7 @@ if submitted:
     "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
     "author":   "A. Klein, G. Pratten, R. Buscicchio, P. Schmidt, C. J. Moore, E. Finch, A. Bonino, L. M. Thomas, N. Williams, D. Gerosa, S. McGee, M. Nicholl, A. Vecchio",
     "journal":  "",
-    "link":     "",
+    "link":     "https://arxiv.org/abs/2204.03423",
     "arxiv":    "arXiv:2204.03423 [astro-ph.HE]",
     "ads":      "2022arXiv220403423K",
     "inspire":  "Klein:2022rbf",
@@ -85,10 +85,10 @@ if published:
     papers['published']['data'] = []
 
     papers['published']['data'].append({
-    "title":    "A test for LISA foreground Gaussianity and stationarity. II. Extreme mass-ratio inspirals",
+    "title":    "Test for LISA foreground Gaussianity and stationarity: extreme mass-ratio inspirals",
     "author":   "M. Piarulli, R. Buscicchio, F. Pozzoli, O. Burke, M. Bonetti, A. Sesana",
-    "journal":  "\prd ,(2025) (in press)",
-    "link":     "https://journals.aps.org/prd/accepted/cf078Q79K361123cf4d86278e15ca5f50f3255f51",
+    "journal":  "\prd 111, (2025) 103047",
+    "link":     "https://doi.org/10.1103/nfn4-pgr5",
     "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
     "ads":      "2024arXiv241008862P",
     "inspire":  "Piarulli:2024yhj",
