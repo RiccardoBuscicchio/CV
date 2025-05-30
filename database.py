@@ -24,6 +24,16 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
+    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A  Sesana, P. Severgnini",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
+    "ads":      "",
+    "inspire":  "Rigamonti:2025zwe",
+    "more":     ""
+    })
+    papers['submitted']['data'].append({
     "title":    "Accelerating LISA inference with Gaussian processes",
     "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
     "journal":  "",
@@ -60,7 +70,7 @@ if submitted:
     "title":    "LISA Definition Study Report",
     "author":   "M. Colpi, K. Danzmann, M. Hewitson, K. Holley-Bockelmann, et al. (incl. R. Buscicchio)",
     "journal":  "",
-    "link":     "https://arxiv.org/abs/2402.07571",
+    "link":     "",
     "arxiv":    "arXiv:2402.07571 [astro-ph.CO]",
     "ads":      "2024arXiv240207571C",
     "inspire":  "Colpi:2024xhw",
@@ -71,7 +81,7 @@ if submitted:
     "title":    "The last three years: multiband gravitational-wave observations of stellar-mass binary black holes",
     "author":   "A. Klein, G. Pratten, R. Buscicchio, P. Schmidt, C. J. Moore, E. Finch, A. Bonino, L. M. Thomas, N. Williams, D. Gerosa, S. McGee, M. Nicholl, A. Vecchio",
     "journal":  "",
-    "link":     "https://arxiv.org/abs/2204.03423",
+    "link":     "",
     "arxiv":    "arXiv:2204.03423 [astro-ph.HE]",
     "ads":      "2022arXiv220403423K",
     "inspire":  "Klein:2022rbf",
