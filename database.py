@@ -429,6 +429,7 @@ if collab:
     
     papers['collab'] = {}
     papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to.'
+    papers['collab']['total'] = 47 # Add here the total of published collaboration papers.
     papers['collab']['data'] = []
 
     papers['collab']['data'].append({
