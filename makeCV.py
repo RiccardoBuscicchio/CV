@@ -237,24 +237,23 @@ def metricspapers(papers,filename="metricspapers.tex"):
         out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers).\\\\")
     else:
         out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers and \\textbf{"+str(supervised)+"}\, lead by supervised student).\\\\")
-    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & collaboration papers, with substantial contribution, published in major peer-reviewed journals\\\\")
+    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & collaboration papers with substantial contribution, published in major peer-reviewed journals\\\\")
+    out.append("&\\textbf{"+str(len(papers['collab']['total']))+"} & collaboration papers in total.\\\\")
 
-    first_author = []
-    for k in ['submitted','published']:
-        for p in papers[k]['data']:
-            if ("R. Buscicchio" not in p['author']) and ('LIGO Scientific Collaboration' not in p['author']):
-                raise ValueError("Looks like you're not an author:", p['title'])
-            first_author.append( p['author'].split("R. Buscicchio")[0]=="" )
+    # first_author = []
+    # for k in ['submitted','published']:
+    #     for p in papers[k]['data']:
+    #         if ("R. Buscicchio" not in p['author']) and ('LIGO Scientific Collaboration' not in p['author']):
+    #             raise ValueError("Looks like you're not an author:", p['title'])
+    #         first_author.append( p['author'].split("R. Buscicchio")[0]=="" )
+            
+#    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & collaboration papers, with substantial contribution, published in major peer-reviewed journals\\\\")
+ #   out.append("&\\textbf{"+str(papers['collab']['total'])+"} & collaboration papers, with substantial contribution, published in major peer-reviewed journals\\\\")
 
-    out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers).\\\\")
-
-    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & collaboration papers, with substantial contribution, published in major peer-reviewed journals\\\\")
-    
     if len(papers['submitted']['data'])>1:
         out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, papers in submission stage,\\\\")
     elif len(papers['submitted']['data'])==1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, paper in submission stage,")
-        
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, paper in submission stage,")    
 
 #    press_release = []
 #    for k in ['submitted','published', 'collab']: #, 'proceedings']:
