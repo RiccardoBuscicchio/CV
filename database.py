@@ -41,7 +41,7 @@ if submitted:
     "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
     "ads":      "2025arXiv250321871E",
     "inspire":  "ElGammal:2025dkz",
-    "more":     ""
+    "more":     "supervised"
     })
 
     papers['submitted']['data'].append({
@@ -52,7 +52,7 @@ if submitted:
     "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
     "ads":      "2024arXiv241210468P",
     "inspire":  "Pozzoli:2024hkt",
-    "more":     ""
+    "more":     "supervised"
     })
 
     papers['submitted']['data'].append({
@@ -63,7 +63,7 @@ if submitted:
     "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
     "ads":      "2024arXiv241008263B",
     "inspire":  "Buscicchio:2024wwm",
-    "more":     ""
+    "more":     "supervised"
     })
      
     papers['submitted']['data'].append({
@@ -102,7 +102,7 @@ if published:
     "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
     "ads":      "2024arXiv241008862P",
     "inspire":  "Piarulli:2024yhj",
-    "more":     ""
+    "more":     "supervised"
     })
 
     papers['published']['data'].append({
@@ -113,7 +113,7 @@ if published:
     "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
     "ads":      "2024arXiv241008274P",
     "inspire":  "Pozzoli:2024wfe",
-    "more":     ""
+    "more":     "supervised"
     })
 
     papers['published']['data'].append({
@@ -146,7 +146,7 @@ if published:
         "arxiv":    "arXiv:2409.13011 [astro-ph.HE]",
         "ads":      "2025PhRvD.111b3004S",
         "inspire":  "Spadaro:2024tve",
-        "more":     ""
+        "more":     "supervised"
         })
 
     papers['published']['data'].append({
@@ -179,7 +179,7 @@ if published:
         "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
         "ads":      "2024PhRvD.109h3029P",
         "inspire":  "Pozzoli:2023lgz",
-        "more":     ""
+        "more":     "supervised"
         })
 
     papers['published']['data'].append({
@@ -201,7 +201,7 @@ if published:
         "arxiv":    "arXiv:2306.03923 [gr-qc]",
         "ads":      "2023PhRvD.108l3029S",
         "inspire":  "Spadaro:2023muy",
-        "more":     ""
+        "more":     "supervised"
         })
     
     papers['published']['data'].append({
