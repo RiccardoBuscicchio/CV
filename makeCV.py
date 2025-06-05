@@ -231,14 +231,14 @@ def metricspapers(papers,filename="metricspapers.tex"):
             if ("R. Buscicchio" not in p['author']) and ('LIGO Scientific Collaboration' not in p['author']):
                 raise ValueError("Looks like you're not an author:", p['title'])
             first_author.append( p['author'].split("R. Buscicchio")[0]=="" )
-            if p['supervised'] == "True":
+            if p['supervised'] == "True" and k == 'published:
                 supervised+=1
     if supervised == 0:
         out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers).\\\\")
     else:
         out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers and \\textbf{"+str(supervised)+"}\, lead by supervised student).\\\\")
     out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & collaboration papers with substantial contribution, published in major peer-reviewed journals\\\\")
-    out.append("&\\textbf{"+str(len(papers['collab']['total']))+"} & collaboration papers in total.\\\\")
+    out.append("&\\textbf{"+str(papers['collab']['total'])+"} & collaboration papers in total, published in major peer-reviewed journals\\\\")
 
     # first_author = []
     # for k in ['submitted','published']:
