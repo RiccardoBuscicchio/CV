@@ -41,7 +41,8 @@ if submitted:
     "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
     "ads":      "2025arXiv250321871E",
     "inspire":  "ElGammal:2025dkz",
-    "more":     "supervised"
+    "more":     "",
+    "supervised": "True"
     })
 
     papers['submitted']['data'].append({
@@ -52,7 +53,8 @@ if submitted:
     "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
     "ads":      "2024arXiv241210468P",
     "inspire":  "Pozzoli:2024hkt",
-    "more":     "supervised"
+    "more":     "",
+    "supervised": "True"
     })
 
     papers['submitted']['data'].append({
@@ -63,7 +65,7 @@ if submitted:
     "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
     "ads":      "2024arXiv241008263B",
     "inspire":  "Buscicchio:2024wwm",
-    "more":     "supervised"
+    "more":     ""
     })
      
     papers['submitted']['data'].append({
@@ -102,7 +104,8 @@ if published:
     "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
     "ads":      "2024arXiv241008862P",
     "inspire":  "Piarulli:2024yhj",
-    "more":     "supervised"
+    "more":     "",
+    "supervised": "True"
     })
 
     papers['published']['data'].append({
@@ -113,7 +116,8 @@ if published:
     "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
     "ads":      "2024arXiv241008274P",
     "inspire":  "Pozzoli:2024wfe",
-    "more":     "supervised"
+    "more":     "",
+    "supervised": "True"
     })
 
     papers['published']['data'].append({
@@ -139,26 +143,27 @@ if published:
     })
 
     papers['published']['data'].append({
-        "title":    "Stars or gas? Constraining the hardening processes of massive black-hole binaries with LISA",
-        "author":   "A. Spadaro, R. Buscicchio, D. Izquierdo--Villalba, D. Gerosa, A. Klein, G. Pratten",
-        "journal":  "\prd 111, (2025) 023004",
-        "link":     "https://doi.org/10.1103/PhysRevD.111.023004",
-        "arxiv":    "arXiv:2409.13011 [astro-ph.HE]",
-        "ads":      "2025PhRvD.111b3004S",
-        "inspire":  "Spadaro:2024tve",
-        "more":     "supervised"
-        })
+    "title":    "Stars or gas? Constraining the hardening processes of massive black-hole binaries with LISA",
+    "author":   "A. Spadaro, R. Buscicchio, D. Izquierdo--Villalba, D. Gerosa, A. Klein, G. Pratten",
+    "journal":  "\prd 111, (2025) 023004",
+    "link":     "https://doi.org/10.1103/PhysRevD.111.023004",
+    "arxiv":    "arXiv:2409.13011 [astro-ph.HE]",
+    "ads":      "2025PhRvD.111b3004S",
+    "inspire":  "Spadaro:2024tve",
+    "more":     "",
+    "supervised": "True"
+    })
 
     papers['published']['data'].append({
-        "title":    "Partial alignment between jets and megamasers: coherent or selective accretion?",
-        "author":   "M. Dotti, R. Buscicchio, F. Bollati, R. Decarli, W. Del Pozzo, A. Franchini",
-        "journal":  "\\aap 692 (2024) A233",
-        "link":     "https://doi.org/10.1051/0004-6361/202450112",
-        "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
-        "ads":      "2024arXiv240318002D",
-        "inspire":  "Dotti:2024wng",
-        "more":     ""
-        })
+    "title":    "Partial alignment between jets and megamasers: coherent or selective accretion?",
+    "author":   "M. Dotti, R. Buscicchio, F. Bollati, R. Decarli, W. Del Pozzo, A. Franchini",
+    "journal":  "\\aap 692 (2024) A233",
+    "link":     "https://doi.org/10.1051/0004-6361/202450112",
+    "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
+    "ads":      "2024arXiv240318002D",
+    "inspire":  "Dotti:2024wng",
+    "more":     ""
+    })
    
     papers['published']['data'].append({
         "title":    "Expected insights on type Ia supernovae from LISA's gravitational wave observations",
@@ -179,7 +184,8 @@ if published:
         "arxiv":    "arXiv:2311.12111 [astro-ph.CO]",
         "ads":      "2024PhRvD.109h3029P",
         "inspire":  "Pozzoli:2023lgz",
-        "more":     "supervised"
+        "more":     "",
+        "supervised": "True"
         })
 
     papers['published']['data'].append({
@@ -201,7 +207,8 @@ if published:
         "arxiv":    "arXiv:2306.03923 [gr-qc]",
         "ads":      "2023PhRvD.108l3029S",
         "inspire":  "Spadaro:2023muy",
-        "more":     "supervised"
+        "more":     "",
+        "supervised": "True"
         })
     
     papers['published']['data'].append({
