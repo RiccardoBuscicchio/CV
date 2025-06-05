@@ -31,7 +31,8 @@ if submitted:
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
     "ads":      "",
     "inspire":  "Rigamonti:2025zwe",
-    "more":     ""
+    "more":     "",
+    "supervised": ""
     })
     papers['submitted']['data'].append({
     "title":    "Accelerating LISA inference with Gaussian processes",
@@ -65,7 +66,8 @@ if submitted:
     "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
     "ads":      "2024arXiv241008263B",
     "inspire":  "Buscicchio:2024wwm",
-    "more":     ""
+    "more":     "",
+    "supervised": ""
     })
      
     papers['submitted']['data'].append({
@@ -76,7 +78,8 @@ if submitted:
     "arxiv":    "arXiv:2402.07571 [astro-ph.CO]",
     "ads":      "2024arXiv240207571C",
     "inspire":  "Colpi:2024xhw",
-    "more":     ""
+    "more":     "",
+    "supervised": ""
     })
     
     papers['submitted']['data'].append({
@@ -87,7 +90,8 @@ if submitted:
     "arxiv":    "arXiv:2204.03423 [astro-ph.HE]",
     "ads":      "2022arXiv220403423K",
     "inspire":  "Klein:2022rbf",
-    "more":     ""
+    "more":     "",
+    "supervised": ""
     })
 
 
@@ -128,7 +132,8 @@ if published:
     "arxiv":    "arXiv:2410.14354 [gr-qc]",
     "ads":      "2024arXiv241014354K",
     "inspire":  "Karnesis:2024pxh",
-    "more":     ""
+    "more":     "",
+    "supervised": ""
     })
 
     papers['published']['data'].append({
@@ -139,7 +144,8 @@ if published:
     "arxiv":    "arXiv:2410.18171 [astro-ph.HE]",
     "ads":      "2024arXiv241018171B",
     "inspire":  "Buscicchio:2024asl",
-    "more":     ""
+    "more":     "",
+    "supervised": ""
     })
 
     papers['published']['data'].append({
@@ -162,7 +168,8 @@ if published:
     "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
     "ads":      "2024arXiv240318002D",
     "inspire":  "Dotti:2024wng",
-    "more":     ""
+    "more":     "",
+    "supervised": ""
     })
    
     papers['published']['data'].append({
@@ -173,7 +180,8 @@ if published:
         "arxiv":    "arXiv:2407.03935 [astro-ph.HE]",
         "ads":      "2024arXiv240703935K",
         "inspire":  "Korol:2024dzw",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -196,7 +204,8 @@ if published:
         "arxiv":    "arXiv:2310.06896 [astro-ph.HE]",
         "ads":      "2023A&A...680A..69D",
         "inspire":  "Dotti:2023bac",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
     
     papers['published']['data'].append({
@@ -219,7 +228,8 @@ if published:
         "arxiv":    "arXiv:2305.05955 [astro-ph.HE]",
         "ads":      "2023MNRAS.525.2851S",
         "inspire":  "Steinle:2023vxs",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -230,7 +240,8 @@ if published:
         "arxiv":    "arXiv:2304.13063 [gr-qc]",
         "ads":      "2023PhRvD.108b4024D",
         "inspire":  "DeRenzis:2023lwa",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -241,7 +252,8 @@ if published:
         "arxiv":    "arXiv:2212.10038 [gr-qc]",
         "ads":      "2023PhRvD.107l4044B",
         "inspire":  "Ballelli:2022bli",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -252,7 +264,8 @@ if published:
         "arxiv":    "arXiv:2209.01400 [gr-qc]",
         "ads":      "2023PhRvD.107f3027B",
         "inspire":  "Buscicchio:2022raf",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -263,7 +276,8 @@ if published:
         "arxiv":    "arXiv:2203.05907 [astro-ph.HE]",
         "ads":      "2022MNRAS.514.2092V",
         "inspire":  "Veronesi:2022hql",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
     
     papers['published']['data'].append({
@@ -274,7 +288,8 @@ if published:
         "arxiv":    "arXiv:2106.05259 [astro-ph.HE]",
         "ads":      "2021PhRvD.104d4065B",
         "inspire":  "Buscicchio:2021dph",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -285,7 +300,8 @@ if published:
         "arxiv":    "arXiv:2004.03052 [physics.ed-ph]",
         "ads":      "2021AmJPh..89..702C",
         "inspire":  "Cooper:2020ygn",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })    
 
     papers['published']['data'].append({
@@ -296,7 +312,8 @@ if published:
         "arxiv":    "arXiv:2011.05332 [astro-ph.HE]",
         "ads":      "2021ApJ...915L..35K",
         "inspire":  "Kimball:2020qyd",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -307,7 +324,8 @@ if published:
         "arxiv":    "arXiv:2103.16486   [gr-qc]",
         "ads":      "2021iSci...24j2577M",
         "inspire":  "Moore:2021eok",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
 
@@ -319,7 +337,8 @@ if published:
         "arxiv":    "arXiv:2010.05920 [astro-ph.GA]",
         "ads":      "2021ApJ...911..136B",
         "inspire":  "Bianconi:2020pcc",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         }) 
 
     papers['published']['data'].append({
@@ -330,7 +349,8 @@ if published:
         "arxiv":    "arXiv:2011.06591 [astro-ph.HE]",
         "ads":      "2021ApJ...907L..48V",
         "inspire":  "Veske:2020idq",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
     papers['published']['data'].append({
         "title":    "Constraining the lensing of binary black holes from their stochastic background",
@@ -340,7 +360,8 @@ if published:
         "arxiv":    "arXiv:2006.04516 [astro-ph.CO]",
         "ads":      "2020PhRvL.125n1102B",
         "inspire":  "Buscicchio:2020cij",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -351,7 +372,8 @@ if published:
         "arxiv":    "arXiv:2008.12621 [astro-ph.HE]",
         "ads":      "2020PhRvD.102h1501B",
         "inspire":  "Buscicchio:2020bdq",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -362,7 +384,8 @@ if published:
         "arxiv":    "arXiv:2006.16153 [gr-qc]",
         "ads":      "2020PhRvR...2d3096P",
         "inspire":  "Pratten:2020igi",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
     
     papers['published']['data'].append({
@@ -373,7 +396,8 @@ if published:
         "arxiv":    "arXiv:2002.10462 [astro-ph.GA]",
         "ads":      "2020A&A...638A.153K",
         "inspire":  "Korol:2020lpq",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -384,7 +408,8 @@ if published:
         "arxiv":    "arXiv:2002.10465 [astro-ph.GA]",
         "ads":      "2020ApJ...894L..15R",
         "inspire":  "Roebber:2020hso",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
 
     papers['published']['data'].append({
@@ -395,7 +420,8 @@ if published:
         "arxiv":    "arXiv:1907.11631 [astro-ph.IM]",
         "ads":      "2019PhRvD.100h4041B",
         "inspire":  "Buscicchio:2019rir",
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         })
     
 
@@ -413,7 +439,8 @@ if collab:
         "arxiv":    "arXiv:2304.08393 [gr-qc]" ,
         "ads":      "2024ApJ...970..191A", 
         "inspire":  "LIGOScientific:2023bwz", 
-        "more":     ""
+        "more":     "",
+        "supervised": ""
         }),
 
     papers['collab']['data'].append({
