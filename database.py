@@ -843,7 +843,7 @@ if conferences:
     
 if seminars:
     talks['seminars'] = {}
-    talks['seminars']['label'] = 'Seminari presso istituti di ricerca e università'
+    talks['seminars']['label'] = 'Seminari presso istituti di ricerca e dipartimenti universitari'
     talks['seminars']['data'] = []
 
     talks['seminars']['data'].append({
