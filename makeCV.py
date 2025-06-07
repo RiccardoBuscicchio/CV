@@ -237,8 +237,8 @@ def metricspapers(papers,filename="metricspapers.tex"):
         out.append("& & (di cui \\textbf{"+str(np.sum(first_author))+"}\, articoli a primo autore).\\\\")
     else:
         out.append("& & (di cui \\textbf{"+str(np.sum(first_author))+"}\, articoli a primo autore e \\textbf{"+str(supervised)+"}\, di studenti supervisionati).\\\\")
-    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & articoli di collaborazione con contributo sostanziale, pubblicati in riviste internazioni peer-reviewed\\\\")
-    out.append("&\\textbf{"+str(papers['collab']['total'])+"} & articoli di collaborazionane in totale, pubblicati in riviste internazioni peer-reviewed\\\\")
+    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & articoli di collaborazione con contributo significativo in riviste internazionali peer-reviewed\\\\")
+    out.append("&\\textbf{"+str(papers['collab']['total'])+"} & articoli di collaborazione totali, in riviste internazionali peer-reviewed\\\\")
 
     # first_author = []
     # for k in ['submitted','published']:
@@ -251,9 +251,9 @@ def metricspapers(papers,filename="metricspapers.tex"):
  #   out.append("&\\textbf{"+str(papers['collab']['total'])+"} & collaboration papers, with substantial contribution, published in major peer-reviewed journals\\\\")
 
     if len(papers['submitted']['data'])>1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, articoli in fase pre-print,\\\\")
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, articoli in fase preprint,\\\\")
     elif len(papers['submitted']['data'])==1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, articolo in fase pre-print,")    
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, articolo in fase preprint,")    
 
 #    press_release = []
 #    for k in ['submitted','published', 'collab']: #, 'proceedings']:
