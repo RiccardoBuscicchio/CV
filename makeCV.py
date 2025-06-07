@@ -221,8 +221,8 @@ def metricspapers(papers,filename="metricspapers.tex"):
     
     out=[]
     out.append("\cvitem{}{\\begin{tabular}{rcl}")
-    out.append("\\textcolor{mark_color}{\\textbf{Publications}}: & \hspace{0.3cm} & \\\\")
-    out.append("&\\textbf{"+str(len(papers['published']['data']))+"\, } & short-author papers published in major peer-reviewed journals\\\\")
+    out.append("\\textcolor{mark_color}{\\textbf{Pubblicazioni}}: & \hspace{0.3cm} & \\\\")
+    out.append("&\\textbf{"+str(len(papers['published']['data']))+"\, } & pubblicazioni short-author in riviste internazionali peer-reviewed\\\\")
 
     first_author = []
     supervised = 0
@@ -234,11 +234,11 @@ def metricspapers(papers,filename="metricspapers.tex"):
             if p['supervised'] == "True" and k == 'published':
                 supervised+=1
     if supervised == 0:
-        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers).\\\\")
+        out.append("& & (di cui \\textbf{"+str(np.sum(first_author))+"}\, articoli a primo autore).\\\\")
     else:
-        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers and \\textbf{"+str(supervised)+"}\, lead by supervised student).\\\\")
-    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & collaboration papers with substantial contribution, published in major peer-reviewed journals\\\\")
-    out.append("&\\textbf{"+str(papers['collab']['total'])+"} & collaboration papers in total, published in major peer-reviewed journals\\\\")
+        out.append("& & (di cui \\textbf{"+str(np.sum(first_author))+"}\, articoli a primo autore e \\textbf{"+str(supervised)+"}\, di studenti supervisionati).\\\\")
+    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & articoli di collaborazione con contributo sostanziale, pubblicati in riviste internazioni peer-reviewed\\\\")
+    out.append("&\\textbf{"+str(papers['collab']['total'])+"} & articoli di collaborazionane in totale, pubblicati in riviste internazioni peer-reviewed\\\\")
 
     # first_author = []
     # for k in ['submitted','published']:
@@ -251,9 +251,9 @@ def metricspapers(papers,filename="metricspapers.tex"):
  #   out.append("&\\textbf{"+str(papers['collab']['total'])+"} & collaboration papers, with substantial contribution, published in major peer-reviewed journals\\\\")
 
     if len(papers['submitted']['data'])>1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, papers in submission stage,\\\\")
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, articoli in fase pre-print,\\\\")
     elif len(papers['submitted']['data'])==1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, paper in submission stage,")    
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, articolo in fase pre-print,")    
 
 #    press_release = []
 #    for k in ['submitted','published', 'collab']: #, 'proceedings']:
@@ -261,7 +261,7 @@ def metricspapers(papers,filename="metricspapers.tex"):
 #            press_release.append("press release" in p['more'])
 #    out.append("and \\textbf{"+str(np.sum(press_release))+"} papers covered by press releases).\\\\")
 
-    out.append("&\\textbf{"+str(len(papers['others']['data']))+"}& \, other publications (thesis, white papers, long-authorlist reviews)")
+    out.append("&\\textbf{"+str(len(papers['others']['data']))+"}& \, altre pubblicazioni (tesi di dottorato, white papers, reviews)")
     out.append("\end{tabular} }")
 
 
@@ -278,10 +278,10 @@ def metricspapers(papers,filename="metricspapers.tex"):
 
     rounded = int(totalnumber/100)*100
 
-    out.append("\\textcolor{mark_color}{\\textbf{Total number of citations}}: >"+str(rounded)+".")
+    out.append("\\textcolor{mark_color}{\\textbf{Numero totale di citazioni}}: >"+str(rounded)+".")
     out.append("\\textcolor{mark_color}{\\textbf{h-index}}: "+str(hind)+" (using ADS and iNSPIRE).")
     out.append("\\\\")
-    out.append("\\textcolor{mark_color}{\\textbf{Web links to list services}}:")
+    out.append("\\textcolor{mark_color}{\\textbf{Link a profili di citazione}}:")
     out.append("\href{https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_doctype%7D&fq_doctype=(doctype%3A%22misc%22%20OR%20doctype%3A%22inproceedings%22%20OR%20doctype%3A%22article%22%20OR%20doctype%3A%22eprint%22)&q=%20author%3A%22Buscicchio%2C%20Riccardo%22&sort=citation_count%20desc%2C%20bibcode%20desc&p_=0}{\\textsc{ADS}};")
     out.append("\href{https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=author%3AR.Buscicchio&ui-citation-summary=true}{\\textsc{iNSPIRE}};")
     out.append("\href{http://arxiv.org/a/buscicchio_r_1.html}{\\textsc{arXiv}};")
@@ -296,12 +296,12 @@ def metricstalks(talks,filename="metricstalks.tex"):
 
     out=[]
     out.append("\cvitem{}{\\begin{tabular}{rcl}")
-    out.append("\\textcolor{mark_color}{\\textbf{Presentations}}: &\hspace{0.3cm} &")
-    out.append("\\textbf{"+str(len(talks['conferences']['data']))+"} talks at conferences,")
-    out.append("\\textbf{"+str(len(talks['seminars']['data']))+"} talks at department seminars,")
+    out.append("\\textcolor{mark_color}{\\textbf{Seminari}}: &\hspace{0.3cm} &")
+    out.append("\\textbf{"+str(len(talks['conferences']['data']))+"} seminari a conferenze,")
+    out.append("\\textbf{"+str(len(talks['seminars']['data']))+"} seminari dipartimentali,")
     
     if ('posters' in talks.keys()) and (len(talks['posters']['data'])>0):
-        out.append("\\textbf{"+str(len(talks['posters']['data']))+"} posters at conferences,")
+        out.append("\\textbf{"+str(len(talks['posters']['data']))+"} posters a conferenze,")
     out.append("\\\\ & &")
 
     invited = []
