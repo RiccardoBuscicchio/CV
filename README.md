@@ -6,3 +6,9 @@ Products:
 - Latest CV (short version): [view](http://github.com/RiccardoBuscicchio/CV/blob/build/CVshort.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build/CVshort.pdf)
 - Latest publication list: [view](http://github.com/RiccardoBuscicchio/CV/blob/build/publist.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build/publist.pdf)
 - Latest talk list: [view](http://github.com/RiccardoBuscicchio/CV/blob/build/talklist.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build/talklist.pdf) 
+
+Italian version:
+- Latest CV: [view](http://github.com/RiccardoBuscicchio/CV/blob/build_ita/CV.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build_ita/CV.pdf)
+- Latest CV (short version): [view](http://github.com/RiccardoBuscicchio/CV/blob/build_ita/CVshort.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build_ita/CVshort.pdf)
+- Latest publication list: [view](http://github.com/RiccardoBuscicchio/CV/blob/build_ita/publist.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build_ita/publist.pdf)
+- Latest talk list: [view](http://github.com/RiccardoBuscicchio/CV/blob/build_ita/talklist.pdf) - [download](http://github.com/RiccardoBuscicchio/CV/raw/build_ita/talklist.pdf) 
