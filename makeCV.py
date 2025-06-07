@@ -279,7 +279,7 @@ def metricspapers(papers,filename="metricspapers.tex"):
     rounded = int(totalnumber/100)*100
 
     out.append("\\textcolor{mark_color}{\\textbf{Numero totale di citazioni}}: >"+str(rounded)+".")
-    out.append("\\textcolor{mark_color}{\\textbf{h-index}}: "+str(hind)+" (using ADS and iNSPIRE).")
+    out.append("\\textcolor{mark_color}{\\textbf{h-index}}: "+str(hind)+" (secondo record ADS e iNSPIRE).")
     out.append("\\\\")
     out.append("\\textcolor{mark_color}{\\textbf{Link a profili di citazione}}:")
     out.append("\href{https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_doctype%7D&fq_doctype=(doctype%3A%22misc%22%20OR%20doctype%3A%22inproceedings%22%20OR%20doctype%3A%22article%22%20OR%20doctype%3A%22eprint%22)&q=%20author%3A%22Buscicchio%2C%20Riccardo%22&sort=citation_count%20desc%2C%20bibcode%20desc&p_=0}{\\textsc{ADS}};")

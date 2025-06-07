@@ -20,7 +20,7 @@ outreach = True
 if submitted:
 
     papers['submitted'] = {}
-    papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
+    papers['submitted']['label'] = 'Preprints a lista di autori breve e di collaborazione a cui ho contribuito significativamente.'
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
@@ -29,7 +29,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
-    "ads":      "",
+    "ads":      "2025arXiv250522706R",
     "inspire":  "Rigamonti:2025zwe",
     "more":     "",
     "supervised": ""
@@ -469,7 +469,7 @@ if collab:
     papers['collab']['data'].append({
         "title":    "Tests of General Relativity with GWTC-3",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  "\prd (accepted)", 
+        "journal":  "\prd (accettato per la pubblicazione)", 
         "link":     "https://journals.aps.org/prd/accepted/17075Qf4Z7b11729787e85f1c18faca230d51e013", 
         "arxiv":    "arXiv:2112.06861 [gr-qc]",
         "ads":      "2021arXiv211206861T", 
@@ -579,7 +579,7 @@ if collab:
     
 if others:
     papers['others'] = {}
-    papers['others']['label'] = 'Other publications. These include PhD thesis, and other collaboration papers.'
+    papers['others']['label'] = 'Altre pubblicazioni, incluse tesi di dottorato, e altri articoli di collaborazione.'
     papers['others']['data'] = []
 
     papers['others']['data'].append({
@@ -606,7 +606,7 @@ if others:
 
 if conferences:
     talks['conferences'] = {}
-    talks['conferences']['label'] = 'Talks at conferences'
+    talks['conferences']['label'] = 'Seminari a conferenze nazionali e internazionali'
     talks['conferences']['data'] = []
 
 
@@ -843,7 +843,7 @@ if conferences:
     
 if seminars:
     talks['seminars'] = {}
-    talks['seminars']['label'] = 'Talks at department seminars'
+    talks['seminars']['label'] = 'Seminari presso istituti di ricerca e università'
     talks['seminars']['data'] = []
 
     talks['seminars']['data'].append({
