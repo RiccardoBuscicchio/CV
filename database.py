@@ -596,7 +596,7 @@ if others:
     papers['others']['data'].append({
         "title":    "Topics in Bayesian population inference for gravitational wave astronomy",
         "author":   "R. Buscicchio",
-        "journal":  "PhD thesis",
+        "journal":  "Tesi di dottorato",
         "link":     "https://etheses.bham.ac.uk//id/eprint/12288/",
         "arxiv":    "",
         "ads":      "",
