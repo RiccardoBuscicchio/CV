@@ -747,7 +747,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Chirp: a web and smartphone application for visualization of gravitational-wave alerts", 
-        "where": "(remote) 14th Amaldi Conference on Gravitational Waves",
+        "where": "14th Amaldi Conference on Gravitational Waves, (online) ",
         "when": "2021/07/21",
         "invited": False,
         "more": ""
@@ -755,7 +755,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Search for lensing signatures in the gravitational-wave observations from the first half of LIGO-Virgo’s third observing run", 
-        "where": "2nd EPS conference on gravitation, (remote, on behalf of LVK)",
+        "where": "2nd EPS conference on gravitation, (online, per conto della collaborazione LIGO Virgo KAGRA)",
         "when": "2021/05/27",
         "invited": True,
         "more": ""
@@ -763,7 +763,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Bayesian parameter estimation of stellar-mass black-hole binaries with LISA", 
-        "where": "LISA Data Challenge meeting, (remote)",
+        "where": "LISA Data Challenge meeting, (online)",
         "when": "2021/06/17",
         "invited": True,
         "more": ""
@@ -771,7 +771,7 @@ if conferences:
     
     talks['conferences']['data'].append({
         "title": "Search for lensing signatures in the gravitational-wave observations from the first half of LIGO-Virgo’s third observing run", 
-        "where": "Webinar on behalf of the LVK collaboration, (remote)",
+        "where": "Webinar on behalf of the LVK collaboration, (online)",
         "when": "2021/05/27",
         "invited": True,
         "more": ""
@@ -779,7 +779,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Milky Way Satellites Shining Bright in Gravitational Waves", 
-        "where": "13th LISA Symposium, (remote)",
+        "where": "13th LISA Symposium, (online)",
         "when": "2020/09/13",
         "invited": False,
         "more": ""
@@ -810,21 +810,21 @@ if conferences:
     })
     
     talks['conferences']['data'].append({
+        "title": "An improved detector for non-Gaussian stochastic background",
+        "where": "Stochastic Background Data Analysis for LISA meeting, Instituto de Fisica Teorica, Madrid, Spain",
+        "when": "2019/06/01",
+        "invited": False,
+        "more": ""
+    })
+
+    talks['conferences']['data'].append({
         "title": "Hierarchical nonparametric density estimation for population inference",
         "where": "LIGO, Virgo, KAGRA March meeting, Winsconsin, USA",
         "when": "2019/03/18",
         "invited": False,
         "more": ""
     })
-    
-    talks['conferences']['data'].append({
-        "title": "An improved detector for non-Gaussian stochastic background",
-        "where": "Stochastic Background Data Analysis for LISA meeting, Instituto de Fisica Teorica, Madrid, Spain",
-        "when": "2019/--/--",
-        "invited": False,
-        "more": ""
-    })
-        
+            
     talks['conferences']['data'].append({
         "title": "Fast Evaluation of Campbell processes N–point correlation functions",
         "where": "Astro Hack Week: Data Science for Next-Generation Astronomy, Lorentz Center, Leiden, The Netherlands",
@@ -905,7 +905,7 @@ if seminars:
     talks['seminars']['data'].append({
         "title": "Stellar mass binary black holes : what, when, and where",
         "where": "Astroparticule et cosmologie, Universitè Paris Citè, Paris, France",
-        "when": "2022/06/12, (remote)",
+        "when": "2022/06/12, (online)",
         "invited": True,
         "more": ""
     })
@@ -921,7 +921,7 @@ if seminars:
     talks['seminars']['data'].append({
         "title": "Set the alarm : Bayesian parameter estimation of stellar-mass black-hole binaries with LISA", 
         "where": "Sun Yat-sen University, Zhuhai, China",
-        "when": "2021/07/30, (remote)",
+        "when": "2021/07/30, (online)",
         "invited": True,
         "more": ""
     })
