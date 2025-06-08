@@ -188,7 +188,7 @@ def parsetalks(talks,filename="parsetalks.tex"):
     out.append("\\vspace{0.2cm}")
     out.append("")
 
-    for k in ['conferences','seminars']: #,'lectures','posters','outreach']:
+    for k in ['conferences','seminars','outreach']: #,'lectures','posters','outreach']:
         out.append("\\textcolor{color1}{\\textbf{"+talks[k]['label']+":}}")
         out.append("\\vspace{-0.5cm}")
         out.append("")
