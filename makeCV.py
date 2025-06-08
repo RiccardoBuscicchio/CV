@@ -184,7 +184,7 @@ def parsetalks(talks,filename="parsetalks.tex"):
     print('Parse talks from database')
 
     out=[]
-    out.append("Invited talks marked with *.")
+    out.append("Seminari su invito indicati con *.")
     out.append("\\vspace{0.2cm}")
     out.append("")
 

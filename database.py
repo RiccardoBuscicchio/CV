@@ -787,7 +787,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Constraining the Lensing of Binary Black Holes from Their Stochastic Background",
-        "where": "LISA Sprint workshop, Center for Computational Astrophysics, Flatiron Institute, New York (NY), USA",
+        "where": "LISA Sprint workshop, CCA, Flatiron Institute, New York (NY), USA",
         "when": "2020/03/04",
         "invited": False,
         "more": ""
@@ -937,7 +937,7 @@ if outreach:
     talks['outreach']['data'] = []
 
     talks['outreach']['data'].append({
-        "title": "Onde gravitazionali: ascoltare l'Universo anzich\'e solo guardarlo", 
+        "title": "Onde gravitazionali: ascoltare l'Universo anzichè solo guardarlo", 
         "where": "Università di Milano-Bicocca, Milano, Italia",
         "when": "2024",
         "invited": False,
@@ -953,21 +953,21 @@ if outreach:
     })
     talks['outreach']['data'].append({
         "title": "Gravitational-waves in space and on Earth", 
-        "where": "Manchester Museum of Science and Industry, Regno Unito",
+        "where": "Manchester Museum of Science and Industry, Manchester, Regno Unito",
         "when": "2018",
         "invited": False,
         "more": ""
     })
     talks['outreach']['data'].append({
         "title": "An orchestra of lasers and gravitational waves", 
-        "where": "Manchester Museum of Science and Industry, Regno Unito",
+        "where": "Manchester Museum of Science and Industry, Manchester, Regno Unito",
         "when": "2018",
         "invited": False,
         "more": ""
     })
     talks['outreach']['data'].append({
         "title": "A Universe of waves", 
-        "where": "Science Caf\'e, Italia",
+        "where": "Science Cafè, Pontedera, Italia",
         "when": "2018",
         "invited": False,
         "more": ""
