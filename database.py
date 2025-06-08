@@ -428,7 +428,7 @@ if published:
 if collab:
     
     papers['collab'] = {}
-    papers['collab']['label'] = 'Pubblicazioni di collaborazione in riviste peer-reviewed internazionali, a cui ho contribuito significativamente.'
+    papers['collab']['label'] = 'Pubblicazioni di collaborazione in riviste peer-reviewed internazionali, a cui ho contribuito significativamente'
     papers['collab']['total'] = 47 # Add here the total of published collaboration papers.
     papers['collab']['data'] = []
 
