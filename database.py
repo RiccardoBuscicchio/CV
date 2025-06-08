@@ -579,7 +579,7 @@ if collab:
     
 if others:
     papers['others'] = {}
-    papers['others']['label'] = 'Altre pubblicazioni, incluse tesi di dottorato, e altri articoli di collaborazione.'
+    papers['others']['label'] = 'Tesi di dottorato, rapporti tecnici'
     papers['others']['data'] = []
 
     papers['others']['data'].append({
