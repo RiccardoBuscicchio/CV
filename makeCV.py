@@ -188,7 +188,7 @@ def parsetalks(talks,filename="parsetalks.tex"):
     out.append("\\vspace{0.2cm}")
     out.append("")
 
-    for k in ['conferences','seminars']: #,'lectures','posters','outreach']:
+    for k in ['conferences','seminars', 'outreach']: #,'lectures','posters','outreach']:
         out.append("\\textcolor{color1}{\\textbf{"+talks[k]['label']+":}}")
         out.append("\\vspace{-0.5cm}")
         out.append("")
@@ -261,7 +261,7 @@ def metricspapers(papers,filename="metricspapers.tex"):
 #            press_release.append("press release" in p['more'])
 #    out.append("and \\textbf{"+str(np.sum(press_release))+"} papers covered by press releases).\\\\")
 
-    out.append("&\\textbf{"+str(len(papers['others']['data']))+"}& \, other publications (thesis, white papers, long-authorlist reviews)")
+    out.append("&\\textbf{"+str(len(papers['others']['data']))+"}& \, other publications (thesis, white papers, reviews)")
     out.append("\end{tabular} }")
 
 
@@ -279,7 +279,7 @@ def metricspapers(papers,filename="metricspapers.tex"):
     rounded = int(totalnumber/100)*100
 
     out.append("\\textcolor{mark_color}{\\textbf{Total number of citations}}: >"+str(rounded)+".")
-    out.append("\\textcolor{mark_color}{\\textbf{h-index}}: "+str(hind)+" (using ADS and iNSPIRE).")
+    out.append("\\textcolor{mark_color}{\\textbf{h-index}}: "+str(hind)+" (from ADS and iNSPIRE record).")
     out.append("\\\\")
     out.append("\\textcolor{mark_color}{\\textbf{Web links to list services}}:")
     out.append("\href{https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_doctype%7D&fq_doctype=(doctype%3A%22misc%22%20OR%20doctype%3A%22inproceedings%22%20OR%20doctype%3A%22article%22%20OR%20doctype%3A%22eprint%22)&q=%20author%3A%22Buscicchio%2C%20Riccardo%22&sort=citation_count%20desc%2C%20bibcode%20desc&p_=0}{\\textsc{ADS}};")
