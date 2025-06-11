@@ -20,7 +20,7 @@ outreach = True
 if submitted:
 
     papers['submitted'] = {}
-    papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
+    papers['submitted']['label'] = 'Short-author and collaboration preprints which I have substantially contributed to.'
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
@@ -29,7 +29,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
-    "ads":      "",
+    "ads":      "2025arXiv250522706R",
     "inspire":  "Rigamonti:2025zwe",
     "more":     "",
     "supervised": ""
@@ -97,7 +97,7 @@ if submitted:
 
 if published:
     papers['published'] = {}
-    papers['published']['label'] = 'Papers in major peer-reviewed journals'
+    papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
 
     papers['published']['data'].append({
@@ -469,7 +469,7 @@ if collab:
     papers['collab']['data'].append({
         "title":    "Tests of General Relativity with GWTC-3",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  "\prd (accepted)", 
+        "journal":  "\prd (in press)", 
         "link":     "https://journals.aps.org/prd/accepted/17075Qf4Z7b11729787e85f1c18faca230d51e013", 
         "arxiv":    "arXiv:2112.06861 [gr-qc]",
         "ads":      "2021arXiv211206861T", 
@@ -579,7 +579,7 @@ if collab:
     
 if others:
     papers['others'] = {}
-    papers['others']['label'] = 'Other publications. These include PhD thesis, and other collaboration papers.'
+    papers['others']['label'] = 'PhD thesis, technical reports.'
     papers['others']['data'] = []
 
     papers['others']['data'].append({
@@ -715,7 +715,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title":    "Beyond functional forms: non-parametric methods. (panelist talk)",
-        "where":    "Gravitational-wave populations: What's next?, Milano-Bicocca, IT",
+        "where":    "Gravitational-wave populations: What's next?, University of Milano-Bicocca, Milan, Italy",
         "when":     "2023/07/01",
         "invited":  True,
         "more":     ""
@@ -747,7 +747,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Chirp: a web and smartphone application for visualization of gravitational-wave alerts", 
-        "where": "(remote) 14th Amaldi Conference on Gravitational Waves",
+        "where": "14th Amaldi Conference on Gravitational Waves, (online)",
         "when": "2021/07/21",
         "invited": False,
         "more": ""
@@ -755,7 +755,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Search for lensing signatures in the gravitational-wave observations from the first half of LIGO-Virgo’s third observing run", 
-        "where": "2nd EPS conference on gravitation, (remote, on behalf of LVK)",
+        "where": "2nd EPS conference on gravitation, (online, on behalf of LVK)",
         "when": "2021/05/27",
         "invited": True,
         "more": ""
@@ -763,7 +763,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Bayesian parameter estimation of stellar-mass black-hole binaries with LISA", 
-        "where": "LISA Data Challenge meeting, (remote)",
+        "where": "LISA Data Challenge meeting, (online)",
         "when": "2021/06/17",
         "invited": True,
         "more": ""
@@ -771,7 +771,7 @@ if conferences:
     
     talks['conferences']['data'].append({
         "title": "Search for lensing signatures in the gravitational-wave observations from the first half of LIGO-Virgo’s third observing run", 
-        "where": "Webinar on behalf of the LVK collaboration, (remote)",
+        "where": "Webinar on behalf of the LVK collaboration, (online)",
         "when": "2021/05/27",
         "invited": True,
         "more": ""
@@ -779,7 +779,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Milky Way Satellites Shining Bright in Gravitational Waves", 
-        "where": "13th LISA Symposium, (remote)",
+        "where": "13th LISA Symposium, (online)",
         "when": "2020/09/13",
         "invited": False,
         "more": ""
@@ -787,7 +787,7 @@ if conferences:
 
     talks['conferences']['data'].append({
         "title": "Constraining the Lensing of Binary Black Holes from Their Stochastic Background",
-        "where": "LISA Sprint workshop, Center for Computational Astrophysics, Flatiron Institute, New York (NY), USA",
+        "where": "LISA Sprint workshop, CCA, Flatiron Institute, New York (NY), USA",
         "when": "2020/03/04",
         "invited": False,
         "more": ""
@@ -808,7 +808,15 @@ if conferences:
         "invited": False,
         "more": ""
     })
-    
+
+    talks['conferences']['data'].append({
+        "title": "An improved detector for non-Gaussian stochastic background",
+        "where": "Stochastic Background Data Analysis for LISA meeting, Instituto de Fisica Teorica, Madrid, Spain",
+        "when": "2019/06/01",
+        "invited": False,
+        "more": ""
+    })
+
     talks['conferences']['data'].append({
         "title": "Hierarchical nonparametric density estimation for population inference",
         "where": "LIGO, Virgo, KAGRA March meeting, Winsconsin, USA",
@@ -816,15 +824,7 @@ if conferences:
         "invited": False,
         "more": ""
     })
-    
-    talks['conferences']['data'].append({
-        "title": "An improved detector for non-Gaussian stochastic background",
-        "where": "Stochastic Background Data Analysis for LISA meeting, Instituto de Fisica Teorica, Madrid, Spain",
-        "when": "2019/--/--",
-        "invited": False,
-        "more": ""
-    })
-        
+            
     talks['conferences']['data'].append({
         "title": "Fast Evaluation of Campbell processes N–point correlation functions",
         "where": "Astro Hack Week: Data Science for Next-Generation Astronomy, Lorentz Center, Leiden, The Netherlands",
@@ -856,7 +856,7 @@ if seminars:
 
     talks['seminars']['data'].append({
         "title":    "Emergence of Milky Way structure in the first year of LISA data",
-        "where":    "Department of Physics, Pisa, Italy",
+        "where":    "Department of Physics, University of Pisa, Pisa, Italy",
         "when":     "2025/05/16",
         "invited":  True,
         "more":     ""
@@ -880,7 +880,7 @@ if seminars:
 
     talks['seminars']['data'].append({
         "title":    "LISA global inference: statistical and modelling challenges  for the Milky Way",
-        "where":    "Max Planck Institute for Astrophysics, Munchen, Germany",
+        "where":    "Max Planck Institute for Astrophysics, Garching, Germany",
         "when":     "2023/11/29",
         "invited":  True,
         "more":     ""
@@ -905,7 +905,7 @@ if seminars:
     talks['seminars']['data'].append({
         "title": "Stellar mass binary black holes : what, when, and where",
         "where": "Astroparticule et cosmologie, Universitè Paris Citè, Paris, France",
-        "when": "2022/06/12, (remote)",
+        "when": "2022/06/12, (online)",
         "invited": True,
         "more": ""
     })
@@ -921,7 +921,7 @@ if seminars:
     talks['seminars']['data'].append({
         "title": "Set the alarm : Bayesian parameter estimation of stellar-mass black-hole binaries with LISA", 
         "where": "Sun Yat-sen University, Zhuhai, China",
-        "when": "2021/07/30, (remote)",
+        "when": "2021/07/30, (online)",
         "invited": True,
         "more": ""
     })
@@ -933,7 +933,7 @@ if posters:
 
 if outreach:
     talks['outreach'] = {}
-    talks['outreach']['label'] = 'Outreach talks'
+    talks['outreach']['label'] = 'Outreach \& public engagement talks'
     talks['outreach']['data'] = []
 
     talks['outreach']['data'].append({
@@ -953,14 +953,14 @@ if outreach:
     })
     talks['outreach']['data'].append({
         "title": "Gravitational-waves in space and on Earth", 
-        "where": "Manchester Museum of Science and Industry, UK",
+        "where": "Manchester Museum of Science and Industry, Manchester, UK",
         "when": "2018",
         "invited": False,
         "more": ""
     })
     talks['outreach']['data'].append({
         "title": "An orchestra of lasers and gravitational waves", 
-        "where": "Manchester Museum of Science and Industry, UK",
+        "where": "Manchester Museum of Science and Industry, Manchester, UK",
         "when": "2018",
         "invited": False,
         "more": ""
