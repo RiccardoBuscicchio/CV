@@ -24,8 +24,20 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "Bahamas: BAyesian inference with HAmiltonian Montecarlo for Astrophysical Stochastic background",
+    "author":   "F. Pozzoli, R. Buscicchio, A. Klein, D. Chirico",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2506.22542[astro-ph.IM]",
+    "ads":      "",
+    "inspire":  "Pozzoli:2025hhl",
+    "more":     "",
+    "supervised": "True"
+    })
+
+    papers['submitted']['data'].append({
     "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
-    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A  Sesana, P. Severgnini",
+    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
