@@ -24,12 +24,24 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "Muffled Murmurs: Environmental effects in the LISA stochastic signal from stellar-mass black hole binaries",
+    "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2507.00694[gr-qc]",
+    "ads":      "",
+    "inspire":  "",
+    "more":     "",
+    "supervised": ""
+    })
+
+    papers['submitted']['data'].append({
     "title":    "Bahamas: BAyesian inference with HAmiltonian Montecarlo for Astrophysical Stochastic background",
     "author":   "F. Pozzoli, R. Buscicchio, A. Klein, D. Chirico",
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2506.22542[astro-ph.IM]",
-    "ads":      "",
+    "ads":      "2025arXiv250622542P",
     "inspire":  "Pozzoli:2025hhl",
     "more":     "",
     "supervised": "True"
@@ -41,7 +53,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
-    "ads":      "",
+    "ads":      "2025arXiv250522706R",
     "inspire":  "Rigamonti:2025zwe",
     "more":     "",
     "supervised": ""
