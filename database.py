@@ -30,7 +30,7 @@ if submitted:
     "link":     "",
     "arxiv":    "arXiv:2507.00694[gr-qc]",
     "ads":      "",
-    "inspire":  "",
+    "inspire":  "Chen:2025qyj",
     "more":     "",
     "supervised": ""
     })
