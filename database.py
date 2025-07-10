@@ -58,17 +58,6 @@ if submitted:
     "more":     "",
     "supervised": ""
     })
-    papers['submitted']['data'].append({
-    "title":    "Accelerating LISA inference with Gaussian processes",
-    "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
-    "ads":      "2025arXiv250321871E",
-    "inspire":  "ElGammal:2025dkz",
-    "more":     "",
-    "supervised": "True"
-    })
 
     papers['submitted']['data'].append({
     "title":    "Is your stochastic signal really detectable?",
@@ -123,6 +112,18 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['publsihed']['data'].append({
+    "title":    "Accelerating LISA inference with Gaussian processes",
+    "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
+    "journal":  "\prd 111, (2025) (in press)",
+    "link":     "",
+    "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
+    "ads":      "2025arXiv250321871E",
+    "inspire":  "ElGammal:2025dkz",
+    "more":     "",
+    "supervised": "True"
+    })
 
     papers['published']['data'].append({
     "title":    "Test for LISA foreground Gaussianity and stationarity: extreme mass-ratio inspirals",
