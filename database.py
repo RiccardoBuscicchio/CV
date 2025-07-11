@@ -113,7 +113,7 @@ if published:
     papers['published']['label'] = 'Papers in major peer-reviewed journals'
     papers['published']['data'] = []
 
-    papers['publsihed']['data'].append({
+    papers['published']['data'].append({
     "title":    "Accelerating LISA inference with Gaussian processes",
     "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
     "journal":  "\prd 111, (2025) (in press)",
