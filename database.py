@@ -20,12 +20,36 @@ outreach = True
 if submitted:
 
     papers['submitted'] = {}
-    papers['submitted']['label'] = 'Short-author and collaboration preprints which I have substantially contributed to.'
+    papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "Muffled Murmurs: Environmental effects in the LISA stochastic signal from stellar-mass black hole binaries",
+    "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2507.00694[gr-qc]",
+    "ads":      "",
+    "inspire":  "Chen:2025qyj",
+    "more":     "",
+    "supervised": ""
+    })
+
+    papers['submitted']['data'].append({
+    "title":    "Bahamas: BAyesian inference with HAmiltonian Montecarlo for Astrophysical Stochastic background",
+    "author":   "F. Pozzoli, R. Buscicchio, A. Klein, D. Chirico",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2506.22542[astro-ph.IM]",
+    "ads":      "2025arXiv250622542P",
+    "inspire":  "Pozzoli:2025hhl",
+    "more":     "",
+    "supervised": "True"
+    })
+
+    papers['submitted']['data'].append({
     "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
-    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A  Sesana, P. Severgnini",
+    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
@@ -33,17 +57,6 @@ if submitted:
     "inspire":  "Rigamonti:2025zwe",
     "more":     "",
     "supervised": ""
-    })
-    papers['submitted']['data'].append({
-    "title":    "Accelerating LISA inference with Gaussian processes",
-    "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
-    "ads":      "2025arXiv250321871E",
-    "inspire":  "ElGammal:2025dkz",
-    "more":     "",
-    "supervised": "True"
     })
 
     papers['submitted']['data'].append({
@@ -95,10 +108,23 @@ if submitted:
     })
 
 
+
 if published:
     papers['published'] = {}
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    "Accelerating LISA inference with Gaussian processes",
+    "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
+    "journal":  "\prd 111, (2025) (in press)",
+    "link":     "https://doi.org/10.1103/c66v-rl3w",
+    "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
+    "ads":      "2025arXiv250321871E",
+    "inspire":  "ElGammal:2025dkz",
+    "more":     "",
+    "supervised": "True"
+    })
 
     papers['published']['data'].append({
     "title":    "Test for LISA foreground Gaussianity and stationarity: extreme mass-ratio inspirals",
