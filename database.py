@@ -23,6 +23,19 @@ if submitted:
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
     papers['submitted']['data'] = []
 
+
+    papers['submitted']['data'].append({
+    "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
+    "author":   "A. Toubiana, D. Gerosa, M. Mould, S. Rinaldi, M. Arca Sedda, T. Bruel, R. Buscicchio, J. Gair, L. Paiella, F. Santoliquido, R. Tenorio, C. Ugolini",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2507.13249[gr-qc]",
+    "ads":      "",
+    "inspire":  "Toubiana:2025syw",
+    "more":     "",
+    "supervised": ""
+    })
+
     papers['submitted']['data'].append({
     "title":    "Muffled Murmurs: Environmental effects in the LISA stochastic signal from stellar-mass black hole binaries",
     "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
