@@ -30,7 +30,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2507.13249[gr-qc]",
-    "ads":      "",
+    "ads":      "2025arXiv250713249T",
     "inspire":  "Toubiana:2025syw",
     "more":     "",
     "supervised": ""
