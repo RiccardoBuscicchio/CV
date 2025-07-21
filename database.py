@@ -54,7 +54,7 @@ papers['submitted']['data'].append({
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2507.00694[gr-qc]",
-    "ads":      "",
+    "ads":      "2025arXiv250700694C",
     "inspire":  "Chen:2025qyj",
     "more":     "",
     "supervised": ""
