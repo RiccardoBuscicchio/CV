@@ -24,6 +24,18 @@ if submitted:
     papers['submitted']['data'] = []
 
 
+papers['submitted']['data'].append({
+    "title":    "Functional inference on deviations from General Relativity",
+    "author":   "C. Pacilio, R. Buscicchio",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2507.13454[gr-qc]",
+    "ads":      "",
+    "inspire":  "Pacilio:2025wel",
+    "more":     "",
+    "supervised": ""
+    })
+
     papers['submitted']['data'].append({
     "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
     "author":   "A. Toubiana, D. Gerosa, M. Mould, S. Rinaldi, M. Arca Sedda, T. Bruel, R. Buscicchio, J. Gair, L. Paiella, F. Santoliquido, R. Tenorio, C. Ugolini",
