@@ -23,7 +23,7 @@ if submitted:
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
     papers['submitted']['data'] = []
 
-papers['submitted']['data'].append({
+    papers['submitted']['data'].append({
     "title":    "Functional inference on deviations from General Relativity",
     "author":   "C. Pacilio, R. Buscicchio",
     "journal":  "",
