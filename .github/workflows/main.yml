@@ -3,7 +3,7 @@ name: CV workflow
 on:
   push:
     branches:
-      - main_eng_custom
+#      - main_eng_custom
       - main
     paths-ignore:
       - '**/README.md'
@@ -112,6 +112,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
-          publish_branch: build_custom
+#          publish_branch: build_custom
+          publish_branch: build
           force_orphan: true
 
