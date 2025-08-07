@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - main_eng_custom
+      - main
     paths-ignore:
       - '**/README.md'
   pull_request:
     branches:
       - main_eng_custom
+      - main
     paths-ignore:
       - '**/README.md'
 
