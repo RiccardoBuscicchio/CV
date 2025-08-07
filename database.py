@@ -29,7 +29,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2507.13454[gr-qc]",
-    "ads":      "",
+    "ads":      "2025arXiv250713454P",
     "inspire":  "Pacilio:2025wel",
     "more":     "",
     "supervised": ""
