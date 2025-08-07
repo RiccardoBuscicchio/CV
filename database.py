@@ -94,18 +94,6 @@ if submitted:
     "more":     "",
     "supervised": "True"
     })
-
-    papers['submitted']['data'].append({
-    "title":    "A test for LISA foreground Gaussianity and stationarity. I. Galactic white-dwarf binaries",
-    "author":   "R. Buscicchio, A. Klein, V. Korol, F. Di Renzo, C.J. Moore, D. Gerosa, A. Carzaniga",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
-    "ads":      "2024arXiv241008263B",
-    "inspire":  "Buscicchio:2024wwm",
-    "more":     "",
-    "supervised": ""
-    })
      
     papers['submitted']['data'].append({
     "title":    "LISA Definition Study Report",
@@ -137,6 +125,18 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    "A test for LISA foreground Gaussianity and stationarity. I. Galactic white-dwarf binaries",
+    "author":   "R. Buscicchio, A. Klein, V. Korol, F. Di Renzo, C.J. Moore, D. Gerosa, A. Carzaniga",
+    "journal":  "Eur.~Phys.~J. C 85, (2025) (in press)",
+    "link":     "",
+    "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
+    "ads":      "2024arXiv241008263B",
+    "inspire":  "Buscicchio:2024wwm",
+    "more":     "",
+    "supervised": ""
+    })
 
     papers['published']['data'].append({
     "title":    "Accelerating LISA inference with Gaussian processes",
