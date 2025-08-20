@@ -129,8 +129,8 @@ if published:
     papers['published']['data'].append({
     "title":    "A test for LISA foreground Gaussianity and stationarity. I. Galactic white-dwarf binaries",
     "author":   "R. Buscicchio, A. Klein, V. Korol, F. Di Renzo, C.J. Moore, D. Gerosa, A. Carzaniga",
-    "journal":  "Eur.~Phys.~J. C 85, (2025) (in press)",
-    "link":     "",
+    "journal":  "Eur.~Phys.~J. C 85, (2025) 887",
+    "link":     "https://doi.org/10.1140/epjc/s10052-025-14616-w",
     "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
     "ads":      "2024arXiv241008263B",
     "inspire":  "Buscicchio:2024wwm",
