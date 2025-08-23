@@ -82,18 +82,6 @@ if submitted:
     "more":     "",
     "supervised": ""
     })
-
-    papers['submitted']['data'].append({
-    "title":    "Is your stochastic signal really detectable?",
-    "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
-    "ads":      "2024arXiv241210468P",
-    "inspire":  "Pozzoli:2024hkt",
-    "more":     "",
-    "supervised": "True"
-    })
      
     papers['submitted']['data'].append({
     "title":    "LISA Definition Study Report",
@@ -125,6 +113,18 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['submitted']['data'].append({
+    "title":    "Is your stochastic signal really detectable?",
+    "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
+    "journal":  "\prd 111, (2025) (in press)",
+    "link":     "",
+    "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
+    "ads":      "2024arXiv241210468P",
+    "inspire":  "Pozzoli:2024hkt",
+    "more":     "",
+    "supervised": "True"
+    })
 
     papers['published']['data'].append({
     "title":    "A test for LISA foreground Gaussianity and stationarity. I. Galactic white-dwarf binaries",
