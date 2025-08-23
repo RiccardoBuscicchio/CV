@@ -114,7 +114,7 @@ if published:
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
 
-    papers['submitted']['data'].append({
+    papers['published']['data'].append({
     "title":    "Is your stochastic signal really detectable?",
     "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
     "journal":  "\prd 111, (2025) (in press)",
