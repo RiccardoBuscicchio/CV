@@ -105,7 +105,7 @@ if published:
     papers['published']['data'].append({
     "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
     "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
-    "journal":  "\aap (2025), (in press)",
+    "journal":  "\\aap (2025), (in press)",
     "link":     "",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
     "ads":      "2025arXiv250522706R",
