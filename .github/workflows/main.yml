@@ -22,22 +22,24 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Cache Conda environment
+    - name: Cache Conda packages
       uses: actions/cache@v4
       with:
-        path: |
-          ${{ env.HOME }}/.conda/pkgs/
-          ${{ env.HOME }}/.conda/envs/
-        key: conda-${{ runner.os }}-${{ hashFiles('**/environment.yml') }}
+        path: ~/conda_pkgs_dir
+        key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
         restore-keys: |
-          conda-${{ runner.os }}-
+          ${{ runner.os }}-conda-
 
     - name: Set up conda
       uses: conda-incubator/setup-miniconda@v3
       with:
+        auto-update-conda: true
+        python-version: "3.11"
         activate-environment: buildcv
         environment-file: environment.yml
-        auto-update-conda: true
+
+    - name: Configure conda to use cached pkgs
+      run: conda config --add pkgs_dirs ~/conda_pkgs_dir
 
 #    - name: Conda environment
 #      run: conda env create --name buildcv --file environment.yml
