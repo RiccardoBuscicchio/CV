@@ -70,19 +70,7 @@ if submitted:
     "more":     "",
     "supervised": "True"
     })
-
-    papers['submitted']['data'].append({
-    "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
-    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
-    "ads":      "2025arXiv250522706R",
-    "inspire":  "Rigamonti:2025zwe",
-    "more":     "",
-    "supervised": ""
-    })
-     
+   
     papers['submitted']['data'].append({
     "title":    "LISA Definition Study Report",
     "author":   "M. Colpi, K. Danzmann, M. Hewitson, K. Holley-Bockelmann, et al. (incl. R. Buscicchio)",
@@ -113,6 +101,19 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
+    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
+    "journal":  "\aap (2025), (in press)",
+    "link":     "",
+    "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
+    "ads":      "2025arXiv250522706R",
+    "inspire":  "Rigamonti:2025zwe",
+    "more":     "",
+    "supervised": ""
+    })
+    
 
     papers['published']['data'].append({
     "title":    "Is your stochastic signal really detectable?",
