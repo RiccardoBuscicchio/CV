@@ -50,14 +50,6 @@ jobs:
     - name: Run Python script for short CV
       run: conda run --name buildcv bash -c "python makeCV.py --short"
 
-    - name: Cache TeX Live
-      uses: actions/cache@v4
-      with:
-        path: ~/.texlive2025
-        key: ${{ runner.os }}-texlive-${{ hashFiles('**/*.tex') }}
-        restore-keys: |
-          ${{ runner.os }}-texlive-
-    
     - name: LaTeX CV
       uses: dante-ev/latex-action@latest
       with:
