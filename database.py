@@ -142,7 +142,7 @@ if published:
     papers['published']['data'].append({
     "title":    "Accelerating LISA inference with Gaussian processes",
     "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
-    "journal":  "\prd 111, (2025) (in press)",
+    "journal":  "\prd 112, (2025) 063010",
     "link":     "https://doi.org/10.1103/c66v-rl3w",
     "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
     "ads":      "2025arXiv250321871E",
@@ -157,7 +157,7 @@ if published:
     "journal":  "\prd 111, (2025) 103047",
     "link":     "https://doi.org/10.1103/nfn4-pgr5",
     "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
-    "ads":      "2024arXiv241008862P",
+    "ads":      "2025PhRvD.111j3047P",
     "inspire":  "Piarulli:2024yhj",
     "more":     "",
     "supervised": "True"
@@ -169,7 +169,7 @@ if published:
     "journal":  "\prd 111, (2025) 063005",
     "link":     "https://doi.org/10.1103/PhysRevD.111.063005",
     "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
-    "ads":      "2024arXiv241008274P",
+    "ads":      "2025PhRvD.111f3005P",
     "inspire":  "Pozzoli:2024wfe",
     "more":     "",
     "supervised": "True"
@@ -181,7 +181,7 @@ if published:
     "journal":  "\prd 111, (2025) 022005",
     "link":     "https://doi.org/10.1103/PhysRevD.111.022005",
     "arxiv":    "arXiv:2410.14354 [gr-qc]",
-    "ads":      "2024arXiv241014354K",
+    "ads":      "2025PhRvD.111b2005K",
     "inspire":  "Karnesis:2024pxh",
     "more":     "",
     "supervised": ""
@@ -193,7 +193,7 @@ if published:
     "journal":  "\jcap 01 (2025) 084",
     "link":     "https://doi.org/10.1088/1475-7516/2025/01/084",
     "arxiv":    "arXiv:2410.18171 [astro-ph.HE]",
-    "ads":      "2024arXiv241018171B",
+    "ads":      "2025JCAP...01..084B",
     "inspire":  "Buscicchio:2024asl",
     "more":     "",
     "supervised": ""
@@ -217,7 +217,7 @@ if published:
     "journal":  "\\aap 692 (2024) A233",
     "link":     "https://doi.org/10.1051/0004-6361/202450112",
     "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
-    "ads":      "2024arXiv240318002D",
+    "ads":      "2024A&A...692A.233D",
     "inspire":  "Dotti:2024wng",
     "more":     "",
     "supervised": ""
@@ -229,7 +229,7 @@ if published:
         "journal":  "\\aap 691 (2024) A44",
         "link":     "https://www.aanda.org/articles/aa/full_html/2024/11/aa51380-24/aa51380-24.html",
         "arxiv":    "arXiv:2407.03935 [astro-ph.HE]",
-        "ads":      "2024arXiv240703935K",
+        "ads":      "2024A&A...691A..44K",
         "inspire":  "Korol:2024dzw",
         "more":     "",
         "supervised": ""
