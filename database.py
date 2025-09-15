@@ -118,7 +118,7 @@ if published:
     papers['published']['data'].append({
     "title":    "Is your stochastic signal really detectable?",
     "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
-    "journal":  "\prd 111, (2025) (in press)",
+    "journal":  "\prd 112, (2025) 064035",
     "link":     "https://doi.org/10.1103/22h4-tqh9",
     "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
     "ads":      "2024arXiv241210468P",
