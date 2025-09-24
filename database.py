@@ -90,7 +90,7 @@ if published:
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
 
-    papers['submitted']['data'].append({
+    papers['published']['data'].append({
     "title":    "Environmental effects in the LISA stochastic signal from stellar-mass black hole binaries",
     "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
     "journal":  "\prd 112, (2025), (in press)",
@@ -106,7 +106,7 @@ if published:
     "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
     "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
     "journal":  "\\aap (2025), (in press)",
-    "link":     "",
+    "link":     "https://doi.org/10.1051/0004-6361/202555550",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
     "ads":      "2025arXiv250522706R",
     "inspire":  "Rigamonti:2025zwe",
