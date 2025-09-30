@@ -29,7 +29,10 @@ jobs:
         key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
         restore-keys: |
           ${{ runner.os }}-conda-
-
+          
+    - name: Install Pandoc
+      run: sudo apt-get update && sudo apt-get install -y pandoc
+      
     - name: Set up conda
       uses: conda-incubator/setup-miniconda@v3
       with:
@@ -77,19 +80,29 @@ jobs:
         root_file: CVshort.tex
         compiler: pdflatex
         args: -interaction=nonstopmode -shell-escape
-        
+    
     - name: Prepare
       run: |
         mkdir pdfs/
         mkdir texs/
         mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
         mv preamble.tex CV.tex metricspapers.tex metricstalks.tex parsepapers.tex parsetalks.tex publist.tex talklist.tex CVshort.tex pdfs/
-            
+
+    - name: Convert TeX to Markdown
+      run: |
+        mkdir mds/
+        pandoc CV.tex -f latex -t gfm -o mds/CV.md
+        pandoc publist.tex -f latex -t gfm -o mds/publist.md
+        pandoc talklist.tex -f latex -t gfm -o mds/talklist.md
+        pandoc CVshort.tex -f latex -t gfm -o mds/CVshort.md
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
         name: artifacts
-        path: pdfs/
+        path: |
+          pdfs/
+          mds/    
 
   deploy:
     # Edit here if compiling multiple papers
@@ -107,7 +120,7 @@ jobs:
           path: pdfs
       
       - name: move
-        run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
+        run: mkdir -p github_deploy && mv pdfs/*/* mds/* github_deploy
         
       - name: deploy on orphan branch
         uses: peaceiris/actions-gh-pages@v4.0.0
