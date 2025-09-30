@@ -98,7 +98,8 @@ jobs:
         name: artifacts
         path: |
           pdfs/
-          mds/    
+          mds/
+          texs/
 
   deploy:
     # Edit here if compiling multiple papers
@@ -113,10 +114,13 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          path: pdfs
+          path: |
+            pdfs/
+            mds/
+            texs/
       
       - name: move
-        run: mkdir -p github_deploy && mv pdfs/*/* mds/* github_deploy
+        run: mkdir -p github_deploy && mv pdfs/*/* mds/* texs/* github_deploy
         
       - name: deploy on orphan branch
         uses: peaceiris/actions-gh-pages@v4.0.0
