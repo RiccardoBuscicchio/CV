@@ -85,17 +85,13 @@ jobs:
       run: |
         mkdir pdfs/
         mkdir texs/
-        mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
-        mv preamble.tex CV.tex metricspapers.tex metricstalks.tex parsepapers.tex parsetalks.tex publist.tex talklist.tex CVshort.tex pdfs/
-
-    - name: Convert TeX to Markdown
-      run: |
         mkdir mds/
         pandoc CV.tex -f latex -t gfm -o mds/CV.md
         pandoc publist.tex -f latex -t gfm -o mds/publist.md
         pandoc talklist.tex -f latex -t gfm -o mds/talklist.md
         pandoc CVshort.tex -f latex -t gfm -o mds/CVshort.md
-
+        mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
+        mv preamble.tex CV.tex metricspapers.tex metricstalks.tex parsepapers.tex parsetalks.tex publist.tex talklist.tex CVshort.tex texs/
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
