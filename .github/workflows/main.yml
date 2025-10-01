@@ -29,7 +29,10 @@ jobs:
         key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
         restore-keys: |
           ${{ runner.os }}-conda-
-
+          
+    - name: Install Pandoc
+      run: sudo apt-get update && sudo apt-get install -y pandoc
+      
     - name: Set up conda
       uses: conda-incubator/setup-miniconda@v3
       with:
@@ -77,14 +80,16 @@ jobs:
         root_file: CVshort.tex
         compiler: pdflatex
         args: -interaction=nonstopmode -shell-escape
-        
+    
     - name: Prepare
       run: |
         mkdir pdfs/
-        mkdir texs/
+        pandoc CV.tex -f latex -t gfm -o pdfs/CV.md
+        pandoc publist.tex -f latex -t gfm -o pdfs/publist.md
+        pandoc talklist.tex -f latex -t gfm -o pdfs/talklist.md
+        pandoc CVshort.tex -f latex -t gfm -o pdfs/CVshort.md
         mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
         mv preamble.tex CV.tex metricspapers.tex metricstalks.tex parsepapers.tex parsetalks.tex publist.tex talklist.tex CVshort.tex pdfs/
-            
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -104,7 +109,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          path: pdfs
+          path: pdfs/
       
       - name: move
         run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
