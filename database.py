@@ -24,6 +24,18 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "The first year of LISA Galactic foreground",
+    "author":   "R. Buscicchio, F.Pozzoli, D.Chirico, A.Sesana",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:[astro-ph.IM]",
+    "ads":      "",
+    "inspire":  "Buscicchio:2025zeb",
+    "more":     "",
+    "supervised": ""
+    })
+    
+    papers['submitted']['data'].append({
     "title":    "Functional inference on deviations from General Relativity",
     "author":   "C. Pacilio, R. Buscicchio",
     "journal":  "",
