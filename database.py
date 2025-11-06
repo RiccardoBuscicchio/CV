@@ -28,7 +28,7 @@ if submitted:
     "author":   "R. Buscicchio, F.Pozzoli, D.Chirico, A.Sesana",
     "journal":  "",
     "link":     "",
-    "arxiv":    "arXiv:[astro-ph.IM]",
+    "arxiv":    "arXiv:2511.03604[astro-ph.IM]",
     "ads":      "",
     "inspire":  "Buscicchio:2025zeb",
     "more":     "",
