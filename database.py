@@ -24,12 +24,25 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    "samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
+Trans-Dimensional Bayesian Analysis",
+    "author":   "G. Astorino, L. Valbusa Dall'Armi, R. Buscicchio, J. Pomper, A. Ricciardone, W. Del Pozzo",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2511.07385[stat.CO]",
+    "ads":      "",
+    "inspire":  "Astorino:2025ccl",
+    "more":     "",
+    "supervised": ""
+    })
+    
+    papers['submitted']['data'].append({
     "title":    "The first year of LISA Galactic foreground",
     "author":   "R. Buscicchio, F.Pozzoli, D.Chirico, A.Sesana",
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2511.03604[astro-ph.IM]",
-    "ads":      "",
+    "ads":      "2025arXiv251103604B",
     "inspire":  "Buscicchio:2025zeb",
     "more":     "",
     "supervised": ""
