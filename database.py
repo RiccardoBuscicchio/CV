@@ -24,8 +24,8 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
-    "title":    "samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
-Trans-Dimensional Bayesian Analysis",
+    "title":    """samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
+Trans-Dimensional Bayesian Analysis""",
     "author":   "G. Astorino, L. Valbusa Dall'Armi, R. Buscicchio, J. Pomper, A. Ricciardone, W. Del Pozzo",
     "journal":  "",
     "link":     "",
