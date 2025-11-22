@@ -139,6 +139,9 @@ def parsepapers(papers,filename="parsepapers.tex"):
     print('Parse papers from database')
 
     out=[]
+    out.append("Supervised students papers marked with *.")
+    out.append("\\vspace{0.2cm}")
+    out.append("")
     for k in ['submitted','published','collab','others']:
         i = len(papers[k]['data'])
 
@@ -150,7 +153,12 @@ def parsepapers(papers,filename="parsepapers.tex"):
         out.append("%")
 
         for p in papers[k]['data']:
-            out.append("\\textbf{"+str(i)+".} & & \\textit{"+p['title'].strip(".")+".}")
+            if 'supervised' in p.keys():
+                if p['supervised'] == True:
+                    marker ="*"
+                else:
+                    marker = ""
+            out.append("\\textbf{"+str(i)+marker+".} & & \\textit{"+p['title'].strip(".")+".}")
             out.append("\\newline{}")
             out.append(p['author'].replace("R. Buscicchio","\\textbf{R. Buscicchio}").strip(".")+".")
             out.append("\\newline{}")
