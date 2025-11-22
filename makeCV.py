@@ -147,7 +147,7 @@ def parsepapers(papers,filename="parsepapers.tex"):
             if k in ['submitted', 'published']:
                 out.append("")
                 out.append("\\vspace{-0.1cm}")
-                out.append("Supervised students publications marked with *.")
+                out.append("\footnotesize{Supervised students publications marked with *.}")
                 out.append("\\vspace{0.1cm}")
                 out.append("")
         out.append("\\vspace{-0.5cm}")
