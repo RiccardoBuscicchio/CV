@@ -30,7 +30,7 @@ Trans-Dimensional Bayesian Analysis""",
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2511.07385[stat.CO]",
-    "ads":      "",
+    "ads":      "2025arXiv251107385A",
     "inspire":  "Astorino:2025ccl",
     "more":     "",
     "supervised": "True"
@@ -56,6 +56,19 @@ Trans-Dimensional Bayesian Analysis""",
     "arxiv":    "arXiv:2507.13454[gr-qc]",
     "ads":      "2025arXiv250713454P",
     "inspire":  "Pacilio:2025wel",
+    "more":     "",
+    "supervised": ""
+    })
+
+
+    papers['submitted']['data'].append({
+    "title":    "GWTC-4.0: Updating the Gravitational-Wave Transient Catalog with Observations from the First Part of the Fourth LIGO-Virgo-KAGRA Observing Run",
+    "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2508.18082[gr-qc]",
+    "ads":      "2025arXiv250818082T",
+    "inspire":  "LIGOScientific:2025slb",
     "more":     "",
     "supervised": ""
     })
@@ -121,7 +134,7 @@ if published:
     "journal":  "\prd 112, (2025) 084053",
     "link":     "https://doi.org/10.1103/w61d-3jk5",
     "arxiv":    "arXiv:2507.00694[gr-qc]",
-    "ads":      "2025arXiv250700694C",
+    "ads":      "2025PhRvD.112h4053C",
     "inspire":  "Chen:2025qyj",
     "more":     "",
     "supervised": "True"
@@ -133,7 +146,7 @@ if published:
     "journal":  "\\aap 702 (2025) A242",
     "link":     "https://doi.org/10.1051/0004-6361/202555550",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
-    "ads":      "2025arXiv250522706R",
+    "ads":      "2025A&A...702A.242R",
     "inspire":  "Rigamonti:2025zwe",
     "more":     "",
     "supervised": ""
@@ -141,12 +154,12 @@ if published:
     
 
     papers['published']['data'].append({
-    "title":    "Is your stochastic signal really detectable?",
+    "title":    "Is the stochastic signal really detectable?",
     "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
     "journal":  "\prd 112, (2025) 064035",
     "link":     "https://doi.org/10.1103/22h4-tqh9",
     "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
-    "ads":      "2024arXiv241210468P",
+    "ads":      "2025PhRvD.112f4035P",
     "inspire":  "Pozzoli:2024hkt",
     "more":     "",
     "supervised": "True"
@@ -158,7 +171,7 @@ if published:
     "journal":  "\epjc 85, (2025) 887",
     "link":     "https://doi.org/10.1140/epjc/s10052-025-14616-w",
     "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
-    "ads":      "2024arXiv241008263B",
+    "ads":      "2025EPJC...85..887B",
     "inspire":  "Buscicchio:2024wwm",
     "more":     "",
     "supervised": ""
@@ -170,7 +183,7 @@ if published:
     "journal":  "\prd 112, (2025) 063010",
     "link":     "https://doi.org/10.1103/c66v-rl3w",
     "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
-    "ads":      "2025arXiv250321871E",
+    "ads":      "2025PhRvD.112f3010E",
     "inspire":  "ElGammal:2025dkz",
     "more":     "",
     "supervised": "True"
@@ -505,7 +518,7 @@ if collab:
     
     papers['collab'] = {}
     papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to'
-    papers['collab']['total'] = 47 # Add here the total of published collaboration papers.
+    papers['collab']['total'] = 60 # Add here the total of published collaboration papers.
     papers['collab']['data'] = []
 
     papers['collab']['data'].append({
