@@ -146,7 +146,7 @@ def parsepapers(papers,filename="parsepapers.tex"):
             out.append("\\textcolor{color1}{\\textbf{"+papers[k]['label']+":}}")
             if k in ['submitted', 'published']:
                 out.append("\\vspace{-0.1cm}")
-                out.append("Supervised students papers marked with *.")
+                out.append("Supervised students publications marked with *.")
                 out.append("\\vspace{0.1cm}")
                 out.append("")
         out.append("\\vspace{-0.5cm}")
@@ -155,11 +155,10 @@ def parsepapers(papers,filename="parsepapers.tex"):
         out.append("%")
 
         for p in papers[k]['data']:
+            marker = " "
             if 'supervised' in p.keys():
                 if p['supervised'] == 'True':
-                    marker ="*"
-                else:
-                    marker = "-"
+                    marker =" * "
             out.append("\\textbf{"+str(i)+".} &"+ marker +"& \\textit{"+p['title'].strip(".")+".}")
             out.append("\\newline{}")
             out.append(p['author'].replace("R. Buscicchio","\\textbf{R. Buscicchio}").strip(".")+".")
