@@ -20,17 +20,54 @@ outreach = True
 if submitted:
 
     papers['submitted'] = {}
-    papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
+    papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to'
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
-    "title":    "Muffled Murmurs: Environmental effects in the LISA stochastic signal from stellar-mass black hole binaries",
-    "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
+    "title":    """samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
+Trans-Dimensional Bayesian Analysis""",
+    "author":   "G. Astorino, L. Valbusa Dall'Armi, R. Buscicchio, J. Pomper, A. Ricciardone, W. Del Pozzo",
     "journal":  "",
     "link":     "",
-    "arxiv":    "arXiv:2507.00694[gr-qc]",
+    "arxiv":    "arXiv:2511.07385[stat.CO]",
     "ads":      "",
-    "inspire":  "Chen:2025qyj",
+    "inspire":  "Astorino:2025ccl",
+    "more":     "",
+    "supervised": "True"
+    })
+    
+    papers['submitted']['data'].append({
+    "title":    "The first year of LISA Galactic foreground",
+    "author":   "R. Buscicchio, F.Pozzoli, D.Chirico, A.Sesana",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2511.03604[astro-ph.IM]",
+    "ads":      "2025arXiv251103604B",
+    "inspire":  "Buscicchio:2025zeb",
+    "more":     "",
+    "supervised": ""
+    })
+    
+    papers['submitted']['data'].append({
+    "title":    "Functional inference on deviations from General Relativity",
+    "author":   "C. Pacilio, R. Buscicchio",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2507.13454[gr-qc]",
+    "ads":      "2025arXiv250713454P",
+    "inspire":  "Pacilio:2025wel",
+    "more":     "",
+    "supervised": ""
+    })
+
+    papers['submitted']['data'].append({
+    "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
+    "author":   "A. Toubiana, D. Gerosa, M. Mould, S. Rinaldi, M. Arca Sedda, T. Bruel, R. Buscicchio, J. Gair, L. Paiella, F. Santoliquido, R. Tenorio, C. Ugolini",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2507.13249[gr-qc]",
+    "ads":      "2025arXiv250713249T",
+    "inspire":  "Toubiana:2025syw",
     "more":     "",
     "supervised": ""
     })
@@ -46,43 +83,7 @@ if submitted:
     "more":     "",
     "supervised": "True"
     })
-
-    papers['submitted']['data'].append({
-    "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
-    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
-    "ads":      "2025arXiv250522706R",
-    "inspire":  "Rigamonti:2025zwe",
-    "more":     "",
-    "supervised": ""
-    })
-
-    papers['submitted']['data'].append({
-    "title":    "Is your stochastic signal really detectable?",
-    "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
-    "ads":      "2024arXiv241210468P",
-    "inspire":  "Pozzoli:2024hkt",
-    "more":     "",
-    "supervised": "True"
-    })
-
-    papers['submitted']['data'].append({
-    "title":    "A test for LISA foreground Gaussianity and stationarity. I. Galactic white-dwarf binaries",
-    "author":   "R. Buscicchio, A. Klein, V. Korol, F. Di Renzo, C.J. Moore, D. Gerosa, A. Carzaniga",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
-    "ads":      "2024arXiv241008263B",
-    "inspire":  "Buscicchio:2024wwm",
-    "more":     "",
-    "supervised": ""
-    })
-     
+   
     papers['submitted']['data'].append({
     "title":    "LISA Definition Study Report",
     "author":   "M. Colpi, K. Danzmann, M. Hewitson, K. Holley-Bockelmann, et al. (incl. R. Buscicchio)",
@@ -115,9 +116,58 @@ if published:
     papers['published']['data'] = []
 
     papers['published']['data'].append({
+    "title":    "Environmental effects in the LISA stochastic signal from stellar-mass black hole binaries",
+    "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
+    "journal":  "\prd 112, (2025) 084053",
+    "link":     "https://doi.org/10.1103/w61d-3jk5",
+    "arxiv":    "arXiv:2507.00694[gr-qc]",
+    "ads":      "2025arXiv250700694C",
+    "inspire":  "Chen:2025qyj",
+    "more":     "",
+    "supervised": "True"
+    })
+    
+    papers['published']['data'].append({
+    "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
+    "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
+    "journal":  "\\aap 702 (2025) A242",
+    "link":     "https://doi.org/10.1051/0004-6361/202555550",
+    "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
+    "ads":      "2025arXiv250522706R",
+    "inspire":  "Rigamonti:2025zwe",
+    "more":     "",
+    "supervised": ""
+    })
+    
+
+    papers['published']['data'].append({
+    "title":    "Is your stochastic signal really detectable?",
+    "author":   "F. Pozzoli, J. Gair, R. Buscicchio, L. Speri",
+    "journal":  "\prd 112, (2025) 064035",
+    "link":     "https://doi.org/10.1103/22h4-tqh9",
+    "arxiv":    "arXiv:2412.10468 [astro-ph.IM]",
+    "ads":      "2024arXiv241210468P",
+    "inspire":  "Pozzoli:2024hkt",
+    "more":     "",
+    "supervised": "True"
+    })
+
+    papers['published']['data'].append({
+    "title":    "A test for LISA foreground Gaussianity and stationarity. I. Galactic white-dwarf binaries",
+    "author":   "R. Buscicchio, A. Klein, V. Korol, F. Di Renzo, C.J. Moore, D. Gerosa, A. Carzaniga",
+    "journal":  "\epjc 85, (2025) 887",
+    "link":     "https://doi.org/10.1140/epjc/s10052-025-14616-w",
+    "arxiv":    "arXiv:2410.08263 [astro-ph.HE]",
+    "ads":      "2024arXiv241008263B",
+    "inspire":  "Buscicchio:2024wwm",
+    "more":     "",
+    "supervised": ""
+    })
+
+    papers['published']['data'].append({
     "title":    "Accelerating LISA inference with Gaussian processes",
     "author":   "J. El Gammal, R. Buscicchio, G. Nardini, J. Torrado",
-    "journal":  "\prd 111, (2025) (in press)",
+    "journal":  "\prd 112, (2025) 063010",
     "link":     "https://doi.org/10.1103/c66v-rl3w",
     "arxiv":    "arXiv:2503.21871 [astro-ph.HE]",
     "ads":      "2025arXiv250321871E",
@@ -132,7 +182,7 @@ if published:
     "journal":  "\prd 111, (2025) 103047",
     "link":     "https://doi.org/10.1103/nfn4-pgr5",
     "arxiv":    "arXiv:2410.08862 [astro-ph.HE]",
-    "ads":      "2024arXiv241008862P",
+    "ads":      "2025PhRvD.111j3047P",
     "inspire":  "Piarulli:2024yhj",
     "more":     "",
     "supervised": "True"
@@ -144,7 +194,7 @@ if published:
     "journal":  "\prd 111, (2025) 063005",
     "link":     "https://doi.org/10.1103/PhysRevD.111.063005",
     "arxiv":    "arXiv:2410.08274 [astro-ph.GA]",
-    "ads":      "2024arXiv241008274P",
+    "ads":      "2025PhRvD.111f3005P",
     "inspire":  "Pozzoli:2024wfe",
     "more":     "",
     "supervised": "True"
@@ -156,7 +206,7 @@ if published:
     "journal":  "\prd 111, (2025) 022005",
     "link":     "https://doi.org/10.1103/PhysRevD.111.022005",
     "arxiv":    "arXiv:2410.14354 [gr-qc]",
-    "ads":      "2024arXiv241014354K",
+    "ads":      "2025PhRvD.111b2005K",
     "inspire":  "Karnesis:2024pxh",
     "more":     "",
     "supervised": ""
@@ -168,7 +218,7 @@ if published:
     "journal":  "\jcap 01 (2025) 084",
     "link":     "https://doi.org/10.1088/1475-7516/2025/01/084",
     "arxiv":    "arXiv:2410.18171 [astro-ph.HE]",
-    "ads":      "2024arXiv241018171B",
+    "ads":      "2025JCAP...01..084B",
     "inspire":  "Buscicchio:2024asl",
     "more":     "",
     "supervised": ""
@@ -192,7 +242,7 @@ if published:
     "journal":  "\\aap 692 (2024) A233",
     "link":     "https://doi.org/10.1051/0004-6361/202450112",
     "arxiv":    "arXiv:2403.18002 [astro-ph.GA]",
-    "ads":      "2024arXiv240318002D",
+    "ads":      "2024A&A...692A.233D",
     "inspire":  "Dotti:2024wng",
     "more":     "",
     "supervised": ""
@@ -204,7 +254,7 @@ if published:
         "journal":  "\\aap 691 (2024) A44",
         "link":     "https://www.aanda.org/articles/aa/full_html/2024/11/aa51380-24/aa51380-24.html",
         "arxiv":    "arXiv:2407.03935 [astro-ph.HE]",
-        "ads":      "2024arXiv240703935K",
+        "ads":      "2024A&A...691A..44K",
         "inspire":  "Korol:2024dzw",
         "more":     "",
         "supervised": ""
@@ -454,7 +504,7 @@ if published:
 if collab:
     
     papers['collab'] = {}
-    papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to.'
+    papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to'
     papers['collab']['total'] = 47 # Add here the total of published collaboration papers.
     papers['collab']['data'] = []
 
@@ -605,7 +655,7 @@ if collab:
     
 if others:
     papers['others'] = {}
-    papers['others']['label'] = 'PhD thesis, technical reports.'
+    papers['others']['label'] = 'PhD thesis, technical reports'
     papers['others']['data'] = []
 
     papers['others']['data'].append({
@@ -636,6 +686,13 @@ if conferences:
     talks['conferences']['data'] = []
 
 
+    talks['conferences']['data'].append({
+        "title":    "Is your stochastic signal really detectable?",
+        "where":    "XXVI SIGRAV conference on general relativity and gravitation, Univ. of Milano-Bicocca, Milan, Italy",
+        "when":     "2025/09/09",
+        "invited":  False,
+        "more":     ""
+    })
     talks['conferences']['data'].append({
         "title":    "Emergence of Milky Way structure in the first year of LISA data",
         "where":    "CERN UniGe Gravitational Wave meeting, Geneva, Switzerland",
