@@ -145,6 +145,7 @@ def parsepapers(papers,filename="parsepapers.tex"):
         if i>=1:
             out.append("\\textcolor{color1}{\\textbf{"+papers[k]['label']+":}}")
             if k in ['submitted', 'published']:
+                out.append("")
                 out.append("\\vspace{-0.1cm}")
                 out.append("Supervised students publications marked with *.")
                 out.append("\\vspace{0.1cm}")
