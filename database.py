@@ -118,7 +118,7 @@ if published:
     papers['published']['data'].append({
     "title":    "Environmental effects in the LISA stochastic signal from stellar-mass black hole binaries",
     "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
-    "journal":  "\prd 112, (2025), (in press)",
+    "journal":  "\prd 112, (2025) 084053",
     "link":     "https://doi.org/10.1103/w61d-3jk5",
     "arxiv":    "arXiv:2507.00694[gr-qc]",
     "ads":      "2025arXiv250700694C",
@@ -130,7 +130,7 @@ if published:
     papers['published']['data'].append({
     "title":    "Variability in the massive black hole binary candidate SDSS J2320+0024: no evidence for periodic modulation",
     "author":   "F. Rigamonti, L. Bertassi, R. Buscicchio, F. Cocchiararo, S. Covino, M. Dotti, A. Sesana, P. Severgnini",
-    "journal":  "\\aap (2025), (in press)",
+    "journal":  "\\aap 702 (2025) A242",
     "link":     "https://doi.org/10.1051/0004-6361/202555550",
     "arxiv":    "arXiv:2505.22706[astro-ph.GA]",
     "ads":      "2025arXiv250522706R",
