@@ -33,7 +33,7 @@ Trans-Dimensional Bayesian Analysis""",
     "ads":      "",
     "inspire":  "Astorino:2025ccl",
     "more":     "",
-    "supervised": ""
+    "supervised": "True"
     })
     
     papers['submitted']['data'].append({
