@@ -687,6 +687,13 @@ if conferences:
 
 
     talks['conferences']['data'].append({
+        "title":    "Is your stochastic signal really detectable?",
+        "where":    "XXVI SIGRAV conference on general relativity and gravitation, Univ. of Milano-Bicocca, Milan, Italy",
+        "when":     "2025/09/09",
+        "invited":  False,
+        "more":     ""
+    })
+    talks['conferences']['data'].append({
         "title":    "Emergence of Milky Way structure in the first year of LISA data",
         "where":    "CERN UniGe Gravitational Wave meeting, Geneva, Switzerland",
         "when":     "2025/05/23",
