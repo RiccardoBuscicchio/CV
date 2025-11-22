@@ -154,7 +154,7 @@ def parsepapers(papers,filename="parsepapers.tex"):
 
         for p in papers[k]['data']:
             if 'supervised' in p.keys():
-                if p['supervised'] == True:
+                if p['supervised'] == 'True':
                     marker ="*"
                 else:
                     marker = ""
