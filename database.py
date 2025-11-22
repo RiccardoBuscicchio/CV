@@ -20,7 +20,7 @@ outreach = True
 if submitted:
 
     papers['submitted'] = {}
-    papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to.'
+    papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to'
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
@@ -504,7 +504,7 @@ if published:
 if collab:
     
     papers['collab'] = {}
-    papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to.'
+    papers['collab']['label'] = 'Collaboration papers in major peer-reviewed journals, which I have substantially contributed to'
     papers['collab']['total'] = 47 # Add here the total of published collaboration papers.
     papers['collab']['data'] = []
 
@@ -655,7 +655,7 @@ if collab:
     
 if others:
     papers['others'] = {}
-    papers['others']['label'] = 'PhD thesis, technical reports.'
+    papers['others']['label'] = 'PhD thesis, technical reports'
     papers['others']['data'] = []
 
     papers['others']['data'].append({
