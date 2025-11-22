@@ -139,14 +139,16 @@ def parsepapers(papers,filename="parsepapers.tex"):
     print('Parse papers from database')
 
     out=[]
-    out.append("Supervised students papers marked with *.")
-    out.append("\\vspace{0.2cm}")
-    out.append("")
     for k in ['submitted','published','collab','others']:
         i = len(papers[k]['data'])
 
         if i>=1:
             out.append("\\textcolor{color1}{\\textbf{"+papers[k]['label']+":}}")
+            if k in ['submitted', 'published']:
+                out.append("\\vspace{-0.1cm}")
+                out.append("Supervised students papers marked with *.")
+                out.append("\\vspace{0.1cm}")
+                out.append("")
         out.append("\\vspace{-0.5cm}")
         out.append("")
         out.append("\cvitem{}{\small\hspace{-1cm}\\begin{longtable}{rp{0.3cm}p{15.8cm}}")
@@ -157,8 +159,8 @@ def parsepapers(papers,filename="parsepapers.tex"):
                 if p['supervised'] == 'True':
                     marker ="*"
                 else:
-                    marker = ""
-            out.append("\\textbf{"+str(i)+marker+".} & & \\textit{"+p['title'].strip(".")+".}")
+                    marker = "-"
+            out.append("\\textbf{"+str(i)+".} &"+ marker +"& \\textit{"+p['title'].strip(".")+".}")
             out.append("\\newline{}")
             out.append(p['author'].replace("R. Buscicchio","\\textbf{R. Buscicchio}").strip(".")+".")
             out.append("\\newline{}")
