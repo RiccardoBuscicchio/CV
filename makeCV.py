@@ -246,7 +246,7 @@ def parsesupervision(supervision,filename="parsesupervision.tex"):
         for p in supervision[k]['data']:
             out.append("\\cvitemwithcomment{}{\\hspace{0.4cm}$\\circ\\;$ "+p['student']+", "+p['institution']+", "+p['level']+", "+p['percentage']+"}{"+p['period']+"}\\vspace{-0.1cm}")
             if p['status']:
-                out.append("\\hspace{0.4cm}$\\phantom{\\circ}\\;$("+p['status']+")")
+                out.append("\\hspace{0.4cm}$\\phantom{\\circ}\\;$("+p['status']+")\\\\")
                 out.append("\\vspace{0.1cm}")
             out.append("%")
 
@@ -270,9 +270,10 @@ def parserefereeing(refereeing,filename="parserefereeing.tex"):
         out.append("\\vspace{0.1cm}")
         out.append("")
         
-        # Create two-column layout
+        # Create two-column layout with smaller font and minimal spacing to prevent overflow
         data = refereeing[k]['data']
-        out.append("\\begin{tabular}{@{\\hskip 0.4cm}l@{\\hskip 0.3in}l}")
+        out.append("{\\footnotesize")
+        out.append("\\begin{tabular}{@{\\hskip 0.4cm}l@{\\hskip 0.1in}l}")
         
         # Add entries in two columns
         for i in range(0, len(data), 2):
@@ -282,6 +283,7 @@ def parserefereeing(refereeing,filename="parserefereeing.tex"):
                 out.append("$\\circ\\;$  "+data[i]['journal']+"\\\\")
         
         out.append("\\end{tabular}")
+        out.append("}")
 
     with open(filename,"w") as f: f.write("\n".join(out))
 
