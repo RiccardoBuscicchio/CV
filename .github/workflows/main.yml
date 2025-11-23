@@ -46,7 +46,6 @@ jobs:
         python-version: "3.11"
         activate-environment: buildcv
         environment-file: environment.yml
-        use-only-tar-bz2: true
 
     - name: Configure conda to use cached pkgs
       run: conda config --add pkgs_dirs ~/conda_pkgs_dir

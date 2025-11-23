@@ -67,9 +67,9 @@ This ensures:
 
 ### Conda Caching
 The workflow uses the `conda-incubator/setup-miniconda@v3` action with:
-- `use-only-tar-bz2: true` - For more reliable caching
 - Custom package directory configuration
 - Full environment directory caching
+- Standard package format (not restricted to tar.bz2) for compatibility
 
 ### LaTeX Caching
 The LaTeX compilation uses `dante-ev/latex-action@latest` which:
