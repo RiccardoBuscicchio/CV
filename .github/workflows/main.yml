@@ -1,5 +1,11 @@
 name: CV workflow
 
+# This workflow builds and deploys CV, publication list, and talk list PDFs
+# Optimizations:
+# - Caches full conda environment to avoid rebuilding on every run
+# - Caches LaTeX packages to speed up compilation
+# - See CI_OPTIMIZATION.md for detailed documentation
+
 on:
   push:
     branches:
