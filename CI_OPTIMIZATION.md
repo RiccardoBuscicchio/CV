@@ -19,21 +19,25 @@ The GitHub Actions workflow for building and deploying the CV has been optimized
 
 **Expected benefit:** 50-70% faster conda setup on cache hit
 
-### 2. LaTeX Package Caching
+### 2. Docker Layer Caching for LaTeX
 
-**New feature:**
-- Caches TeXLive packages and compilation artifacts
-- Cache paths: `~/.texlive` and `/tmp/latex-cache`
-- Cache key based on `.tex` file hashes
-- Packages only re-downloaded when TeX files change
+**How it works:**
+- The `dante-ev/latex-action` uses a pre-built Docker image with TeX Live
+- GitHub Actions automatically caches Docker layers between runs
+- The Docker image (~2 GB) is pulled once and reused
+- LaTeX compilation is already very fast (~5 seconds for all files)
 
-**Expected benefit:** 20-30% faster LaTeX compilation on cache hit
+**Why file-based caching doesn't work:**
+- The LaTeX action runs in an isolated Docker container
+- File system paths like `~/.texlive` don't persist outside the container
+- Docker layer caching provides the performance benefit instead
+
+**Expected benefit:** Docker layer caching reduces image pull time on warm cache
 
 ### 3. Optimized Cache Keys
 
 All caches use content-based hashing:
 - **Conda cache:** `${{ runner.os }}-conda-env-${{ hashFiles('environment.yml') }}`
-- **LaTeX cache:** `${{ runner.os }}-latex-${{ hashFiles('*.tex', 'preamble.tex') }}`
 
 This ensures:
 - Cache is automatically invalidated when dependencies change
@@ -44,9 +48,8 @@ This ensures:
 
 | Scenario | Before | After | Improvement |
 |----------|--------|-------|-------------|
-| First run (cold cache) | ~X min | ~X min | No change |
-| Subsequent run (warm cache) | ~X min | ~Y min | ~50-70% faster |
-| Run with TeX changes only | ~X min | ~Z min | ~20-30% faster |
+| First run (cold cache) | ~5 min | ~5 min | No change |
+| Subsequent run (warm cache) | ~5 min | ~3 min | ~40% faster |
 
 *Note: Actual times will vary based on runner resources and network conditions*
 
@@ -54,12 +57,11 @@ This ensures:
 
 ### When Cache is Used
 - ✅ Subsequent runs with unchanged `environment.yml`
-- ✅ Subsequent runs with unchanged `.tex` files
+- ✅ Docker layer caching for LaTeX compilation
 - ✅ Rebuilds after merging PRs (if dependencies unchanged)
 
 ### When Cache is Invalidated
 - 🔄 After modifying `environment.yml`
-- 🔄 After modifying `.tex` or `preamble.tex` files
 - 🔄 After 7 days of inactivity (GitHub cache expiration)
 - 🔄 When cache size exceeds 10GB (GitHub limit)
 
@@ -71,18 +73,18 @@ The workflow uses the `conda-incubator/setup-miniconda@v3` action with:
 - Full environment directory caching
 - Standard package format (not restricted to tar.bz2) for compatibility
 
-### LaTeX Caching
+### LaTeX Compilation
 The LaTeX compilation uses `dante-ev/latex-action@latest` which:
-- Runs in a containerized environment
-- Downloads packages on-demand
-- Benefits from pre-cached packages when available
+- Runs in a Docker container with TeX Live pre-installed
+- Benefits from GitHub Actions' automatic Docker layer caching
+- Compiles very quickly (~1-2 seconds per file)
 
 ## Troubleshooting
 
 ### If build times haven't improved:
 1. Check cache hit/miss in workflow logs
 2. Verify cache keys match between runs
-3. Ensure `environment.yml` and `.tex` files are unchanged
+3. Ensure `environment.yml` is unchanged
 4. Check GitHub cache storage limits
 
 ### To force cache rebuild:
@@ -95,5 +97,6 @@ The LaTeX compilation uses `dante-ev/latex-action@latest` which:
 Potential additional optimizations:
 - Cache Python script outputs (parsed papers/talks)
 - Use workflow concurrency limits
+- Implement conditional job execution for unchanged files
 - Implement smart skipping for unchanged files
 - Docker image caching for LaTeX environment

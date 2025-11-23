@@ -3,7 +3,7 @@ name: CV workflow
 # This workflow builds and deploys CV, publication list, and talk list PDFs
 # Optimizations:
 # - Caches full conda environment to avoid rebuilding on every run
-# - Caches LaTeX packages to speed up compilation
+# - Benefits from Docker layer caching for LaTeX compilation
 # - See CI_OPTIMIZATION.md for detailed documentation
 
 on:
@@ -58,16 +58,6 @@ jobs:
       
     - name: Run Python script for short CV
       run: conda run --name buildcv bash -c "python makeCV.py --short"
-
-    - name: Cache LaTeX packages
-      uses: actions/cache@v4
-      with:
-        path: |
-          /tmp/latex-cache
-          ~/.texlive
-        key: ${{ runner.os }}-latex-${{ hashFiles('*.tex', 'preamble.tex') }}
-        restore-keys: |
-          ${{ runner.os }}-latex-
 
     - name: LaTeX CV
       uses: dante-ev/latex-action@latest
