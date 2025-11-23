@@ -12,7 +12,7 @@ import urllib.request
 import urllib.error
 from urllib.parse import urlencode
 import html
-from database import papers, talks
+from database import papers, talks, supervision, refereeing, codesdata
 from datetime import datetime
 import shutil
 import argparse
@@ -221,6 +221,96 @@ def parsetalks(talks,filename="parsetalks.tex"):
             out.append("%")
             i=i-1
         out.append("\end{longtable} }")
+
+    with open(filename,"w") as f: f.write("\n".join(out))
+
+
+def parsesupervision(supervision,filename="parsesupervision.tex"):
+
+    print('Parse supervision from database')
+
+    out=[]
+    out.append("{\\footnotesize According to current national regulations, as a research fellow I cannot be officially appointed as supervisor of students at any level. However, upon agreement with the relevant permanent staff, I have supervised the work of students in the percentages shown below.}")
+    out.append("")
+    out.append("\\vspace{0.2cm}")
+
+    for k in ['phd', 'msc', 'bsc']:
+        if k not in supervision:
+            continue
+            
+        out.append("\\textbf{\\textcolor{black}{"+supervision[k]['label']+":}}")
+        out.append("\\vspace{0.1cm}")
+        out.append("\\\\")
+        out.append("%")
+
+        i = len(supervision[k]['data'])
+        for p in supervision[k]['data']:
+            out.append("\\cvitemwithcomment{}{\\hspace{0.4cm}$\\circ\\;$ "+p['student']+", "+p['institution']+", "+p['level']+", "+p['percentage']+"}{"+p['period']+"}\\vspace{-0.1cm}")
+            if p['status']:
+                out.append("\\hspace{0.4cm}$\\phantom{\\circ}\\;$("+p['status']+")")
+                out.append("\\vspace{0.1cm}")
+            out.append("%")
+
+        out.append("")
+        out.append("\\vspace{0.2cm}")
+
+    with open(filename,"w") as f: f.write("\n".join(out))
+
+
+def parserefereeing(refereeing,filename="parserefereeing.tex"):
+
+    print('Parse refereeing from database')
+
+    out=[]
+    
+    for k in ['journals']:
+        if k not in refereeing:
+            continue
+            
+        out.append("\\textbf{\\textcolor{black}{"+refereeing[k]['label']+"}}") 
+        out.append("\\vspace{0.1cm}")
+        out.append("")
+        
+        # Create two-column layout
+        data = refereeing[k]['data']
+        out.append("\\begin{tabular}{@{\\hskip 0.4cm}l@{\\hskip 0.3in}l}")
+        
+        # Add entries in two columns
+        for i in range(0, len(data), 2):
+            if i+1 < len(data):
+                out.append("$\\circ\\;$  "+data[i]['journal']+" & $\\circ\\;$ "+data[i+1]['journal']+" \\\\")
+            else:
+                out.append("$\\circ\\;$  "+data[i]['journal']+"\\\\ ")
+        
+        out.append("\\end{tabular}")
+
+    with open(filename,"w") as f: f.write("\n".join(out))
+
+
+def parsecodesdata(codesdata,filename="parsecodesdata.tex"):
+
+    print('Parse codes and datasets from database')
+
+    out=[]
+    
+    for k in ['codes']:
+        if k not in codesdata:
+            continue
+        
+        out.append("\\begin{tabular}{@{\\hskip 0.4cm}l@{\\hskip 0.4in}c@{\\hskip 0.1in}c@{\\hskip 0.1in}l@{\\hskip 0.1in}c}")
+        out.append("\\textbf{\\textcolor{black}{Title}} & \\textbf{\\textcolor{black}{Code}}& \\textbf{\\textcolor{black}{Dataset}} & \\textbf{\\textcolor{black}{Zenodo DOI}} & \\textbf{\\textcolor{black}{Public}}\\\\")
+        
+        for p in codesdata[k]['data']:
+            code_mark = "\\checkmark" if p['code'] else ""
+            dataset_mark = "\\checkmark" if p['dataset'] else ""
+            public_mark = "\\checkmark" if p['public'] else ""
+            # Extract the zenodo record ID from the DOI
+            zenodo_id = p['doi'].split('zenodo.')[-1] if p['doi'] else ""
+            doi_link = "\\href{https://zenodo.org/record/"+zenodo_id+"}{"+p['doi']+"}" if p['doi'] else ""
+            
+            out.append("$\\circ\\;$ "+p['title']+" & "+code_mark+" & "+dataset_mark+" & "+doi_link+" & "+public_mark+"\\\\")
+        
+        out.append("\\end{tabular}")
 
     with open(filename,"w") as f: f.write("\n".join(out))
 
@@ -607,6 +697,9 @@ if __name__ == "__main__":
         papers = inspire_citations(papers,testing=args.testing)
         parsepapers(papers)
         parsetalks(talks)
+        parsesupervision(supervision)
+        parserefereeing(refereeing)
+        parsecodesdata(codesdata)
         metricspapers(papers)
         metricstalks(talks)
         

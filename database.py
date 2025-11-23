@@ -1068,3 +1068,288 @@ if outreach:
         "invited": False,
         "more": ""
     })
+
+# Supervision entries
+supervision = {}
+phd_supervision = True
+msc_supervision = True
+bsc_supervision = True
+
+# Journal referee entries
+refereeing = {}
+referee = True
+
+# Codes and datasets entries
+codesdata = {}
+codes_datasets = True
+
+if phd_supervision:
+    supervision['phd'] = {}
+    supervision['phd']['label'] = 'Ph.D. student co-supervisor'
+    supervision['phd']['data'] = []
+    
+    supervision['phd']['data'].append({
+        "student": "B. Saiguhan",
+        "institution": "University of Milano-Bicocca",
+        "level": "PhD",
+        "period": "2025-2028",
+        "percentage": "100\\%",
+        "status": ""
+    })
+    
+    supervision['phd']['data'].append({
+        "student": "L. Viganò",
+        "institution": "University of Milano-Bicocca",
+        "level": "PhD",
+        "period": "2025-2028",
+        "percentage": "80\\%",
+        "status": ""
+    })
+    
+    supervision['phd']['data'].append({
+        "student": "F. Nobili",
+        "institution": "University of Insubria",
+        "level": "PhD",
+        "period": "2024-2027",
+        "percentage": "100\\%",
+        "status": ""
+    })
+    
+    supervision['phd']['data'].append({
+        "student": "A. Spadaro",
+        "institution": "University of Milano-Bicocca",
+        "level": "PhD",
+        "period": "2022-2025",
+        "percentage": "100\\%",
+        "status": ""
+    })
+    
+    supervision['phd']['data'].append({
+        "student": "F. Pozzoli",
+        "institution": "University of Insubria",
+        "level": "PhD",
+        "period": "2022-2025",
+        "percentage": "100\\%",
+        "status": ""
+    })
+
+if msc_supervision:
+    supervision['msc'] = {}
+    supervision['msc']['label'] = 'MSc student co-supervision'
+    supervision['msc']['data'] = []
+    
+    supervision['msc']['data'].append({
+        "student": "R. Bosoni De Martini",
+        "institution": "University of Milano-Bicocca",
+        "level": "Master's thesis",
+        "period": "2025-2026",
+        "percentage": "100\\%",
+        "status": ""
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "L. Viganò",
+        "institution": "University of Milano-Bicocca",
+        "level": "Master's thesis",
+        "period": "2024-2025",
+        "percentage": "100\\%",
+        "status": "now PhD student at Univ. of Milano-Bicocca"
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "M. Bellotti",
+        "institution": "University of Milano-Bicocca",
+        "level": "Master's thesis",
+        "period": "2024-2025",
+        "percentage": "100\\%",
+        "status": "now PhD student at Observatoire Cote d'Azur"
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "D. Chirico",
+        "institution": "University of Milano-Bicocca",
+        "level": "Master's thesis",
+        "period": "2023-2024",
+        "percentage": "100\\%",
+        "status": ""
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "S. Corbo",
+        "institution": "Politecnico di Milano",
+        "level": "Master's thesis",
+        "period": "2023-2024",
+        "percentage": "100\\%",
+        "status": ""
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "R. Rosso",
+        "institution": "University of Pisa",
+        "level": "Master's thesis",
+        "period": "2023-2024",
+        "percentage": "80\\%",
+        "status": "now PhD student at Univ. of Pisa"
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "G. Astorino",
+        "institution": "University of Pisa",
+        "level": "Master's thesis",
+        "period": "2023-2024",
+        "percentage": "80\\%",
+        "status": "now PhD student at Univ. of Pisa"
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "M. Piarulli",
+        "institution": "University of Milano-Bicocca",
+        "level": "Master's thesis",
+        "period": "2022-2023",
+        "percentage": "100\\%",
+        "status": "now PhD student at Univ. of Toulouse"
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "A. Spadaro",
+        "institution": "University of Milano-Bicocca",
+        "level": "Master's thesis",
+        "period": "2021-2022",
+        "percentage": "100\\%",
+        "status": "now PhD student at Univ. of Milano-Bicocca"
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "A. Carzaniga",
+        "institution": "University of Milano-Bicocca",
+        "level": "Master's thesis",
+        "period": "2021-2022",
+        "percentage": "100\\%",
+        "status": ""
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "A. Geminardi",
+        "institution": "University of Milano-Bicocca",
+        "level": "Master's thesis",
+        "period": "2021-2022",
+        "percentage": "100\\%",
+        "status": "now PhD student at Univ. of Pavia"
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "E. Finch",
+        "institution": "University of Birmingham",
+        "level": "Year 4 project",
+        "period": "2018",
+        "percentage": "50\\%",
+        "status": ""
+    })
+    
+    supervision['msc']['data'].append({
+        "student": "V. Spasova",
+        "institution": "University of Birmingham",
+        "level": "Year 4 project",
+        "period": "2018",
+        "percentage": "50\\%",
+        "status": ""
+    })
+
+if bsc_supervision:
+    supervision['bsc'] = {}
+    supervision['bsc']['label'] = 'BSc student supervision'
+    supervision['bsc']['data'] = []
+    
+    supervision['bsc']['data'].append({
+        "student": "H. P. G. Carabajo",
+        "institution": "University of Milano-Bicocca",
+        "level": "Bachelor's thesis",
+        "period": "2023-2024",
+        "percentage": "100\\%",
+        "status": ""
+    })
+
+if referee:
+    refereeing['journals'] = {}
+    refereeing['journals']['label'] = 'Journal referee'
+    refereeing['journals']['data'] = []
+    
+    refereeing['journals']['data'].append({"journal": "Physical Review Letters"})
+    refereeing['journals']['data'].append({"journal": "Physical Review D"})
+    refereeing['journals']['data'].append({"journal": "The Astrophysical Journal Letters"})
+    refereeing['journals']['data'].append({"journal": "The Open Journal of Astrophysics"})
+    refereeing['journals']['data'].append({"journal": "Journal of Cosmology and Astroparticle Physics"})
+    refereeing['journals']['data'].append({"journal": "NASA Technology Transfer Program"})
+    refereeing['journals']['data'].append({"journal": "Monthly Notices of the Royal Astronomical Society"})
+    refereeing['journals']['data'].append({"journal": "IoP Classical and Quantum Gravity"})
+    refereeing['journals']['data'].append({"journal": "Institute of Physics Machine Learning: Science and Technology"})
+    refereeing['journals']['data'].append({"journal": "Institute of Physics Trusted Reviewer Excellence program"})
+
+if codes_datasets:
+    codesdata['codes'] = {}
+    codesdata['codes']['label'] = 'Codes \\& Datasets'
+    codesdata['codes']['data'] = []
+    
+    codesdata['codes']['data'].append({
+        "title": "Bahamas Galactic Foreground",
+        "code": True,
+        "dataset": True,
+        "doi": "10.5281/zenodo.17527235",
+        "public": True
+    })
+    
+    codesdata['codes']['data'].append({
+        "title": "Bahamas",
+        "code": True,
+        "dataset": False,
+        "doi": "10.5281/zenodo.16087705",
+        "public": True
+    })
+    
+    codesdata['codes']['data'].append({
+        "title": "Hypertriangulation Map",
+        "code": True,
+        "dataset": False,
+        "doi": "10.5281/zenodo.13897708",
+        "public": True
+    })
+    
+    codesdata['codes']['data'].append({
+        "title": "Bayesian PowerLaw Sensitivity",
+        "code": True,
+        "dataset": True,
+        "doi": "10.5281/zenodo.14384633",
+        "public": True
+    })
+    
+    codesdata['codes']['data'].append({
+        "title": "Milky Way Satellites",
+        "code": False,
+        "dataset": True,
+        "doi": "10.5281/zenodo.3668904",
+        "public": True
+    })
+    
+    codesdata['codes']['data'].append({
+        "title": "LISA stellar BBH catalogues and samples",
+        "code": True,
+        "dataset": True,
+        "doi": "10.5281/zenodo.14426778",
+        "public": True
+    })
+    
+    codesdata['codes']['data'].append({
+        "title": "LISA MBHB catalogues and samples",
+        "code": False,
+        "dataset": True,
+        "doi": "10.5281/zenodo.13787674",
+        "public": True
+    })
+    
+    codesdata['codes']['data'].append({
+        "title": "Chirp Gravitational Wave Alerts",
+        "code": True,
+        "dataset": False,
+        "doi": "10.5281/zenodo.3525063",
+        "public": True
+    })
