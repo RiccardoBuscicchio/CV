@@ -1,5 +1,11 @@
 name: CV workflow
 
+# This workflow builds and deploys CV, publication list, and talk list PDFs
+# Optimizations:
+# - Caches full conda environment to avoid rebuilding on every run
+# - Benefits from Docker layer caching for LaTeX compilation
+# - See CI_OPTIMIZATION.md for detailed documentation
+
 on:
   push:
     branches:
@@ -22,13 +28,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Cache Conda packages
+    - name: Cache Conda environment
+      id: cache-conda-env
       uses: actions/cache@v4
       with:
-        path: ~/conda_pkgs_dir
-        key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
+        path: |
+          ~/conda_pkgs_dir
+          /usr/share/miniconda3/envs/buildcv
+        key: ${{ runner.os }}-conda-env-${{ hashFiles('environment.yml') }}
         restore-keys: |
-          ${{ runner.os }}-conda-
+          ${{ runner.os }}-conda-env-
 
     - name: Set up conda
       uses: conda-incubator/setup-miniconda@v3
