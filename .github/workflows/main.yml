@@ -22,13 +22,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Cache Conda packages
+    - name: Cache Conda environment
+      id: cache-conda-env
       uses: actions/cache@v4
       with:
-        path: ~/conda_pkgs_dir
-        key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
+        path: |
+          ~/conda_pkgs_dir
+          /usr/share/miniconda3/envs/buildcv
+        key: ${{ runner.os }}-conda-env-${{ hashFiles('environment.yml') }}
         restore-keys: |
-          ${{ runner.os }}-conda-
+          ${{ runner.os }}-conda-env-
 
     - name: Set up conda
       uses: conda-incubator/setup-miniconda@v3
@@ -37,6 +40,7 @@ jobs:
         python-version: "3.11"
         activate-environment: buildcv
         environment-file: environment.yml
+        use-only-tar-bz2: true
 
     - name: Configure conda to use cached pkgs
       run: conda config --add pkgs_dirs ~/conda_pkgs_dir
@@ -49,6 +53,16 @@ jobs:
       
     - name: Run Python script for short CV
       run: conda run --name buildcv bash -c "python makeCV.py --short"
+
+    - name: Cache LaTeX packages
+      uses: actions/cache@v4
+      with:
+        path: |
+          /tmp/latex-cache
+          ~/.texlive
+        key: ${{ runner.os }}-latex-${{ hashFiles('*.tex', 'preamble.tex') }}
+        restore-keys: |
+          ${{ runner.os }}-latex-
 
     - name: LaTeX CV
       uses: dante-ev/latex-action@latest
