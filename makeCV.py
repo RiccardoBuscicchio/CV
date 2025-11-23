@@ -243,7 +243,6 @@ def parsesupervision(supervision,filename="parsesupervision.tex"):
         out.append("\\\\")
         out.append("%")
 
-        i = len(supervision[k]['data'])
         for p in supervision[k]['data']:
             out.append("\\cvitemwithcomment{}{\\hspace{0.4cm}$\\circ\\;$ "+p['student']+", "+p['institution']+", "+p['level']+", "+p['percentage']+"}{"+p['period']+"}\\vspace{-0.1cm}")
             if p['status']:
@@ -280,7 +279,7 @@ def parserefereeing(refereeing,filename="parserefereeing.tex"):
             if i+1 < len(data):
                 out.append("$\\circ\\;$  "+data[i]['journal']+" & $\\circ\\;$ "+data[i+1]['journal']+" \\\\")
             else:
-                out.append("$\\circ\\;$  "+data[i]['journal']+"\\\\ ")
+                out.append("$\\circ\\;$  "+data[i]['journal']+"\\\\")
         
         out.append("\\end{tabular}")
 
@@ -305,8 +304,12 @@ def parsecodesdata(codesdata,filename="parsecodesdata.tex"):
             dataset_mark = "\\checkmark" if p['dataset'] else ""
             public_mark = "\\checkmark" if p['public'] else ""
             # Extract the zenodo record ID from the DOI
-            zenodo_id = p['doi'].split('zenodo.')[-1] if p['doi'] else ""
-            doi_link = "\\href{https://zenodo.org/record/"+zenodo_id+"}{"+p['doi']+"}" if p['doi'] else ""
+            # Expected format: "10.5281/zenodo.XXXXX"
+            if p['doi'] and 'zenodo.' in p['doi']:
+                zenodo_id = p['doi'].split('zenodo.')[-1]
+                doi_link = "\\href{https://zenodo.org/record/"+zenodo_id+"}{"+p['doi']+"}"
+            else:
+                doi_link = p['doi'] if p['doi'] else ""
             
             out.append("$\\circ\\;$ "+p['title']+" & "+code_mark+" & "+dataset_mark+" & "+doi_link+" & "+public_mark+"\\\\")
         
