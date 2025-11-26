@@ -3,6 +3,11 @@ metricspapers.tex
 metricstalks.tex
 parsetalks.tex
 parsepapers.tex
+parsesupervision.tex
+parserefereeing.tex
+parsecodesdata.tex
+__pycache__/
+*.pyc
 CV.pdf
 CVshort.pdf
 publist.pdf
