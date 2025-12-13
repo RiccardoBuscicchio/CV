@@ -691,6 +691,85 @@ def replacekeys():
     with open('publist.bib', 'w') as f:
         f.write(publist)
 
+def localize_structure_files(translations):
+    """Apply translations to structure files (CV.tex, publist.tex, talklist.tex)."""
+    print("Localizing structure files")
+    
+    # Localize CV.tex - work from template if it exists, otherwise from CV.tex
+    template_file = 'CV.tex.template' if os.path.exists('CV.tex.template') else 'CV.tex'
+    with open(template_file, 'r', encoding='utf-8') as f:
+        cv_content = f.read()
+    
+    # Replace hardcoded English strings with translations
+    replacements = {
+        r'\mytitle{Curriculum Vit\ae}': r'\mytitle{' + translations['labels']['curriculum_vitae'] + '}',
+        r'\section{Contacts}': r'\section{' + translations['sections']['contacts'] + '}',
+        r'\cvitem{Email}': r'\cvitem{' + translations['labels']['email'] + '}',
+        r'\cvitem{Address}': r'\cvitem{' + translations['labels']['address'] + '}',
+        r'\cvitem{Nationality}': r'\cvitem{' + translations['labels']['nationality'] + '}',
+        r'\cvitem{Website \& publications record}': r'\cvitem{' + translations['labels']['website_publications'] + '}',
+        r'\section{Academic positions}': r'\section{' + translations['sections']['academic_positions'] + '}',
+        r'\section{Education}': r'\section{' + translations['sections']['education'] + '}',
+        r'\section{Metrics}': r'\section{' + translations['sections']['metrics'] + '}',
+        r'\section{Codes \& Datasets}': r'\section{' + translations['sections']['codes_datasets'] + '}',
+        r'\section{Grants, Prizes, \& Awards}': r'\section{' + translations['sections']['grants_prizes_awards'] + '}',
+        r'\section{Student supervision}': r'\section{' + translations['sections']['student_supervision'] + '}',
+        r'\section{Academic service, editorial and research responsibilities}': r'\section{' + translations['sections']['academic_service'] + '}',
+        r'\section{Skills}': r'\section{' + translations['sections']['skills'] + '}',
+        r'\section{Hobbies}': r'\section{' + translations['sections']['hobbies'] + '}',
+        r'\section{Publications}': r'\section{' + translations['sections']['publications'] + '}',
+        r'\section{Seminar \& Talks}': r'\section{' + translations['sections']['seminars_talks'] + '}',
+        r'\textbf{Date:}': r'\textbf{' + translations['labels']['date'] + ':}',
+        r'\textbf{Signature:}': r'\textbf{' + translations['labels']['signature'] + ':}'
+    }
+    
+    for old, new in replacements.items():
+        cv_content = cv_content.replace(old, new)
+    
+    with open('CV.tex', 'w', encoding='utf-8') as f:
+        f.write(cv_content)
+    
+    # Localize publist.tex - work from template if it exists
+    template_file = 'publist.tex.template' if os.path.exists('publist.tex.template') else 'publist.tex'
+    with open(template_file, 'r', encoding='utf-8') as f:
+        publist_content = f.read()
+    
+    publist_content = publist_content.replace(
+        r'\mytitle{Publication list}',
+        r'\mytitle{' + translations['labels']['publication_list'] + '}'
+    )
+    
+    with open('publist.tex', 'w', encoding='utf-8') as f:
+        f.write(publist_content)
+    
+    # Localize talklist.tex - work from template if it exists
+    template_file = 'talklist.tex.template' if os.path.exists('talklist.tex.template') else 'talklist.tex'
+    with open(template_file, 'r', encoding='utf-8') as f:
+        talklist_content = f.read()
+    
+    talklist_content = talklist_content.replace(
+        r'\mytitle{Presentations}',
+        r'\mytitle{' + translations['labels']['presentations_list'] + '}'
+    )
+    
+    with open('talklist.tex', 'w', encoding='utf-8') as f:
+        f.write(talklist_content)
+    
+    # Localize preamble.tex - work from template if it exists
+    template_file = 'preamble.tex.template' if os.path.exists('preamble.tex.template') else 'preamble.tex'
+    with open(template_file, 'r', encoding='utf-8') as f:
+        preamble_content = f.read()
+    
+    # Replace babel language if specified in translations
+    if 'babel_language' in translations:
+        preamble_content = preamble_content.replace(
+            r'\usepackage[english]{babel}',
+            r'\usepackage[' + translations['babel_language'] + ']{babel}'
+        )
+    
+    with open('preamble.tex', 'w', encoding='utf-8') as f:
+        f.write(preamble_content)
+
 def parseshort():
     print("Update CVshort")
     with open('CV.tex', 'r') as f:
@@ -735,6 +814,9 @@ if __name__ == "__main__":
     # Load translations
     translations = load_translations(args.lang)
     print(f"Using language: {translations['language_name']} ({translations['language_code']})")
+    
+    # Localize structure files based on selected language
+    localize_structure_files(translations)
     
     if args.connected:
         # Set testing=True to avoid API limit

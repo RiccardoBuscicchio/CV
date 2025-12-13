@@ -1,6 +1,7 @@
 {
   "language_code": "en",
   "language_name": "English",
+  "babel_language": "english",
   "sections": {
     "contacts": "Contacts",
     "academic_positions": "Academic positions",
@@ -20,7 +21,11 @@
     "address": "Address",
     "nationality": "Nationality",
     "website_publications": "Website \\& publications record",
-    "curriculum_vitae": "Curriculum Vit\\ae"
+    "curriculum_vitae": "Curriculum Vit\\ae",
+    "publication_list": "Publication list",
+    "presentations_list": "Presentations",
+    "date": "Date",
+    "signature": "Signature"
   },
   "papers": {
     "submitted_label": "Submitted short-author and collaboration papers which I have substantially contributed to",

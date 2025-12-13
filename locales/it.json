@@ -1,6 +1,7 @@
 {
   "language_code": "it",
   "language_name": "Italiano",
+  "babel_language": "italian",
   "sections": {
     "contacts": "Contatti",
     "academic_positions": "Posizioni accademiche",
@@ -20,7 +21,11 @@
     "address": "Indirizzo",
     "nationality": "Nazionalit\\`{a}",
     "website_publications": "Sito web e registro pubblicazioni",
-    "curriculum_vitae": "Curriculum Vitae"
+    "curriculum_vitae": "Curriculum Vitae",
+    "publication_list": "Elenco delle pubblicazioni",
+    "presentations_list": "Presentazioni",
+    "date": "Data",
+    "signature": "Firma"
   },
   "papers": {
     "submitted_label": "Articoli brevi e di collaborazione sottomessi a cui ho contribuito sostanzialmente",
