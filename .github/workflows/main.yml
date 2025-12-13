@@ -9,14 +9,14 @@ name: CV workflow
 on:
   push:
     branches:
-#      - main_eng_custom
       - main
+      - dev
     paths-ignore:
       - '**/README.md'
   pull_request:
     branches:
-      - main_eng_custom
       - main
+      - dev
     paths-ignore:
       - '**/README.md'
 
@@ -104,6 +104,7 @@ jobs:
     # Edit here if compiling multiple papers
     needs: [build]
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     
     steps:
     
@@ -123,7 +124,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
-#          publish_branch: build_custom
           publish_branch: build
           force_orphan: true
 
