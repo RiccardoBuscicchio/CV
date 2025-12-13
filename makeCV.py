@@ -157,11 +157,22 @@ def parsepapers(papers,filename="parsepapers.tex",translations=None):
         translations = load_translations('en')
 
     out=[]
+    # Map database keys to translation keys
+    label_map = {
+        'submitted': 'submitted_label',
+        'published': 'published_label',
+        'collab': 'collab_label',
+        'others': 'others_label'
+    }
+    
     for k in ['submitted','published','collab','others']:
         i = len(papers[k]['data'])
 
         if i>=1:
-            out.append("\\textcolor{color1}{\\textbf{"+papers[k]['label']+":}}")
+            # Use translation instead of database label
+            label_key = label_map.get(k, k + '_label')
+            label_text = translations['papers'].get(label_key, papers[k]['label'])
+            out.append("\\textcolor{color1}{\\textbf{"+label_text+":}}")
             if k in ['submitted', 'published']:
                 out.append("")
                 out.append("\\vspace{-0.1cm}")
@@ -219,8 +230,18 @@ def parsetalks(talks,filename="parsetalks.tex",translations=None):
     out.append("\\vspace{0.2cm}")
     out.append("")
 
+    # Map database keys to translation keys
+    label_map = {
+        'conferences': 'conferences_label',
+        'seminars': 'seminars_label',
+        'outreach': 'outreach_label'
+    }
+    
     for k in ['conferences','seminars', 'outreach']: #,'lectures','posters','outreach']:
-        out.append("\\textcolor{color1}{\\textbf{"+talks[k]['label']+":}}")
+        # Use translation instead of database label
+        label_key = label_map.get(k, k + '_label')
+        label_text = translations['talks'].get(label_key, talks[k]['label'])
+        out.append("\\textcolor{color1}{\\textbf{"+label_text+":}}")
         out.append("\\vspace{-0.5cm}")
         out.append("")
         out.append("\cvitem{}{\small\hspace{-1cm}\\begin{longtable}{rp{0.3cm}p{15.8cm}}")
@@ -734,12 +755,9 @@ def localize_structure_files(translations):
     
     # Replace hardcoded English strings with translations
     replacements = {
+        # Document structure
         r'\mytitle{Curriculum Vit\ae}': r'\mytitle{' + translations['labels']['curriculum_vitae'] + '}',
         r'\section{Contacts}': r'\section{' + translations['sections']['contacts'] + '}',
-        r'\cvitem{Email}': r'\cvitem{' + translations['labels']['email'] + '}',
-        r'\cvitem{Address}': r'\cvitem{' + translations['labels']['address'] + '}',
-        r'\cvitem{Nationality}': r'\cvitem{' + translations['labels']['nationality'] + '}',
-        r'\cvitem{Website \& publications record}': r'\cvitem{' + translations['labels']['website_publications'] + '}',
         r'\section{Academic positions}': r'\section{' + translations['sections']['academic_positions'] + '}',
         r'\section{Education}': r'\section{' + translations['sections']['education'] + '}',
         r'\section{Metrics}': r'\section{' + translations['sections']['metrics'] + '}',
@@ -751,8 +769,43 @@ def localize_structure_files(translations):
         r'\section{Hobbies}': r'\section{' + translations['sections']['hobbies'] + '}',
         r'\section{Publications}': r'\section{' + translations['sections']['publications'] + '}',
         r'\section{Seminar \& Talks}': r'\section{' + translations['sections']['seminars_talks'] + '}',
+        
+        # Labels
+        r'\cvitem{Email}': r'\cvitem{' + translations['labels']['email'] + '}',
+        r'\cvitem{Address}': r'\cvitem{' + translations['labels']['address'] + '}',
+        r'\cvitem{Nationality}': r'\cvitem{' + translations['labels']['nationality'] + '}',
+        r'\cvitem{Website \& publications record}': r'\cvitem{' + translations['labels']['website_publications'] + '}',
         r'\textbf{Date:}': r'\textbf{' + translations['labels']['date'] + ':}',
-        r'\textbf{Signature:}': r'\textbf{' + translations['labels']['signature'] + ':}'
+        r'\textbf{Signature:}': r'\textbf{' + translations['labels']['signature'] + ':}',
+        r'{\textit{Supervisor}}': r'{\textit{' + translations['labels']['supervisor'] + '}}',
+        r'{\textit{Thesis Title}}': r'{\textit{' + translations['labels']['thesis_title'] + '}}',
+        r'{\textit{Thesis title}}': r'{\textit{' + translations['labels']['thesis_title_lower'] + '}}',
+        r'{\textit{Final degree grade}}': r'{\textit{' + translations['labels']['final_degree_grade'] + '}}',
+        r'{\textit{Main activity}}': r'{\textit{' + translations['labels']['main_activity'] + '}}',
+        r'\textit{Content}': r'\textit{' + translations['labels']['content'] + '}',
+        
+        # CV content strings  
+        r'Relativistic astrophysicist, advanced data analysis and statistical frameworks for Bayesian and frequentist inference. Space-mission modelling, signal detection and parameter estimation in gravitational-wave astronomy. Gravitational-wave lensing. Population inference, stochastic background searches. Milky Way morphology, supernovae precursors, supermassive black holes accretion model inference.': translations['cv_content']['header_summary'],
+        r'\textbf{Full list of publications}': r'\textbf{' + translations['cv_content']['full_list_publications'] + '}',
+        r'\textbf{Full list of presentations}': r'\textbf{' + translations['cv_content']['full_list_presentations'] + '}',
+        r'available': translations['cv_content']['available'],
+        r'below and': translations['cv_content']['below_and'],
+        r'\textbf{\textcolor{black}{Career prizes:}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['career_prizes'] + '}}',
+        r'\textbf{\textcolor{black}{Grants:}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['grants'] + '}}',
+        r'\textbf{\textcolor{black}{Invited research visits:}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['invited_research_visits'] + '}}',
+        r'\textbf{\textcolor{black}{Taught classes}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['taught_classes'] + '}}',
+        r'\textbf{\textcolor{black}{Tutoring}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['tutoring'] + '}}',
+        r'\textbf{\textcolor{black}{International collaboration responsibilities}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['international_collaboration'] + '}}',
+        r'\textbf{\textcolor{black}{Editorial responsibilities}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['editorial_responsibilities'] + '}}',
+        r'\textbf{\textcolor{black}{Conference organizer}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['conference_organizer'] + '}}',
+        r'\textbf{\textcolor{black}{Outreach \& public engagement}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['outreach_public_engagement'] + '}}',
+        r'\textbf{\textcolor{black}{Professional recognition and service}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['professional_recognition'] + '}}',
+        r'\textbf{\textcolor{black}{Memberships}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['memberships'] + '}}',
+        r'\textbf{\textcolor{black}{Acad.Year}}': r'\textbf{\textcolor{black}{' + translations['labels']['acad_year'] + '}}',
+        r'\cvitem{Programming languages}': r'\cvitem{' + translations['cv_content']['programming_languages'] + '}',
+        r'\cvitem{Other scientific tools}': r'\cvitem{' + translations['cv_content']['other_scientific_tools'] + '}',
+        r'\cvitem{Languages}': r'\cvitem{' + translations['cv_content']['languages'] + '}',
+        r'Swimming, running, rock climbing, photography. Sci-fi books, electronic music.': translations['cv_content']['hobbies_text']
     }
     
     for old, new in replacements.items():

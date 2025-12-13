@@ -25,7 +25,14 @@
     "publication_list": "Elenco delle pubblicazioni",
     "presentations_list": "Presentazioni",
     "date": "Data",
-    "signature": "Firma"
+    "signature": "Firma",
+    "supervisor": "Supervisore",
+    "thesis_title": "Titolo della tesi",
+    "thesis_title_lower": "Titolo della tesi",
+    "final_degree_grade": "Voto finale",
+    "main_activity": "Attivit\\`{a} principale",
+    "content": "Contenuto",
+    "acad_year": "Anno Accad."
   },
   "papers": {
     "submitted_label": "Articoli brevi e di collaborazione sottomessi a cui ho contribuito sostanzialmente",
@@ -67,6 +74,29 @@
     "dataset": "Dataset",
     "zenodo_doi": "DOI Zenodo",
     "public": "Pubblico"
+  },
+  "cv_content": {
+    "header_summary": "Astrofisico relativista, analisi avanzata di dati e framework statistici per inferenza bayesiana e frequentista. Modellazione di missioni spaziali, rilevazione di segnali e stima di parametri in astronomia a onde gravitazionali. Lensing di onde gravitazionali. Inferenza di popolazione, ricerche di fondo stocastico. Morfologia della Via Lattea, precursori di supernove, inferenza di modelli di accrescimento di buchi neri supermassicci.",
+    "full_list_publications": "Elenco completo delle pubblicazioni",
+    "full_list_presentations": "Elenco completo delle presentazioni",
+    "available": "disponibile",
+    "below_and": "qui sotto e",
+    "at": "su",
+    "career_prizes": "Premi di carriera:",
+    "grants": "Borse:",
+    "invited_research_visits": "Visite di ricerca su invito:",
+    "taught_classes": "Corsi tenuti",
+    "tutoring": "Tutoraggio",
+    "international_collaboration": "Responsabilit\\`{a} nelle collaborazioni internazionali",
+    "editorial_responsibilities": "Responsabilit\\`{a} editoriali",
+    "conference_organizer": "Organizzatore di conferenze",
+    "outreach_public_engagement": "Divulgazione e pubblico coinvolgimento",
+    "professional_recognition": "Riconoscimenti professionali e servizio",
+    "memberships": "Affiliazioni",
+    "programming_languages": "Linguaggi di programmazione",
+    "other_scientific_tools": "Altri strumenti scientifici",
+    "languages": "Lingue",
+    "hobbies_text": "Nuoto, corsa, arrampicata, fotografia. Libri di fantascienza, musica elettronica."
   },
   "talks": {
     "conferences_label": "Conferenze e workshop",

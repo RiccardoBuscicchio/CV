@@ -25,7 +25,14 @@
     "publication_list": "Publication list",
     "presentations_list": "Presentations",
     "date": "Date",
-    "signature": "Signature"
+    "signature": "Signature",
+    "supervisor": "Supervisor",
+    "thesis_title": "Thesis Title",
+    "thesis_title_lower": "Thesis title",
+    "final_degree_grade": "Final degree grade",
+    "main_activity": "Main activity",
+    "content": "Content",
+    "acad_year": "Acad.Year"
   },
   "papers": {
     "submitted_label": "Submitted short-author and collaboration papers which I have substantially contributed to",
@@ -67,6 +74,29 @@
     "dataset": "Dataset",
     "zenodo_doi": "Zenodo DOI",
     "public": "Public"
+  },
+  "cv_content": {
+    "header_summary": "Relativistic astrophysicist, advanced data analysis and statistical frameworks for Bayesian and frequentist inference. Space-mission modelling, signal detection and parameter estimation in gravitational-wave astronomy. Gravitational-wave lensing. Population inference, stochastic background searches. Milky Way morphology, supernovae precursors, supermassive black holes accretion model inference.",
+    "full_list_publications": "Full list of publications",
+    "full_list_presentations": "Full list of presentations",
+    "available": "available",
+    "below_and": "below and",
+    "at": "at",
+    "career_prizes": "Career prizes:",
+    "grants": "Grants:",
+    "invited_research_visits": "Invited research visits:",
+    "taught_classes": "Taught classes",
+    "tutoring": "Tutoring",
+    "international_collaboration": "International collaboration responsibilities",
+    "editorial_responsibilities": "Editorial responsibilities",
+    "conference_organizer": "Conference organizer",
+    "outreach_public_engagement": "Outreach \\& public engagement",
+    "professional_recognition": "Professional recognition and service",
+    "memberships": "Memberships",
+    "programming_languages": "Programming languages",
+    "other_scientific_tools": "Other scientific tools",
+    "languages": "Languages",
+    "hobbies_text": "Swimming, running, rock climbing, photography. Sci-fi books, electronic music."
   },
   "talks": {
     "conferences_label": "Conferences and workshops",
