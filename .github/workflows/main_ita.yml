@@ -1,0 +1,122 @@
+name: CV workflow (Italian)
+
+# This workflow builds and deploys Italian CV, publication list, and talk list PDFs
+# Optimizations:
+# - Caches full conda environment to avoid rebuilding on every run
+# - Benefits from Docker layer caching for LaTeX compilation
+# - See CI_OPTIMIZATION.md for detailed documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/README.md'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '**/README.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:      
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Cache Conda environment
+      id: cache-conda-env
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/conda_pkgs_dir
+          /usr/share/miniconda3/envs/buildcv
+        key: ${{ runner.os }}-conda-env-${{ hashFiles('environment.yml') }}
+        restore-keys: |
+          ${{ runner.os }}-conda-env-
+
+    - name: Set up conda
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        auto-update-conda: true
+        python-version: "3.11"
+        activate-environment: buildcv
+        environment-file: environment.yml
+
+    - name: Configure conda to use cached pkgs
+      run: conda config --add pkgs_dirs ~/conda_pkgs_dir
+
+    - name: Run Python script (Italian)
+      run: conda run --name buildcv bash -c "python makeCV.py --connected --lang it --token ${{ secrets.ADS_TOKEN }}"
+      
+    - name: Run Python script for short CV (Italian)
+      run: conda run --name buildcv bash -c "python makeCV.py --short --lang it"
+
+    - name: LaTeX CV
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: CV.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+
+    - name: LaTeX publist
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: publist.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+
+    - name: LaTeX talklist
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: talklist.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+    
+    - name: LaTeX CVshort
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: CVshort.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+        
+    - name: Prepare
+      run: |
+        mkdir pdfs/
+        mkdir texs/
+        mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
+        mv preamble.tex CV.tex metricspapers.tex metricstalks.tex parsepapers.tex parsetalks.tex parsesupervision.tex parserefereeing.tex parsecodesdata.tex publist.tex talklist.tex CVshort.tex pdfs/
+            
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: artifacts-ita
+        path: pdfs/
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: pdfs
+      
+      - name: move
+        run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
+        
+      - name: deploy on orphan branch
+        uses: peaceiris/actions-gh-pages@v4.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./github_deploy
+          publish_branch: build_ita
+          force_orphan: true
+
