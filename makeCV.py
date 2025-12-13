@@ -7,6 +7,7 @@ import copy
 import sys
 import time
 import os
+import re
 import requests
 import urllib.request
 import urllib.error
@@ -691,14 +692,45 @@ def replacekeys():
     with open('publist.bib', 'w') as f:
         f.write(publist)
 
+def _get_template_or_file(basename):
+    """Helper function to get template file path, falling back to the working file.
+    
+    Args:
+        basename: Base name of the file (e.g., 'CV.tex')
+    
+    Returns:
+        Path to the template file if it exists, otherwise the working file path.
+    """
+    template_file = basename + '.template'
+    return template_file if os.path.exists(template_file) else basename
+
+
 def localize_structure_files(translations):
-    """Apply translations to structure files (CV.tex, publist.tex, talklist.tex)."""
+    """Apply translations to structure files from their templates.
+    
+    This function reads the English template files (.template) and generates
+    localized working files (.tex) by replacing hardcoded English strings with
+    translations from the specified language JSON file.
+    
+    Files localized:
+    - CV.tex: Main CV document structure
+    - preamble.tex: LaTeX preamble including babel language setting
+    - publist.tex: Publication list document
+    - talklist.tex: Talks/presentations list document
+    
+    Args:
+        translations: Dictionary containing translation strings loaded from JSON file.
+    """
     print("Localizing structure files")
     
-    # Localize CV.tex - work from template if it exists, otherwise from CV.tex
-    template_file = 'CV.tex.template' if os.path.exists('CV.tex.template') else 'CV.tex'
-    with open(template_file, 'r', encoding='utf-8') as f:
-        cv_content = f.read()
+    # Helper to read template file
+    def read_template(basename):
+        template_file = _get_template_or_file(basename)
+        with open(template_file, 'r', encoding='utf-8') as f:
+            return f.read()
+    
+    # Localize CV.tex
+    cv_content = read_template('CV.tex')
     
     # Replace hardcoded English strings with translations
     replacements = {
@@ -729,11 +761,8 @@ def localize_structure_files(translations):
     with open('CV.tex', 'w', encoding='utf-8') as f:
         f.write(cv_content)
     
-    # Localize publist.tex - work from template if it exists
-    template_file = 'publist.tex.template' if os.path.exists('publist.tex.template') else 'publist.tex'
-    with open(template_file, 'r', encoding='utf-8') as f:
-        publist_content = f.read()
-    
+    # Localize publist.tex
+    publist_content = read_template('publist.tex')
     publist_content = publist_content.replace(
         r'\mytitle{Publication list}',
         r'\mytitle{' + translations['labels']['publication_list'] + '}'
@@ -742,11 +771,8 @@ def localize_structure_files(translations):
     with open('publist.tex', 'w', encoding='utf-8') as f:
         f.write(publist_content)
     
-    # Localize talklist.tex - work from template if it exists
-    template_file = 'talklist.tex.template' if os.path.exists('talklist.tex.template') else 'talklist.tex'
-    with open(template_file, 'r', encoding='utf-8') as f:
-        talklist_content = f.read()
-    
+    # Localize talklist.tex
+    talklist_content = read_template('talklist.tex')
     talklist_content = talklist_content.replace(
         r'\mytitle{Presentations}',
         r'\mytitle{' + translations['labels']['presentations_list'] + '}'
@@ -755,16 +781,16 @@ def localize_structure_files(translations):
     with open('talklist.tex', 'w', encoding='utf-8') as f:
         f.write(talklist_content)
     
-    # Localize preamble.tex - work from template if it exists
-    template_file = 'preamble.tex.template' if os.path.exists('preamble.tex.template') else 'preamble.tex'
-    with open(template_file, 'r', encoding='utf-8') as f:
-        preamble_content = f.read()
+    # Localize preamble.tex
+    preamble_content = read_template('preamble.tex')
     
     # Replace babel language if specified in translations
+    # Use regex to match any language in the babel package
     if 'babel_language' in translations:
-        preamble_content = preamble_content.replace(
-            r'\usepackage[english]{babel}',
-            r'\usepackage[' + translations['babel_language'] + ']{babel}'
+        preamble_content = re.sub(
+            r'\\usepackage\[([a-z]+)\]\{babel\}',
+            r'\\usepackage[' + translations['babel_language'] + ']{babel}',
+            preamble_content
         )
     
     with open('preamble.tex', 'w', encoding='utf-8') as f:
