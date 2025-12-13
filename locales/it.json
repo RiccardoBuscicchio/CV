@@ -27,8 +27,7 @@
     "published_label": "Articoli brevi pubblicati in riviste scientifiche peer-reviewed",
     "collab_label": "Articoli di collaborazione, con contributo sostanziale, pubblicati in riviste scientifiche peer-reviewed",
     "others_label": "Altre pubblicazioni",
-    "supervised_note": "Pubblicazioni di studenti supervisionati contrassegnate con *.",
-    "invited_note": "Conferenze su invito contrassegnate con *."
+    "supervised_note": "Pubblicazioni di studenti supervisionati contrassegnate con *."
   },
   "metrics": {
     "publications": "Pubblicazioni",
@@ -66,6 +65,8 @@
   "talks": {
     "conferences_label": "Conferenze e workshop",
     "seminars_label": "Seminari",
-    "outreach_label": "Divulgazione"
+    "outreach_label": "Divulgazione",
+    "invited_note": "Conferenze su invito contrassegnate con *.",
+    "posters_conferences": "poster a conferenze,"
   }
 }

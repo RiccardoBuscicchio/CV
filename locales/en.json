@@ -27,8 +27,7 @@
     "published_label": "Short-author papers published in major peer-reviewed journals",
     "collab_label": "Collaboration papers, with substantial contribution, published in major peer-reviewed journals",
     "others_label": "Other publications",
-    "supervised_note": "Supervised students publications marked with *.",
-    "invited_note": "Invited talks marked with *."
+    "supervised_note": "Supervised students publications marked with *."
   },
   "metrics": {
     "publications": "Publications",
@@ -66,6 +65,8 @@
   "talks": {
     "conferences_label": "Conferences and workshops",
     "seminars_label": "Seminars",
-    "outreach_label": "Outreach"
+    "outreach_label": "Outreach",
+    "invited_note": "Invited talks marked with *.",
+    "posters_conferences": "posters at conferences,"
   }
 }

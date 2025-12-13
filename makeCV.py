@@ -30,6 +30,9 @@ def load_translations(lang='en'):
         print(f"Warning: Translation file for '{lang}' not found. Using English.")
         locale_file = os.path.join('locales', 'en.json')
     
+    if not os.path.exists(locale_file):
+        raise FileNotFoundError(f"Translation file not found: {locale_file}. Please ensure locales/en.json exists.")
+    
     with open(locale_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
@@ -211,7 +214,7 @@ def parsetalks(talks,filename="parsetalks.tex",translations=None):
         translations = load_translations('en')
 
     out=[]
-    out.append(translations['papers']['invited_note'])
+    out.append(translations['talks']['invited_note'])
     out.append("\\vspace{0.2cm}")
     out.append("")
 
@@ -438,7 +441,7 @@ def metricstalks(talks,filename="metricstalks.tex",translations=None):
     out.append("\\textbf{"+str(len(talks['seminars']['data']))+"} "+translations['metrics']['talks_seminars'])
     
     if ('posters' in talks.keys()) and (len(talks['posters']['data'])>0):
-        out.append("\\textbf{"+str(len(talks['posters']['data']))+"} posters at conferences,")
+        out.append("\\textbf{"+str(len(talks['posters']['data']))+"} "+translations['talks']['posters_conferences'])
     out.append("\\\\ & &")
 
     invited = []
