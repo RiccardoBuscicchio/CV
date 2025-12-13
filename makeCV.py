@@ -393,9 +393,9 @@ def metricspapers(papers,filename="metricspapers.tex",translations=None):
             if p['supervised'] == "True" and k == 'published':
                 supervised+=1
     if supervised == 0:
-        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+").\\\\")
+        out.append("& & ("+translations['metrics']['out_of_which']+" \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+").\\\\")
     else:
-        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+" and \\textbf{"+str(supervised)+"}\, "+translations['metrics']['lead_supervised']+").\\\\")
+        out.append("& & ("+translations['metrics']['out_of_which']+" \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+" and \\textbf{"+str(supervised)+"}\, "+translations['metrics']['lead_supervised']+").\\\\")
     out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & "+translations['metrics']['collab_papers_contrib']+"\\\\")
     out.append("&\\textbf{"+str(papers['collab']['total'])+"} & "+translations['metrics']['collab_papers_total']+"\\\\")
 
@@ -805,7 +805,30 @@ def localize_structure_files(translations):
         r'\cvitem{Programming languages}': r'\cvitem{' + translations['cv_content']['programming_languages'] + '}',
         r'\cvitem{Other scientific tools}': r'\cvitem{' + translations['cv_content']['other_scientific_tools'] + '}',
         r'\cvitem{Languages}': r'\cvitem{' + translations['cv_content']['languages'] + '}',
-        r'Swimming, running, rock climbing, photography. Sci-fi books, electronic music.': translations['cv_content']['hobbies_text']
+        r'Swimming, running, rock climbing, photography. Sci-fi books, electronic music.': translations['cv_content']['hobbies_text'],
+        
+        # Thesis descriptions and activities
+        r'This thesis explores a number of topics related to Bayesian inference in gravitational-wave astronomy. From hierarchical inference on population of stellar mass binary black hole mergers, to the development of an end-to-end parameter estimation routine for space-based interferometers. Other topics are investigated: population of binary white dwarfs in satellite galaxies of the Milky Way; constraints from stochastic background on lensing of gravitational waves from binary neutron star and binary black hole mergers; statistical techniques for simultaneous inference on multiple undistinguishable sources.': translations['cv_content']['phd_thesis_desc_1'],
+        r'This thesis explored the idea of using functional formalism from stochastic processes and classical field theory to develop a new detection algorithm, with improved performance, for non-gaussian stochastic backgrounds of gravitational waves.': translations['cv_content']['msc_thesis_desc'],
+        r'We estimated the contribution to noise level in second and third generation ground-based detectors due to primary and secondary cosmic ray showers impinging on the interferometer mirrors.': translations['cv_content']['internship_desc'],
+        r'This thesis explored the idea of using differential geometry formalism (as defined in the context of Information theory) to develop a template placing algorithm over source parameter space with non-trivial manifold structure.': translations['cv_content']['bsc_thesis_desc'],
+        
+        # Grant and visit labels
+        r'{Travel Grant}': r'{' + translations['cv_content']['travel_grant'] + '}',
+        r'{Research visit': r'{' + translations['cv_content']['research_visit'],
+        
+        # Course content
+        r'Introduction to gravitational-wave data analysis.': translations['cv_content']['course_content_1'],
+        r'Space-based and ground-based interferometers.': translations['cv_content']['course_content_2'],
+        r'Source populations: compact object binaries, stochastic backgrounds.': translations['cv_content']['course_content_3'],
+        r'Signal modeling: galactic and extragalactic compact object binaries': translations['cv_content']['course_content_4'],
+        r'astrophysical and cosmological stochastic backgrounds.': translations['cv_content']['course_content_5'],
+        r'Signal detection and parameter estimation: frequentist and Bayesian approaches.': translations['cv_content']['course_content_6'],
+        r'Advanced stochastic sampling techniques.': translations['cv_content']['course_content_7'],
+        r'Python programming, simulation of physical systems in celestial': translations['cv_content']['course_content_8'],
+        r'and classical mechanics, thermodynamics, electromagnetism. Data analysis.': translations['cv_content']['course_content_9'],
+        r'Linear algebra, differential and integral calculus, differenzial equations': translations['cv_content']['course_content_10'],
+        r'Groups and representations theory': translations['cv_content']['course_content_11']
     }
     
     for old, new in replacements.items():
