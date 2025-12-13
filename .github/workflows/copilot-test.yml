@@ -1,0 +1,88 @@
+name: Copilot branch test
+
+# This workflow tests CV compilation on copilot branches without deploying
+# It runs the same build steps as main.yml but skips the deployment to orphan branch
+
+on:
+  push:
+    branches:
+      - 'copilot/**'
+    paths-ignore:
+      - '**/README.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:      
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Cache Conda environment
+      id: cache-conda-env
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/conda_pkgs_dir
+          /usr/share/miniconda3/envs/buildcv
+        key: ${{ runner.os }}-conda-env-${{ hashFiles('environment.yml') }}
+        restore-keys: |
+          ${{ runner.os }}-conda-env-
+
+    - name: Set up conda
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        auto-update-conda: true
+        python-version: "3.11"
+        activate-environment: buildcv
+        environment-file: environment.yml
+
+    - name: Configure conda to use cached pkgs
+      run: conda config --add pkgs_dirs ~/conda_pkgs_dir
+
+    - name: Run Python script
+      run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }}"
+      
+    - name: Run Python script for short CV
+      run: conda run --name buildcv bash -c "python makeCV.py --short"
+
+    - name: LaTeX CV
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: CV.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+
+    - name: LaTeX publist
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: publist.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+
+    - name: LaTeX talklist
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: talklist.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+    
+    - name: LaTeX CVshort
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: CVshort.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode -shell-escape
+        
+    - name: Prepare artifacts
+      run: |
+        mkdir pdfs/
+        mkdir texs/
+        mv CV.pdf publist.pdf talklist.pdf CVshort.pdf pdfs/
+        mv preamble.tex CV.tex metricspapers.tex metricstalks.tex parsepapers.tex parsetalks.tex parsesupervision.tex parserefereeing.tex parsecodesdata.tex publist.tex talklist.tex CVshort.tex pdfs/
+            
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: cv-test-artifacts
+        path: pdfs/
