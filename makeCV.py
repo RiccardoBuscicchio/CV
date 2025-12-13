@@ -7,6 +7,7 @@ import copy
 import sys
 import time
 import os
+import re
 import requests
 import urllib.request
 import urllib.error
@@ -156,11 +157,22 @@ def parsepapers(papers,filename="parsepapers.tex",translations=None):
         translations = load_translations('en')
 
     out=[]
+    # Map database keys to translation keys
+    label_map = {
+        'submitted': 'submitted_label',
+        'published': 'published_label',
+        'collab': 'collab_label',
+        'others': 'others_label'
+    }
+    
     for k in ['submitted','published','collab','others']:
         i = len(papers[k]['data'])
 
         if i>=1:
-            out.append("\\textcolor{color1}{\\textbf{"+papers[k]['label']+":}}")
+            # Use translation instead of database label
+            label_key = label_map.get(k, k + '_label')
+            label_text = translations['papers'].get(label_key, papers[k]['label'])
+            out.append("\\textcolor{color1}{\\textbf{"+label_text+":}}")
             if k in ['submitted', 'published']:
                 out.append("")
                 out.append("\\vspace{-0.1cm}")
@@ -218,8 +230,18 @@ def parsetalks(talks,filename="parsetalks.tex",translations=None):
     out.append("\\vspace{0.2cm}")
     out.append("")
 
+    # Map database keys to translation keys
+    label_map = {
+        'conferences': 'conferences_label',
+        'seminars': 'seminars_label',
+        'outreach': 'outreach_label'
+    }
+    
     for k in ['conferences','seminars', 'outreach']: #,'lectures','posters','outreach']:
-        out.append("\\textcolor{color1}{\\textbf{"+talks[k]['label']+":}}")
+        # Use translation instead of database label
+        label_key = label_map.get(k, k + '_label')
+        label_text = translations['talks'].get(label_key, talks[k]['label'])
+        out.append("\\textcolor{color1}{\\textbf{"+label_text+":}}")
         out.append("\\vspace{-0.5cm}")
         out.append("")
         out.append("\cvitem{}{\small\hspace{-1cm}\\begin{longtable}{rp{0.3cm}p{15.8cm}}")
@@ -371,9 +393,9 @@ def metricspapers(papers,filename="metricspapers.tex",translations=None):
             if p['supervised'] == "True" and k == 'published':
                 supervised+=1
     if supervised == 0:
-        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+").\\\\")
+        out.append("& & ("+translations['metrics']['out_of_which']+" \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+").\\\\")
     else:
-        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+" and \\textbf{"+str(supervised)+"}\, "+translations['metrics']['lead_supervised']+").\\\\")
+        out.append("& & ("+translations['metrics']['out_of_which']+" \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+" and \\textbf{"+str(supervised)+"}\, "+translations['metrics']['lead_supervised']+").\\\\")
     out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & "+translations['metrics']['collab_papers_contrib']+"\\\\")
     out.append("&\\textbf{"+str(papers['collab']['total'])+"} & "+translations['metrics']['collab_papers_total']+"\\\\")
 
@@ -691,6 +713,165 @@ def replacekeys():
     with open('publist.bib', 'w') as f:
         f.write(publist)
 
+def _get_template_or_file(basename):
+    """Helper function to get template file path, falling back to the working file.
+    
+    Args:
+        basename: Base name of the file (e.g., 'CV.tex')
+    
+    Returns:
+        Path to the template file if it exists, otherwise the working file path.
+    """
+    template_file = basename + '.template'
+    return template_file if os.path.exists(template_file) else basename
+
+
+def localize_structure_files(translations):
+    """Apply translations to structure files from their templates.
+    
+    This function reads the English template files (.template) and generates
+    localized working files (.tex) by replacing hardcoded English strings with
+    translations from the specified language JSON file.
+    
+    Files localized:
+    - CV.tex: Main CV document structure
+    - preamble.tex: LaTeX preamble including babel language setting
+    - publist.tex: Publication list document
+    - talklist.tex: Talks/presentations list document
+    
+    Args:
+        translations: Dictionary containing translation strings loaded from JSON file.
+    """
+    print("Localizing structure files")
+    
+    # Helper to read template file
+    def read_template(basename):
+        template_file = _get_template_or_file(basename)
+        with open(template_file, 'r', encoding='utf-8') as f:
+            return f.read()
+    
+    # Localize CV.tex
+    cv_content = read_template('CV.tex')
+    
+    # Replace hardcoded English strings with translations
+    replacements = {
+        # Document structure
+        r'\mytitle{Curriculum Vit\ae}': r'\mytitle{' + translations['labels']['curriculum_vitae'] + '}',
+        r'\section{Contacts}': r'\section{' + translations['sections']['contacts'] + '}',
+        r'\section{Academic positions}': r'\section{' + translations['sections']['academic_positions'] + '}',
+        r'\section{Education}': r'\section{' + translations['sections']['education'] + '}',
+        r'\section{Metrics}': r'\section{' + translations['sections']['metrics'] + '}',
+        r'\section{Codes \& Datasets}': r'\section{' + translations['sections']['codes_datasets'] + '}',
+        r'\section{Grants, Prizes, \& Awards}': r'\section{' + translations['sections']['grants_prizes_awards'] + '}',
+        r'\section{Student supervision}': r'\section{' + translations['sections']['student_supervision'] + '}',
+        r'\section{Academic service, editorial and research responsibilities}': r'\section{' + translations['sections']['academic_service'] + '}',
+        r'\section{Skills}': r'\section{' + translations['sections']['skills'] + '}',
+        r'\section{Hobbies}': r'\section{' + translations['sections']['hobbies'] + '}',
+        r'\section{Publications}': r'\section{' + translations['sections']['publications'] + '}',
+        r'\section{Seminar \& Talks}': r'\section{' + translations['sections']['seminars_talks'] + '}',
+        
+        # Labels
+        r'\cvitem{Email}': r'\cvitem{' + translations['labels']['email'] + '}',
+        r'\cvitem{Address}': r'\cvitem{' + translations['labels']['address'] + '}',
+        r'\cvitem{Nationality}': r'\cvitem{' + translations['labels']['nationality'] + '}',
+        r'\cvitem{Website \& publications record}': r'\cvitem{' + translations['labels']['website_publications'] + '}',
+        r'\textbf{Date:}': r'\textbf{' + translations['labels']['date'] + ':}',
+        r'\textbf{Signature:}': r'\textbf{' + translations['labels']['signature'] + ':}',
+        r'{\textit{Supervisor}}': r'{\textit{' + translations['labels']['supervisor'] + '}}',
+        r'{\textit{Thesis Title}}': r'{\textit{' + translations['labels']['thesis_title'] + '}}',
+        r'{\textit{Thesis title}}': r'{\textit{' + translations['labels']['thesis_title_lower'] + '}}',
+        r'{\textit{Final degree grade}}': r'{\textit{' + translations['labels']['final_degree_grade'] + '}}',
+        r'{\textit{Main activity}}': r'{\textit{' + translations['labels']['main_activity'] + '}}',
+        r'\textit{Content}': r'\textit{' + translations['labels']['content'] + '}',
+        
+        # CV content strings  
+        r'Relativistic astrophysicist, advanced data analysis and statistical frameworks for Bayesian and frequentist inference. Space-mission modelling, signal detection and parameter estimation in gravitational-wave astronomy. Gravitational-wave lensing. Population inference, stochastic background searches. Milky Way morphology, supernovae precursors, supermassive black holes accretion model inference.': translations['cv_content']['header_summary'],
+        r'\textbf{Full list of publications}': r'\textbf{' + translations['cv_content']['full_list_publications'] + '}',
+        r'\textbf{Full list of presentations}': r'\textbf{' + translations['cv_content']['full_list_presentations'] + '}',
+        r'available': translations['cv_content']['available'],
+        r'below and': translations['cv_content']['below_and'],
+        r'\textbf{\textcolor{black}{Career prizes:}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['career_prizes'] + '}}',
+        r'\textbf{\textcolor{black}{Grants:}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['grants'] + '}}',
+        r'\textbf{\textcolor{black}{Invited research visits:}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['invited_research_visits'] + '}}',
+        r'\textbf{\textcolor{black}{Taught classes}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['taught_classes'] + '}}',
+        r'\textbf{\textcolor{black}{Tutoring}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['tutoring'] + '}}',
+        r'\textbf{\textcolor{black}{International collaboration responsibilities}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['international_collaboration'] + '}}',
+        r'\textbf{\textcolor{black}{Editorial responsibilities}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['editorial_responsibilities'] + '}}',
+        r'\textbf{\textcolor{black}{Conference organizer}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['conference_organizer'] + '}}',
+        r'\textbf{\textcolor{black}{Outreach \& public engagement}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['outreach_public_engagement'] + '}}',
+        r'\textbf{\textcolor{black}{Professional recognition and service}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['professional_recognition'] + '}}',
+        r'\textbf{\textcolor{black}{Memberships}}': r'\textbf{\textcolor{black}{' + translations['cv_content']['memberships'] + '}}',
+        r'\textbf{\textcolor{black}{Acad.Year}}': r'\textbf{\textcolor{black}{' + translations['labels']['acad_year'] + '}}',
+        r'\cvitem{Programming languages}': r'\cvitem{' + translations['cv_content']['programming_languages'] + '}',
+        r'\cvitem{Other scientific tools}': r'\cvitem{' + translations['cv_content']['other_scientific_tools'] + '}',
+        r'\cvitem{Languages}': r'\cvitem{' + translations['cv_content']['languages'] + '}',
+        r'Swimming, running, rock climbing, photography. Sci-fi books, electronic music.': translations['cv_content']['hobbies_text'],
+        
+        # Thesis descriptions and activities
+        r'This thesis explores a number of topics related to Bayesian inference in gravitational-wave astronomy. From hierarchical inference on population of stellar mass binary black hole mergers, to the development of an end-to-end parameter estimation routine for space-based interferometers. Other topics are investigated: population of binary white dwarfs in satellite galaxies of the Milky Way; constraints from stochastic background on lensing of gravitational waves from binary neutron star and binary black hole mergers; statistical techniques for simultaneous inference on multiple undistinguishable sources.': translations['cv_content']['phd_thesis_desc_1'],
+        r'This thesis explored the idea of using functional formalism from stochastic processes and classical field theory to develop a new detection algorithm, with improved performance, for non-gaussian stochastic backgrounds of gravitational waves.': translations['cv_content']['msc_thesis_desc'],
+        r'We estimated the contribution to noise level in second and third generation ground-based detectors due to primary and secondary cosmic ray showers impinging on the interferometer mirrors.': translations['cv_content']['internship_desc'],
+        r'This thesis explored the idea of using differential geometry formalism (as defined in the context of Information theory) to develop a template placing algorithm over source parameter space with non-trivial manifold structure.': translations['cv_content']['bsc_thesis_desc'],
+        
+        # Grant and visit labels
+        r'{Travel Grant}': r'{' + translations['cv_content']['travel_grant'] + '}',
+        r'{Research visit': r'{' + translations['cv_content']['research_visit'],
+        
+        # Course content
+        r'Introduction to gravitational-wave data analysis.': translations['cv_content']['course_content_1'],
+        r'Space-based and ground-based interferometers.': translations['cv_content']['course_content_2'],
+        r'Source populations: compact object binaries, stochastic backgrounds.': translations['cv_content']['course_content_3'],
+        r'Signal modeling: galactic and extragalactic compact object binaries': translations['cv_content']['course_content_4'],
+        r'astrophysical and cosmological stochastic backgrounds.': translations['cv_content']['course_content_5'],
+        r'Signal detection and parameter estimation: frequentist and Bayesian approaches.': translations['cv_content']['course_content_6'],
+        r'Advanced stochastic sampling techniques.': translations['cv_content']['course_content_7'],
+        r'Python programming, simulation of physical systems in celestial': translations['cv_content']['course_content_8'],
+        r'and classical mechanics, thermodynamics, electromagnetism. Data analysis.': translations['cv_content']['course_content_9'],
+        r'Linear algebra, differential and integral calculus, differenzial equations': translations['cv_content']['course_content_10'],
+        r'Groups and representations theory': translations['cv_content']['course_content_11']
+    }
+    
+    for old, new in replacements.items():
+        cv_content = cv_content.replace(old, new)
+    
+    with open('CV.tex', 'w', encoding='utf-8') as f:
+        f.write(cv_content)
+    
+    # Localize publist.tex
+    publist_content = read_template('publist.tex')
+    publist_content = publist_content.replace(
+        r'\mytitle{Publication list}',
+        r'\mytitle{' + translations['labels']['publication_list'] + '}'
+    )
+    
+    with open('publist.tex', 'w', encoding='utf-8') as f:
+        f.write(publist_content)
+    
+    # Localize talklist.tex
+    talklist_content = read_template('talklist.tex')
+    talklist_content = talklist_content.replace(
+        r'\mytitle{Presentations}',
+        r'\mytitle{' + translations['labels']['presentations_list'] + '}'
+    )
+    
+    with open('talklist.tex', 'w', encoding='utf-8') as f:
+        f.write(talklist_content)
+    
+    # Localize preamble.tex
+    preamble_content = read_template('preamble.tex')
+    
+    # Replace babel language if specified in translations
+    # Use regex to match any language in the babel package
+    if 'babel_language' in translations:
+        preamble_content = re.sub(
+            r'\\usepackage\[([a-zA-Z]+)\]\{babel\}',
+            r'\\usepackage[' + translations['babel_language'] + ']{babel}',
+            preamble_content
+        )
+    
+    with open('preamble.tex', 'w', encoding='utf-8') as f:
+        f.write(preamble_content)
+
 def parseshort():
     print("Update CVshort")
     with open('CV.tex', 'r') as f:
@@ -735,6 +916,9 @@ if __name__ == "__main__":
     # Load translations
     translations = load_translations(args.lang)
     print(f"Using language: {translations['language_name']} ({translations['language_code']})")
+    
+    # Localize structure files based on selected language
+    localize_structure_files(translations)
     
     if args.connected:
         # Set testing=True to avoid API limit
