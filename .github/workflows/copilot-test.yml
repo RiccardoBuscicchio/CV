@@ -1,22 +1,12 @@
-name: CV workflow
+name: Copilot branch test
 
-# This workflow builds and deploys CV, publication list, and talk list PDFs
-# Optimizations:
-# - Caches full conda environment to avoid rebuilding on every run
-# - Benefits from Docker layer caching for LaTeX compilation
-# - See CI_OPTIMIZATION.md for detailed documentation
+# This workflow tests CV compilation on copilot branches without deploying
+# It runs the same build steps as main.yml but skips the deployment to orphan branch
 
 on:
   push:
     branches:
-#      - main_eng_custom
-      - main
-    paths-ignore:
-      - '**/README.md'
-  pull_request:
-    branches:
-      - main_eng_custom
-      - main
+      - 'copilot/**'
     paths-ignore:
       - '**/README.md'
 
@@ -50,9 +40,6 @@ jobs:
     - name: Configure conda to use cached pkgs
       run: conda config --add pkgs_dirs ~/conda_pkgs_dir
 
-#    - name: Conda environment
-#      run: conda env create --name buildcv --file environment.yml
-
     - name: Run Python script
       run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }}"
       
@@ -80,14 +67,14 @@ jobs:
         compiler: pdflatex
         args: -interaction=nonstopmode -shell-escape
     
-    - name: LaTeX talklist
+    - name: LaTeX CVshort
       uses: dante-ev/latex-action@latest
       with:
         root_file: CVshort.tex
         compiler: pdflatex
         args: -interaction=nonstopmode -shell-escape
         
-    - name: Prepare
+    - name: Prepare artifacts
       run: |
         mkdir pdfs/
         mkdir texs/
@@ -97,33 +84,5 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: artifacts
+        name: cv-test-artifacts
         path: pdfs/
-
-  deploy:
-    # Edit here if compiling multiple papers
-    needs: [build]
-    runs-on: ubuntu-latest
-    
-    steps:
-    
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: pdfs
-      
-      - name: move
-        run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
-        
-      - name: deploy on orphan branch
-        uses: peaceiris/actions-gh-pages@v4.0.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./github_deploy
-#          publish_branch: build_custom
-          publish_branch: build
-          force_orphan: true
-
