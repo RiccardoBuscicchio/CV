@@ -44,7 +44,8 @@
     "paper_submission": "paper in submission stage,",
     "other_publications": "other publications (thesis, white papers, reviews)",
     "talks_conferences": "talks at conferences,",
-    "talks_seminars": "talks at department seminars,"
+    "talks_seminars": "talks at department seminars,",
+    "posters_conferences": "posters at conferences,"
   },
   "supervision": {
     "note": "According to current national regulations, as a research fellow I cannot be officially appointed as supervisor of students at any level. However, upon agreement with the relevant permanent staff, I have supervised the work of students in the percentages shown below.",
@@ -66,7 +67,6 @@
     "conferences_label": "Conferences and workshops",
     "seminars_label": "Seminars",
     "outreach_label": "Outreach",
-    "invited_note": "Invited talks marked with *.",
-    "posters_conferences": "posters at conferences,"
+    "invited_note": "Invited talks marked with *."
   }
 }

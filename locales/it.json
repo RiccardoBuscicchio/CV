@@ -44,7 +44,8 @@
     "paper_submission": "articolo in fase di sottomissione,",
     "other_publications": "altre pubblicazioni (tesi, white papers, reviews)",
     "talks_conferences": "conferenze,",
-    "talks_seminars": "seminari dipartimentali,"
+    "talks_seminars": "seminari dipartimentali,",
+    "posters_conferences": "poster a conferenze,"
   },
   "supervision": {
     "note": "Secondo le attuali normative nazionali, in qualit\\`{a} di assegnista di ricerca non posso essere ufficialmente nominato supervisore di studenti a nessun livello. Tuttavia, previo accordo con il personale permanente competente, ho supervisionato il lavoro degli studenti nelle percentuali indicate di seguito.",
@@ -66,7 +67,6 @@
     "conferences_label": "Conferenze e workshop",
     "seminars_label": "Seminari",
     "outreach_label": "Divulgazione",
-    "invited_note": "Conferenze su invito contrassegnate con *.",
-    "posters_conferences": "poster a conferenze,"
+    "invited_note": "Conferenze su invito contrassegnate con *."
   }
 }

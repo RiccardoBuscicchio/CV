@@ -441,7 +441,7 @@ def metricstalks(talks,filename="metricstalks.tex",translations=None):
     out.append("\\textbf{"+str(len(talks['seminars']['data']))+"} "+translations['metrics']['talks_seminars'])
     
     if ('posters' in talks.keys()) and (len(talks['posters']['data'])>0):
-        out.append("\\textbf{"+str(len(talks['posters']['data']))+"} "+translations['talks']['posters_conferences'])
+        out.append("\\textbf{"+str(len(talks['posters']['data']))+"} "+translations['metrics']['posters_conferences'])
     out.append("\\\\ & &")
 
     invited = []
