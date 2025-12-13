@@ -23,6 +23,17 @@ import warnings
 #ssl._create_default_https_context = ssl._create_unverified_context
 
 
+def load_translations(lang='en'):
+    """Load translation file for the specified language."""
+    locale_file = os.path.join('locales', f'{lang}.json')
+    if not os.path.exists(locale_file):
+        print(f"Warning: Translation file for '{lang}' not found. Using English.")
+        locale_file = os.path.join('locales', 'en.json')
+    
+    with open(locale_file, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
 def hindex(citations):
     return sum(x >= i + 1 for i, x in enumerate(sorted(  list(citations), reverse=True)))
 
@@ -134,9 +145,12 @@ def inspire_citations(papers,testing=False):
     return papers
 
 
-def parsepapers(papers,filename="parsepapers.tex"):
+def parsepapers(papers,filename="parsepapers.tex",translations=None):
 
     print('Parse papers from database')
+    
+    if translations is None:
+        translations = load_translations('en')
 
     out=[]
     for k in ['submitted','published','collab','others']:
@@ -147,7 +161,7 @@ def parsepapers(papers,filename="parsepapers.tex"):
             if k in ['submitted', 'published']:
                 out.append("")
                 out.append("\\vspace{-0.1cm}")
-                out.append("{\\footnotesize Supervised students publications marked with *.}")
+                out.append("{\\footnotesize "+translations['papers']['supervised_note']+"}")
                 out.append("\\vspace{0.1cm}")
                 out.append("")
         out.append("\\vspace{-0.5cm}")
@@ -189,12 +203,15 @@ def parsepapers(papers,filename="parsepapers.tex"):
     with open(filename,"w") as f: f.write("\n".join(out))
 
 
-def parsetalks(talks,filename="parsetalks.tex"):
+def parsetalks(talks,filename="parsetalks.tex",translations=None):
 
     print('Parse talks from database')
+    
+    if translations is None:
+        translations = load_translations('en')
 
     out=[]
-    out.append("Invited talks marked with *.")
+    out.append(translations['papers']['invited_note'])
     out.append("\\vspace{0.2cm}")
     out.append("")
 
@@ -225,12 +242,15 @@ def parsetalks(talks,filename="parsetalks.tex"):
     with open(filename,"w") as f: f.write("\n".join(out))
 
 
-def parsesupervision(supervision,filename="parsesupervision.tex"):
+def parsesupervision(supervision,filename="parsesupervision.tex",translations=None):
 
     print('Parse supervision from database')
+    
+    if translations is None:
+        translations = load_translations('en')
 
     out=[]
-    out.append("{\\footnotesize According to current national regulations, as a research fellow I cannot be officially appointed as supervisor of students at any level. However, upon agreement with the relevant permanent staff, I have supervised the work of students in the percentages shown below.}")
+    out.append("{\\footnotesize "+translations['supervision']['note']+"}")
     out.append("")
     out.append("\\vspace{0.2cm}")
 
@@ -256,9 +276,12 @@ def parsesupervision(supervision,filename="parsesupervision.tex"):
     with open(filename,"w") as f: f.write("\n".join(out))
 
 
-def parserefereeing(refereeing,filename="parserefereeing.tex"):
+def parserefereeing(refereeing,filename="parserefereeing.tex",translations=None):
 
     print('Parse refereeing from database')
+    
+    if translations is None:
+        translations = load_translations('en')
 
     out=[]
     
@@ -288,9 +311,12 @@ def parserefereeing(refereeing,filename="parserefereeing.tex"):
     with open(filename,"w") as f: f.write("\n".join(out))
 
 
-def parsecodesdata(codesdata,filename="parsecodesdata.tex"):
+def parsecodesdata(codesdata,filename="parsecodesdata.tex",translations=None):
 
     print('Parse codes and datasets from database')
+    
+    if translations is None:
+        translations = load_translations('en')
 
     out=[]
     
@@ -299,7 +325,7 @@ def parsecodesdata(codesdata,filename="parsecodesdata.tex"):
             continue
         
         out.append("\\begin{tabular}{@{\\hskip 0.4cm}l@{\\hskip 0.4in}c@{\\hskip 0.1in}c@{\\hskip 0.1in}l@{\\hskip 0.1in}c}")
-        out.append("\\textbf{\\textcolor{black}{Title}} & \\textbf{\\textcolor{black}{Code}}& \\textbf{\\textcolor{black}{Dataset}} & \\textbf{\\textcolor{black}{Zenodo DOI}} & \\textbf{\\textcolor{black}{Public}}\\\\")
+        out.append("\\textbf{\\textcolor{black}{"+translations['codes']['title']+"}} & \\textbf{\\textcolor{black}{"+translations['codes']['code']+"}}& \\textbf{\\textcolor{black}{"+translations['codes']['dataset']+"}} & \\textbf{\\textcolor{black}{"+translations['codes']['zenodo_doi']+"}} & \\textbf{\\textcolor{black}{"+translations['codes']['public']+"}}\\\\")
         
         for p in codesdata[k]['data']:
             code_mark = "\\checkmark" if p['code'] else ""
@@ -320,14 +346,17 @@ def parsecodesdata(codesdata,filename="parsecodesdata.tex"):
     with open(filename,"w") as f: f.write("\n".join(out))
 
 
-def metricspapers(papers,filename="metricspapers.tex"):
+def metricspapers(papers,filename="metricspapers.tex",translations=None):
 
     print('Compute papers metrics')
     
+    if translations is None:
+        translations = load_translations('en')
+    
     out=[]
     out.append("\cvitem{}{\\begin{tabular}{rcl}")
-    out.append("\\textcolor{mark_color}{\\textbf{Publications}}: & \hspace{0.3cm} & \\\\")
-    out.append("&\\textbf{"+str(len(papers['published']['data']))+"\, } & short-author papers published in major peer-reviewed journals\\\\")
+    out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['publications']+"}}: & \hspace{0.3cm} & \\\\")
+    out.append("&\\textbf{"+str(len(papers['published']['data']))+"\, } & "+translations['metrics']['short_author_papers']+"\\\\")
 
     first_author = []
     supervised = 0
@@ -339,11 +368,11 @@ def metricspapers(papers,filename="metricspapers.tex"):
             if p['supervised'] == "True" and k == 'published':
                 supervised+=1
     if supervised == 0:
-        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers).\\\\")
+        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+").\\\\")
     else:
-        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, first-authored papers and \\textbf{"+str(supervised)+"}\, lead by supervised student).\\\\")
-    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & collaboration papers with substantial contribution, published in major peer-reviewed journals\\\\")
-    out.append("&\\textbf{"+str(papers['collab']['total'])+"} & collaboration papers in total, published in major peer-reviewed journals\\\\")
+        out.append("& & (out of which \\textbf{"+str(np.sum(first_author))+"}\, "+translations['metrics']['first_authored']+" and \\textbf{"+str(supervised)+"}\, "+translations['metrics']['lead_supervised']+").\\\\")
+    out.append("&\\textbf{"+str(len(papers['collab']['data']))+"} & "+translations['metrics']['collab_papers_contrib']+"\\\\")
+    out.append("&\\textbf{"+str(papers['collab']['total'])+"} & "+translations['metrics']['collab_papers_total']+"\\\\")
 
     # first_author = []
     # for k in ['submitted','published']:
@@ -356,9 +385,9 @@ def metricspapers(papers,filename="metricspapers.tex"):
  #   out.append("&\\textbf{"+str(papers['collab']['total'])+"} & collaboration papers, with substantial contribution, published in major peer-reviewed journals\\\\")
 
     if len(papers['submitted']['data'])>1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, papers in submission stage,\\\\")
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, "+translations['metrics']['papers_submission']+"\\\\")
     elif len(papers['submitted']['data'])==1:
-        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, paper in submission stage,")    
+        out.append("&\\textbf{"+str(len(papers['submitted']['data']))+"}& \, "+translations['metrics']['paper_submission']+"")    
 
 #    press_release = []
 #    for k in ['submitted','published', 'collab']: #, 'proceedings']:
@@ -366,7 +395,7 @@ def metricspapers(papers,filename="metricspapers.tex"):
 #            press_release.append("press release" in p['more'])
 #    out.append("and \\textbf{"+str(np.sum(press_release))+"} papers covered by press releases).\\\\")
 
-    out.append("&\\textbf{"+str(len(papers['others']['data']))+"}& \, other publications (thesis, white papers, reviews)")
+    out.append("&\\textbf{"+str(len(papers['others']['data']))+"}& \, "+translations['metrics']['other_publications'])
     out.append("\end{tabular} }")
 
 
@@ -383,10 +412,10 @@ def metricspapers(papers,filename="metricspapers.tex"):
 
     rounded = int(totalnumber/100)*100
 
-    out.append("\\textcolor{mark_color}{\\textbf{Total number of citations}}: >"+str(rounded)+".")
-    out.append("\\textcolor{mark_color}{\\textbf{h-index}}: "+str(hind)+" (from ADS and iNSPIRE record).")
+    out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['total_citations']+"}}: >"+str(rounded)+".")
+    out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['h_index']+"}}: "+str(hind)+" (from ADS and iNSPIRE record).")
     out.append("\\\\")
-    out.append("\\textcolor{mark_color}{\\textbf{Web links to list services}}:")
+    out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['web_links']+}}:")
     out.append("\href{https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_doctype%7D&fq_doctype=(doctype%3A%22misc%22%20OR%20doctype%3A%22inproceedings%22%20OR%20doctype%3A%22article%22%20OR%20doctype%3A%22eprint%22)&q=%20author%3A%22Buscicchio%2C%20Riccardo%22&sort=citation_count%20desc%2C%20bibcode%20desc&p_=0}{\\textsc{ADS}};")
     out.append("\href{https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=author%3AR.Buscicchio&ui-citation-summary=true}{\\textsc{iNSPIRE}};")
     out.append("\href{http://arxiv.org/a/buscicchio_r_1.html}{\\textsc{arXiv}};")
@@ -395,15 +424,18 @@ def metricspapers(papers,filename="metricspapers.tex"):
     with open(filename,"w") as f: f.write("\n".join(out))
 
 
-def metricstalks(talks,filename="metricstalks.tex"):
+def metricstalks(talks,filename="metricstalks.tex",translations=None):
 
     print('Compute talks metrics')
+    
+    if translations is None:
+        translations = load_translations('en')
 
     out=[]
     out.append("\cvitem{}{\\begin{tabular}{rcl}")
-    out.append("\\textcolor{mark_color}{\\textbf{Presentations}}: &\hspace{0.3cm} &")
-    out.append("\\textbf{"+str(len(talks['conferences']['data']))+"} talks at conferences,")
-    out.append("\\textbf{"+str(len(talks['seminars']['data']))+"} talks at department seminars,")
+    out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['presentations']+"}}: &\hspace{0.3cm} &")
+    out.append("\\textbf{"+str(len(talks['conferences']['data']))+"} "+translations['metrics']['talks_conferences'])
+    out.append("\\textbf{"+str(len(talks['seminars']['data']))+"} "+translations['metrics']['talks_seminars'])
     
     if ('posters' in talks.keys()) and (len(talks['posters']['data'])>0):
         out.append("\\textbf{"+str(len(talks['posters']['data']))+"} posters at conferences,")
@@ -693,20 +725,25 @@ if __name__ == "__main__":
     parser.add_argument("--compiling", action="store_true", help="Set compiling to True")
     parser.add_argument("--token", type=str, help="ADS authentication token")
     parser.add_argument("--short", action="store_true", help="Set short to true (build the short version of the CV)")
+    parser.add_argument("--lang", type=str, default="en", help="Language code for localization (e.g., 'en', 'it')")
     
     args = parser.parse_args()
+    
+    # Load translations
+    translations = load_translations(args.lang)
+    print(f"Using language: {translations['language_name']} ({translations['language_code']})")
     
     if args.connected:
         # Set testing=True to avoid API limit
         papers = ads_citations(papers,testing=args.testing, token=args.token)
         papers = inspire_citations(papers,testing=args.testing)
-        parsepapers(papers)
-        parsetalks(talks)
-        parsesupervision(supervision)
-        parserefereeing(refereeing)
-        parsecodesdata(codesdata)
-        metricspapers(papers)
-        metricstalks(talks)
+        parsepapers(papers, translations=translations)
+        parsetalks(talks, translations=translations)
+        parsesupervision(supervision, translations=translations)
+        parserefereeing(refereeing, translations=translations)
+        parsecodesdata(codesdata, translations=translations)
+        metricspapers(papers, translations=translations)
+        metricstalks(talks, translations=translations)
         
     if args.short:
         parseshort()
