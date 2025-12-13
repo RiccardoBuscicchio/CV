@@ -788,7 +788,7 @@ def localize_structure_files(translations):
     # Use regex to match any language in the babel package
     if 'babel_language' in translations:
         preamble_content = re.sub(
-            r'\\usepackage\[([a-z]+)\]\{babel\}',
+            r'\\usepackage\[([a-zA-Z]+)\]\{babel\}',
             r'\\usepackage[' + translations['babel_language'] + ']{babel}',
             preamble_content
         )
