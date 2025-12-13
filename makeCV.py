@@ -415,7 +415,7 @@ def metricspapers(papers,filename="metricspapers.tex",translations=None):
     out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['total_citations']+"}}: >"+str(rounded)+".")
     out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['h_index']+"}}: "+str(hind)+" (from ADS and iNSPIRE record).")
     out.append("\\\\")
-    out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['web_links']+}}:")
+    out.append("\\textcolor{mark_color}{\\textbf{"+translations['metrics']['web_links']+"}}:")
     out.append("\href{https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_doctype%7D&fq_doctype=(doctype%3A%22misc%22%20OR%20doctype%3A%22inproceedings%22%20OR%20doctype%3A%22article%22%20OR%20doctype%3A%22eprint%22)&q=%20author%3A%22Buscicchio%2C%20Riccardo%22&sort=citation_count%20desc%2C%20bibcode%20desc&p_=0}{\\textsc{ADS}};")
     out.append("\href{https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=author%3AR.Buscicchio&ui-citation-summary=true}{\\textsc{iNSPIRE}};")
     out.append("\href{http://arxiv.org/a/buscicchio_r_1.html}{\\textsc{arXiv}};")
