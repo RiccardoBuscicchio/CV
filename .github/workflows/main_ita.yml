@@ -1,12 +1,22 @@
-name: Copilot branch test
+name: CV workflow (Italian)
 
-# This workflow tests CV compilation on copilot branches without deploying
-# It runs the same build steps as main.yml but skips the deployment to orphan branch
+# This workflow builds and deploys Italian CV, publication list, and talk list PDFs
+# Optimizations:
+# - Caches full conda environment to avoid rebuilding on every run
+# - Benefits from Docker layer caching for LaTeX compilation
+# - See CI_OPTIMIZATION.md for detailed documentation
 
 on:
   push:
     branches:
-      - 'copilot/**'
+      - main
+      - dev
+    paths-ignore:
+      - '**/README.md'
+  pull_request:
+    branches:
+      - main
+      - dev
     paths-ignore:
       - '**/README.md'
 
@@ -40,11 +50,11 @@ jobs:
     - name: Configure conda to use cached pkgs
       run: conda config --add pkgs_dirs ~/conda_pkgs_dir
 
-    - name: Run Python script
-      run: conda run --name buildcv bash -c "python makeCV.py --connected --token ${{ secrets.ADS_TOKEN }}"
+    - name: Run Python script (Italian)
+      run: conda run --name buildcv bash -c "python makeCV.py --connected --lang it --token ${{ secrets.ADS_TOKEN }}"
       
-    - name: Run Python script for short CV
-      run: conda run --name buildcv bash -c "python makeCV.py --short"
+    - name: Run Python script for short CV (Italian)
+      run: conda run --name buildcv bash -c "python makeCV.py --short --lang it"
 
     - name: LaTeX CV
       uses: dante-ev/latex-action@latest
@@ -74,7 +84,7 @@ jobs:
         compiler: pdflatex
         args: -interaction=nonstopmode -shell-escape
         
-    - name: Prepare artifacts
+    - name: Prepare
       run: |
         mkdir pdfs/
         mkdir texs/
@@ -84,5 +94,32 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: cv-test-artifacts
+        name: artifacts-ita
         path: pdfs/
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: pdfs
+      
+      - name: move
+        run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
+        
+      - name: deploy on orphan branch
+        uses: peaceiris/actions-gh-pages@v4.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./github_deploy
+          publish_branch: build_ita
+          force_orphan: true
+

@@ -1,0 +1,72 @@
+{
+  "language_code": "it",
+  "language_name": "Italiano",
+  "sections": {
+    "contacts": "Contatti",
+    "academic_positions": "Posizioni accademiche",
+    "education": "Istruzione",
+    "metrics": "Metriche",
+    "codes_datasets": "Codici e Dataset",
+    "grants_prizes_awards": "Borse, Premi e Riconoscimenti",
+    "student_supervision": "Supervisione studenti",
+    "academic_service": "Servizio accademico, responsabilit\\`{a} editoriali e di ricerca",
+    "skills": "Competenze",
+    "hobbies": "Interessi",
+    "publications": "Pubblicazioni",
+    "seminars_talks": "Seminari e Conferenze"
+  },
+  "labels": {
+    "email": "Email",
+    "address": "Indirizzo",
+    "nationality": "Nazionalit\\`{a}",
+    "website_publications": "Sito web e registro pubblicazioni",
+    "curriculum_vitae": "Curriculum Vitae"
+  },
+  "papers": {
+    "submitted_label": "Articoli brevi e di collaborazione sottomessi a cui ho contribuito sostanzialmente",
+    "published_label": "Articoli brevi pubblicati in riviste scientifiche peer-reviewed",
+    "collab_label": "Articoli di collaborazione, con contributo sostanziale, pubblicati in riviste scientifiche peer-reviewed",
+    "others_label": "Altre pubblicazioni",
+    "supervised_note": "Pubblicazioni di studenti supervisionati contrassegnate con *."
+  },
+  "metrics": {
+    "publications": "Pubblicazioni",
+    "presentations": "Presentazioni",
+    "total_citations": "Numero totale di citazioni",
+    "h_index": "indice h",
+    "web_links": "Collegamenti web ai servizi di elenco",
+    "short_author_papers": "articoli brevi pubblicati in riviste scientifiche peer-reviewed",
+    "first_authored": "articoli come primo autore",
+    "lead_supervised": "guidati da studente supervisionato",
+    "collab_papers_contrib": "articoli di collaborazione con contributo sostanziale, pubblicati in riviste scientifiche peer-reviewed",
+    "collab_papers_total": "articoli di collaborazione in totale, pubblicati in riviste scientifiche peer-reviewed",
+    "papers_submission": "articoli in fase di sottomissione,",
+    "paper_submission": "articolo in fase di sottomissione,",
+    "other_publications": "altre pubblicazioni (tesi, white papers, reviews)",
+    "talks_conferences": "conferenze,",
+    "talks_seminars": "seminari dipartimentali,",
+    "posters_conferences": "poster a conferenze,"
+  },
+  "supervision": {
+    "note": "Secondo le attuali normative nazionali, in qualit\\`{a} di assegnista di ricerca non posso essere ufficialmente nominato supervisore di studenti a nessun livello. Tuttavia, previo accordo con il personale permanente competente, ho supervisionato il lavoro degli studenti nelle percentuali indicate di seguito.",
+    "phd_label": "Studenti di dottorato",
+    "msc_label": "Studenti di laurea magistrale",
+    "bsc_label": "Studenti di laurea triennale"
+  },
+  "refereeing": {
+    "journals_label": "Riviste"
+  },
+  "codes": {
+    "title": "Titolo",
+    "code": "Codice",
+    "dataset": "Dataset",
+    "zenodo_doi": "DOI Zenodo",
+    "public": "Pubblico"
+  },
+  "talks": {
+    "conferences_label": "Conferenze e workshop",
+    "seminars_label": "Seminari",
+    "outreach_label": "Divulgazione",
+    "invited_note": "Conferenze su invito contrassegnate con *."
+  }
+}

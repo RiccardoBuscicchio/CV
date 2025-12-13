@@ -1,0 +1,72 @@
+{
+  "language_code": "en",
+  "language_name": "English",
+  "sections": {
+    "contacts": "Contacts",
+    "academic_positions": "Academic positions",
+    "education": "Education",
+    "metrics": "Metrics",
+    "codes_datasets": "Codes \\& Datasets",
+    "grants_prizes_awards": "Grants, Prizes, \\& Awards",
+    "student_supervision": "Student supervision",
+    "academic_service": "Academic service, editorial and research responsibilities",
+    "skills": "Skills",
+    "hobbies": "Hobbies",
+    "publications": "Publications",
+    "seminars_talks": "Seminar \\& Talks"
+  },
+  "labels": {
+    "email": "Email",
+    "address": "Address",
+    "nationality": "Nationality",
+    "website_publications": "Website \\& publications record",
+    "curriculum_vitae": "Curriculum Vit\\ae"
+  },
+  "papers": {
+    "submitted_label": "Submitted short-author and collaboration papers which I have substantially contributed to",
+    "published_label": "Short-author papers published in major peer-reviewed journals",
+    "collab_label": "Collaboration papers, with substantial contribution, published in major peer-reviewed journals",
+    "others_label": "Other publications",
+    "supervised_note": "Supervised students publications marked with *."
+  },
+  "metrics": {
+    "publications": "Publications",
+    "presentations": "Presentations",
+    "total_citations": "Total number of citations",
+    "h_index": "h-index",
+    "web_links": "Web links to list services",
+    "short_author_papers": "short-author papers published in major peer-reviewed journals",
+    "first_authored": "first-authored papers",
+    "lead_supervised": "lead by supervised student",
+    "collab_papers_contrib": "collaboration papers with substantial contribution, published in major peer-reviewed journals",
+    "collab_papers_total": "collaboration papers in total, published in major peer-reviewed journals",
+    "papers_submission": "papers in submission stage,",
+    "paper_submission": "paper in submission stage,",
+    "other_publications": "other publications (thesis, white papers, reviews)",
+    "talks_conferences": "talks at conferences,",
+    "talks_seminars": "talks at department seminars,",
+    "posters_conferences": "posters at conferences,"
+  },
+  "supervision": {
+    "note": "According to current national regulations, as a research fellow I cannot be officially appointed as supervisor of students at any level. However, upon agreement with the relevant permanent staff, I have supervised the work of students in the percentages shown below.",
+    "phd_label": "PhD students",
+    "msc_label": "MSc students",
+    "bsc_label": "BSc students"
+  },
+  "refereeing": {
+    "journals_label": "Journals"
+  },
+  "codes": {
+    "title": "Title",
+    "code": "Code",
+    "dataset": "Dataset",
+    "zenodo_doi": "Zenodo DOI",
+    "public": "Public"
+  },
+  "talks": {
+    "conferences_label": "Conferences and workshops",
+    "seminars_label": "Seminars",
+    "outreach_label": "Outreach",
+    "invited_note": "Invited talks marked with *."
+  }
+}
