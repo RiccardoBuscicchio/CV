@@ -23,6 +23,20 @@ if submitted:
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to'
     papers['submitted']['data'] = []
 
+    
+
+    papers['submitted']['data'].append({
+    "title":    """Identification of periodicities with arbitrary shapes in AGN light curves""",
+    "author":   "L. Bertassi, M. Charisi, R. Buscicchio, F. Rigamonti, J. Runnoe, M. Dotti",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2512.xxxx [astro.ph-IM]",
+    "ads":      "",
+    "inspire":  "Bertassi:xxxx",
+    "more":     "",
+    "supervised": "False"
+    })
+    
     papers['submitted']['data'].append({
     "title":    """samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
 Trans-Dimensional Bayesian Analysis""",
