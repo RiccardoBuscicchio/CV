@@ -30,9 +30,9 @@ if submitted:
     "author":   "L. Bertassi, M. Charisi, R. Buscicchio, F. Rigamonti, J. Runnoe, M. Dotti",
     "journal":  "",
     "link":     "",
-    "arxiv":    "arXiv:2512.xxxx [astro.ph-IM]",
-    "ads":      "",
-    "inspire":  "Bertassi:xxxx",
+    "arxiv":    "arXiv:2512.13688 [astro-ph.GA]",
+    "ads":      "2025arXiv251213688B",
+    "inspire":  "",
     "more":     "",
     "supervised": "False"
     })
