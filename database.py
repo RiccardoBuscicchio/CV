@@ -23,8 +23,19 @@ if submitted:
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to'
     papers['submitted']['data'] = []
 
+    papers['submitted']['data'].append({
+    "title":    """Fast pre-merger detection of massive black-hole binaries in LISA based on time-frequency excess power""",
+    "author":   "F. Nobili, M. Bellotti, R. Buscicchio, M. Dotti, A. Lupi",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2602.16792 [astro-ph.IM]",
+    "ads":      "2026arXiv260216792N",
+    "inspire":  "Nobili:2026cnr",
+    "more":     "",
+    "supervised": "True"
+    })
     
-
+    
     papers['submitted']['data'].append({
     "title":    """Identification of periodicities with arbitrary shapes in AGN light curves""",
     "author":   "L. Bertassi, M. Charisi, R. Buscicchio, F. Rigamonti, J. Runnoe, M. Dotti",
