@@ -533,7 +533,7 @@ if collab:
     papers['collab']['total'] = 60 # Add here the total of published collaboration papers.
     papers['collab']['data'] = []
 
-    papers['submitted']['data'].append({
+    papers['collab']['data'].append({
         "title":    "GWTC-4.0: An Introduction to Version 4.0 of the Gravitational-Wave Transient Catalog",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
         "journal":  "\\apjl (2025) 995 ",
