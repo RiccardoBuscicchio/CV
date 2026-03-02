@@ -85,19 +85,6 @@ Trans-Dimensional Bayesian Analysis""",
     "supervised": ""
     })
 
-
-    papers['submitted']['data'].append({
-    "title":    "GWTC-4.0: Updating the Gravitational-Wave Transient Catalog with Observations from the First Part of the Fourth LIGO-Virgo-KAGRA Observing Run",
-    "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2508.18082 [gr-qc]",
-    "ads":      "2025arXiv250818082T",
-    "inspire":  "LIGOScientific:2025slb",
-    "more":     "",
-    "supervised": ""
-    })
-
     papers['submitted']['data'].append({
     "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
     "author":   "A. Toubiana, D. Gerosa, M. Mould, S. Rinaldi, M. Arca Sedda, T. Bruel, R. Buscicchio, J. Gair, L. Paiella, F. Santoliquido, R. Tenorio, C. Ugolini",
@@ -546,6 +533,17 @@ if collab:
     papers['collab']['total'] = 60 # Add here the total of published collaboration papers.
     papers['collab']['data'] = []
 
+    papers['submitted']['data'].append({
+        "title":    "GWTC-4.0: An Introduction to Version 4.0 of the Gravitational-Wave Transient Catalog",
+        "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
+        "journal":  "\\apjl (2025) 995 ",
+        "link":     "https://iopscience.iop.org/article/10.3847/2041-8213/ae0c06",
+        "arxiv":    "arXiv:2508.18082 [gr-qc]",
+        "ads":      "2025ApJ...995L..18A",
+        "inspire":  "LIGOScientific:2025hdt",
+        "more":     ""
+    })
+
     papers['collab']['data'].append({
         "title":    "Search for gravitational-lensing signatures in the full third observing run of the LIGO-Virgo network",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
@@ -554,8 +552,7 @@ if collab:
         "arxiv":    "arXiv:2304.08393 [gr-qc]" ,
         "ads":      "2024ApJ...970..191A", 
         "inspire":  "LIGOScientific:2023bwz", 
-        "more":     "",
-        "supervised": ""
+        "more":     ""
         }),
 
     papers['collab']['data'].append({
@@ -583,10 +580,10 @@ if collab:
     papers['collab']['data'].append({
         "title":    "Tests of General Relativity with GWTC-3",
         "author":   "LIGO Scientific Collaboration, Virgo Collaboration, KAGRA collaboration",
-        "journal":  "\prd (in press)", 
-        "link":     "https://journals.aps.org/prd/accepted/17075Qf4Z7b11729787e85f1c18faca230d51e013", 
+        "journal":  "\prd 112 (2025) 084080", 
+        "link":     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.112.084080", 
         "arxiv":    "arXiv:2112.06861 [gr-qc]",
-        "ads":      "2021arXiv211206861T", 
+        "ads":      "2025PhRvD.112h4080A", 
         "inspire":  "LIGOScientific:2021sio", 
         "more":     ""
     })
