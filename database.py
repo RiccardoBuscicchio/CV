@@ -86,18 +86,6 @@ Trans-Dimensional Bayesian Analysis""",
     })
 
     papers['submitted']['data'].append({
-    "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
-    "author":   "A. Toubiana, D. Gerosa, M. Mould, S. Rinaldi, M. Arca Sedda, T. Bruel, R. Buscicchio, J. Gair, L. Paiella, F. Santoliquido, R. Tenorio, C. Ugolini",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2507.13249 [gr-qc]",
-    "ads":      "2025arXiv250713249T",
-    "inspire":  "Toubiana:2025syw",
-    "more":     "",
-    "supervised": ""
-    })
-
-    papers['submitted']['data'].append({
     "title":    "Bahamas: BAyesian inference with HAmiltonian Montecarlo for Astrophysical Stochastic background",
     "author":   "F. Pozzoli, R. Buscicchio, A. Klein, D. Chirico",
     "journal":  "",
@@ -139,6 +127,18 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
+    "author":   "A. Toubiana, D. Gerosa, M. Mould, S. Rinaldi, M. Arca Sedda, T. Bruel, R. Buscicchio, J. Gair, L. Paiella, F. Santoliquido, R. Tenorio, C. Ugolini",
+    "journal":  "\prd  (in press), (2025)",
+    "link":     "https://doi.org/10.1103/8xkp-zpj1",
+    "arxiv":    "arXiv:2507.13249 [gr-qc]",
+    "ads":      "2025arXiv250713249T",
+    "inspire":  "Toubiana:2025syw",
+    "more":     "",
+    "supervised": ""
+    })
 
     papers['published']['data'].append({
     "title":    "Environmental effects in the LISA stochastic signal from stellar-mass black hole binaries",
