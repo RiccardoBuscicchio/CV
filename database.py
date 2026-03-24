@@ -24,6 +24,18 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    """    Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
+    "author":   "A. Spadaro, J. Gair, S.R. Green, D. Gerosa, R. Buscicchio, N. Gupte, R. Tenorio, S. Clyne, M. Pürrer, N. Korsakova",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2603.20431 [astro-ph.HE]",
+    "ads":      "",
+    "inspire":  "Spadaro:2026evb",
+    "more":     "",
+    "supervised": "True"
+    })
+
+    papers['submitted']['data'].append({
     "title":    """Fast pre-merger detection of massive black-hole binaries in LISA based on time-frequency excess power""",
     "author":   "F. Nobili, M. Bellotti, R. Buscicchio, M. Dotti, A. Lupi",
     "journal":  "",
