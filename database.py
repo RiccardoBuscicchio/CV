@@ -24,7 +24,7 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
-    "title":    """    Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
+    "title":    """Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
     "author":   "A. Spadaro, J. Gair, S.R. Green, D. Gerosa, R. Buscicchio, N. Gupte, R. Tenorio, S. Clyne, M. Pürrer, N. Korsakova",
     "journal":  "",
     "link":     "",
@@ -143,7 +143,7 @@ if published:
     papers['published']['data'].append({
     "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
     "author":   "A. Toubiana, D. Gerosa, M. Mould, S. Rinaldi, M. Arca Sedda, T. Bruel, R. Buscicchio, J. Gair, L. Paiella, F. Santoliquido, R. Tenorio, C. Ugolini",
-    "journal":  "\prd  (in press), (2025)",
+    "journal":  "\prd 113, (2025) 083006",
     "link":     "https://doi.org/10.1103/8xkp-zpj1",
     "arxiv":    "arXiv:2507.13249 [gr-qc]",
     "ads":      "2025arXiv250713249T",
