@@ -728,10 +728,25 @@ if others:
         })
 
 if conferences:
-    talks['conferences'] = {}
+    ['conferences'] = {}
     talks['conferences']['label'] = 'Talks at conferences'
     talks['conferences']['data'] = []
 
+    talks['conferences']['data'].append({
+        "title":    "LISA Global Fit (panel session chair)",
+        "where":    "Gravicon 2026, Scuola Normale Superiore, Pisa, Italy",
+        "when":     "2026/04/23",
+        "invited":  True,
+        "more":     ""
+    })
+    
+    talks['conferences']['data'].append({
+        "title":    "LISA: targets, synergies and challenges",
+        "where":    "INFN CSN2 meeting, Siracusa, Italy",
+        "when":     "2026/04/14",
+        "invited":  True,
+        "more":     ""
+    })
 
     talks['conferences']['data'].append({
         "title":    "Is your stochastic signal really detectable?",
