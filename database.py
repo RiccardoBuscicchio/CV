@@ -728,7 +728,7 @@ if others:
         })
 
 if conferences:
-    ['conferences'] = {}
+    talks['conferences'] = {}
     talks['conferences']['label'] = 'Talks at conferences'
     talks['conferences']['data'] = []
 
