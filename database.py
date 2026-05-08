@@ -1335,10 +1335,11 @@ if referee:
     refereeing['journals'] = {}
     refereeing['journals']['label'] = 'Journal referee'
     refereeing['journals']['data'] = []
-    
+     
     refereeing['journals']['data'].append({"journal": "Physical Review Letters"})
     refereeing['journals']['data'].append({"journal": "Physical Review D"})
     refereeing['journals']['data'].append({"journal": "The Astrophysical Journal Letters"})
+    refereeing['journals']['data'].append({"journal": "Physics Letters B"})
     refereeing['journals']['data'].append({"journal": "The Open Journal of Astrophysics"})
     refereeing['journals']['data'].append({"journal": "Journal of Cosmology and Astroparticle Physics"})
     refereeing['journals']['data'].append({"journal": "NASA Technology Transfer Program"})
