@@ -24,6 +24,19 @@ if submitted:
     papers['submitted']['data'] = []
 
     papers['submitted']['data'].append({
+    "title":    """Implications of the LISA stochastic signal from eccentric stellar mass black hole binaries in vacuum
+    """,
+    "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
+    "journal":  "",
+    "link":     "",
+    "arxiv":    "arXiv:2605.05537 [gr-qc]",
+    "ads":      "",
+    "inspire":  "Chen:2026pmu",
+    "more":     "",
+    "supervised": "False"
+    })
+ 
+    papers['submitted']['data'].append({
     "title":    """Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
     "author":   "A. Spadaro, J. Gair, S.R. Green, D. Gerosa, R. Buscicchio, N. Gupte, R. Tenorio, S. Clyne, M. Pürrer, N. Korsakova",
     "journal":  "",
