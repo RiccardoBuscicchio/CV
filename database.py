@@ -42,7 +42,7 @@ if submitted:
     "journal":  "",
     "link":     "",
     "arxiv":    "arXiv:2603.20431 [astro-ph.HE]",
-    "ads":      "",
+    "ads":      "2026arXiv260320431S",
     "inspire":  "Spadaro:2026evb",
     "more":     "",
     "supervised": "True"
