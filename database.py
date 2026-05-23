@@ -59,20 +59,7 @@ if submitted:
     "more":     "",
     "supervised": "True"
     })
-    
-    
-    papers['submitted']['data'].append({
-    "title":    """Identification of periodicities with arbitrary shapes in AGN light curves""",
-    "author":   "L. Bertassi, M. Charisi, R. Buscicchio, F. Rigamonti, J. Runnoe, M. Dotti",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2512.13688 [astro-ph.GA]",
-    "ads":      "2025arXiv251213688B",
-    "inspire":  "",
-    "more":     "",
-    "supervised": "False"
-    })
-    
+        
     papers['submitted']['data'].append({
     "title":    """samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
 Trans-Dimensional Bayesian Analysis""",
@@ -152,6 +139,19 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+    papers['published']['data'].append({
+    "title":    """Identification of periodicities with arbitrary shapes in AGN light curves""",
+    "author":   "L. Bertassi, M. Charisi, R. Buscicchio, F. Rigamonti, J. Runnoe, M. Dotti",
+    "journal":  "\\aap , (2026) in press",
+    "link":     "",
+    "arxiv":    "arXiv:2512.13688 [astro-ph.GA]",
+    "ads":      "2025arXiv251213688B",
+    "inspire":  "",
+    "more":     "",
+    "supervised": "False"
+    })
+
 
     papers['published']['data'].append({
     "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
