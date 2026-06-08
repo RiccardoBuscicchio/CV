@@ -37,18 +37,6 @@ if submitted:
     })
  
     papers['submitted']['data'].append({
-    "title":    """Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
-    "author":   "A. Spadaro, J. Gair, S.R. Green, D. Gerosa, R. Buscicchio, N. Gupte, R. Tenorio, S. Clyne, M. Pürrer, N. Korsakova",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2603.20431 [astro-ph.HE]",
-    "ads":      "2026arXiv260320431S",
-    "inspire":  "Spadaro:2026evb",
-    "more":     "",
-    "supervised": "True"
-    })
-
-    papers['submitted']['data'].append({
     "title":    """Fast pre-merger detection of massive black-hole binaries in LISA based on time-frequency excess power""",
     "author":   "F. Nobili, M. Bellotti, R. Buscicchio, M. Dotti, A. Lupi",
     "journal":  "",
@@ -141,6 +129,18 @@ if published:
     papers['published']['data'] = []
 
     papers['published']['data'].append({
+    "title":    """Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
+    "author":   "A. Spadaro, J. Gair, S.R. Green, D. Gerosa, R. Buscicchio, N. Gupte, R. Tenorio, S. Clyne, M. Pürrer, N. Korsakova",
+    "journal":  "\prd, (2026) in press",
+    "link":     "https://doi.org/10.1103/mmyl-wdgq",
+    "arxiv":    "arXiv:2603.20431 [astro-ph.HE]",
+    "ads":      "2026arXiv260320431S",
+    "inspire":  "Spadaro:2026evb",
+    "more":     "",
+    "supervised": "True"
+    })
+
+    papers['published']['data'].append({
     "title":    """Identification of periodicities with arbitrary shapes in AGN light curves""",
     "author":   "L. Bertassi, M. Charisi, R. Buscicchio, F. Rigamonti, J. Runnoe, M. Dotti",
     "journal":  "\\aap , (2026) in press",
@@ -151,7 +151,6 @@ if published:
     "more":     "",
     "supervised": "False"
     })
-
 
     papers['published']['data'].append({
     "title":    "Comparing astrophysical models to gravitational-wave data in the observable space",
