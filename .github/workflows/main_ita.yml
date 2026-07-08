@@ -30,7 +30,7 @@ jobs:
 
     - name: Cache Conda environment
       id: cache-conda-env
-      uses: actions/cache@v4
+      uses: actions/cache@v6.1.0
       with:
         path: |
           ~/conda_pkgs_dir
@@ -40,7 +40,7 @@ jobs:
           ${{ runner.os }}-conda-env-
 
     - name: Set up conda
-      uses: conda-incubator/setup-miniconda@v3
+      uses: conda-incubator/setup-miniconda@v4.0.1
       with:
         auto-update-conda: true
         python-version: "3.11"
@@ -92,7 +92,7 @@ jobs:
         mv preamble.tex CV.tex metricspapers.tex metricstalks.tex parsepapers.tex parsetalks.tex parsesupervision.tex parserefereeing.tex parsecodesdata.tex publist.tex talklist.tex CVshort.tex pdfs/
             
     - name: Upload artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7.0.0
       with:
         name: artifacts-ita
         path: pdfs/
@@ -105,10 +105,10 @@ jobs:
     steps:
     
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.0
       
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8.0.1
         with:
           path: pdfs
       
@@ -116,7 +116,7 @@ jobs:
         run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
         
       - name: deploy on orphan branch
-        uses: peaceiris/actions-gh-pages@v4.0.0
+        uses: peaceiris/actions-gh-pages@v3.1.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
