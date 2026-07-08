@@ -119,7 +119,7 @@ jobs:
         run: mkdir -p github_deploy && mv pdfs/*/* github_deploy
         
       - name: deploy on orphan branch
-        uses: peaceiris/actions-gh-pages@v3.1.2
+        uses: peaceiris/actions-github-pages@v3.1.12
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
