@@ -144,7 +144,7 @@ if published:
     "title":    """Identification of periodicities with arbitrary shapes in AGN light curves""",
     "author":   "L. Bertassi, M. Charisi, R. Buscicchio, F. Rigamonti, J. Runnoe, M. Dotti",
     "journal":  "\\aap , (2026) in press",
-    "link":     "",
+    "link":     "https://doi.org/10.1051/0004-6361/202558583",
     "arxiv":    "arXiv:2512.13688 [astro-ph.GA]",
     "ads":      "2025arXiv251213688B",
     "inspire":  "",
