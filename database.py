@@ -131,7 +131,7 @@ if published:
     papers['published']['data'].append({
     "title":    """Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
     "author":   "A. Spadaro, J. Gair, S.R. Green, D. Gerosa, R. Buscicchio, N. Gupte, R. Tenorio, S. Clyne, M. Pürrer, N. Korsakova",
-    "journal":  "\prd, (2026) in press",
+    "journal":  "\prd 114, (2026)  023038",
     "link":     "https://doi.org/10.1103/mmyl-wdgq",
     "arxiv":    "arXiv:2603.20431 [astro-ph.HE]",
     "ads":      "2026arXiv260320431S",
@@ -143,7 +143,7 @@ if published:
     papers['published']['data'].append({
     "title":    """Identification of periodicities with arbitrary shapes in AGN light curves""",
     "author":   "L. Bertassi, M. Charisi, R. Buscicchio, F. Rigamonti, J. Runnoe, M. Dotti",
-    "journal":  "\\aap , (2026) in press",
+    "journal":  "\\aap  711, (2026) A126",
     "link":     "https://doi.org/10.1051/0004-6361/202558583",
     "arxiv":    "arXiv:2512.13688 [astro-ph.GA]",
     "ads":      "2025arXiv251213688B",
