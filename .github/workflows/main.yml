@@ -134,10 +134,31 @@ jobs:
       - name: Generate short CV
         run: conda run --name buildcv python makeCV.py --short --lang en
 
-      - name: Compile LaTeX documents
+      - name: Compile CV
         uses: dante-ev/latex-action@latest
         with:
-          root_file: CV.tex,publist.tex,talklist.tex,CVshort.tex
+          root_file: CV.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+
+      - name: Compile publication list
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: publist.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+
+      - name: Compile talk list
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: talklist.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+
+      - name: Compile short CV
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: CVshort.tex
           compiler: pdflatex
           args: -interaction=nonstopmode -shell-escape
 
@@ -208,10 +229,31 @@ jobs:
       - name: Generate short CV
         run: conda run --name buildcv python makeCV.py --short --lang it
 
-      - name: Compile LaTeX documents
+      - name: Compile CV
         uses: dante-ev/latex-action@latest
         with:
-          root_file: CV.tex,publist.tex,talklist.tex,CVshort.tex
+          root_file: CV.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+
+      - name: Compile publication list
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: publist.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+
+      - name: Compile talk list
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: talklist.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+
+      - name: Compile short CV
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: CVshort.tex
           compiler: pdflatex
           args: -interaction=nonstopmode -shell-escape
 
