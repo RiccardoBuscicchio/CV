@@ -21,21 +21,7 @@ if submitted:
 
     papers['submitted'] = {}
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to'
-    papers['submitted']['data'] = []
- 
-        
-    papers['submitted']['data'].append({
-    "title":    """samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
-Trans-Dimensional Bayesian Analysis""",
-    "author":   "G. Astorino, L. Valbusa Dall'Armi, R. Buscicchio, J. Pomper, A. Ricciardone, W. Del Pozzo",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2511.07385 [stat.CO]",
-    "ads":      "2025arXiv251107385A",
-    "inspire":  "Astorino:2025ccl",
-    "more":     "",
-    "supervised": "True"
-    })
+    papers['submitted']['data'] = []    
     
     papers['submitted']['data'].append({
     "title":    "The first year of LISA Galactic foreground",
@@ -109,7 +95,7 @@ if published:
     "title":    """Fast pre-merger detection of massive black-hole binaries in LISA based on time-frequency excess power""",
     "author":   "F. Nobili, M. Bellotti, R. Buscicchio, M. Dotti, A. Lupi",
     "journal":  "\prd, (2026) in press",
-    "link":     "",
+    "link":     "https://doi.org/10.1103/l85g-ds5n",
     "arxiv":    "arXiv:2602.16792 [astro-ph.IM]",
     "ads":      "2026arXiv260216792N",
     "inspire":  "Nobili:2026cnr",
@@ -130,12 +116,25 @@ if published:
     })
 
     papers['published']['data'].append({
+    "title":    """samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
+Trans-Dimensional Bayesian Analysis""",
+    "author":   "G. Astorino, L. Valbusa Dall'Armi, R. Buscicchio, J. Pomper, A. Ricciardone, W. Del Pozzo",
+    "journal":  "\epjc 86, (2026) 395",
+    "link":     "https://doi.org/10.1140/epjc/s10052-026-15629-9",
+    "arxiv":    "arXiv:2511.07385 [stat.CO]",
+    "ads":      "2026EPJC...86..395A",
+    "inspire":  "Astorino:2025ccl",
+    "more":     "",
+    "supervised": "True"
+    })
+    
+    papers['published']['data'].append({
     "title":    """Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
     "author":   "A. Spadaro, J. Gair, S.R. Green, D. Gerosa, R. Buscicchio, N. Gupte, R. Tenorio, S. Clyne, M. Pürrer, N. Korsakova",
     "journal":  "\prd 114, (2026)  023038",
     "link":     "https://doi.org/10.1103/mmyl-wdgq",
     "arxiv":    "arXiv:2603.20431 [astro-ph.HE]",
-    "ads":      "2026arXiv260320431S",
+    "ads":      "2026PhRvD.114b3038S",
     "inspire":  "Spadaro:2026evb",
     "more":     "",
     "supervised": "True"
