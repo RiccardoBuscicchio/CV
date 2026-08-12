@@ -32,7 +32,7 @@ Cache signal from latest sampled build jobs:
 ### 1) Unified workflow for EN/IT builds
 
 Replaced two near-duplicate workflows with one language-aware workflow:
-- `/home/runner/work/CV/CV/.github/workflows/main.yml`
+- `.github/workflows/main.yml`
 
 The unified workflow builds both languages through a matrix and keeps separate deploy targets:
 - English deploy branch: `build`
@@ -59,7 +59,7 @@ This prevents stale/broken cache restores from failing the pipeline.
 ### 4) Environment portability fix
 
 Removed local machine-specific `prefix` from:
-- `/home/runner/work/CV/CV/environment.yml`
+- `environment.yml`
 
 This improves cross-runner cache stability and avoids path-coupled environment behavior.
 

@@ -14,6 +14,9 @@ on:
     paths-ignore:
       - '**/README.md'
 
+permissions:
+  contents: read
+
 jobs:
   detect-changes:
     runs-on: ubuntu-latest
@@ -23,69 +26,63 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Detect changed files
-        id: changes
-        uses: dorny/paths-filter@v3
         with:
-          filters: |
-            shared:
-              - 'makeCV.py'
-              - 'database.py'
-              - 'environment.yml'
-              - 'CV.tex'
-              - 'preamble.tex'
-              - 'publist.tex'
-              - 'talklist.tex'
-              - 'CV.tex.template'
-              - 'preamble.tex.template'
-              - 'publist.tex.template'
-              - 'talklist.tex.template'
-              - 'locales/*.json'
-              - '!locales/en.json'
-              - '!locales/it.json'
-              - '.github/workflows/main.yml'
-            en_locale:
-              - 'locales/en.json'
-            it_locale:
-              - 'locales/it.json'
+          fetch-depth: 0
 
       - name: Decide language builds
         id: decide
         run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+          HEAD_SHA="${{ github.sha }}"
+
           run_en=false
           run_it=false
+          shared=false
+          en_locale=false
+          it_locale=false
 
-          if [[ "${{ steps.changes.outputs.shared }}" == 'true' ]]; then
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" == "0000000000000000000000000000000000000000" ]]; then
             run_en=true
             run_it=true
-          elif [[ "${{ steps.changes.outputs.en_locale }}" == 'true' && "${{ steps.changes.outputs.it_locale }}" == 'true' ]]; then
-            run_en=true
-            run_it=true
-          elif [[ "${{ steps.changes.outputs.en_locale }}" == 'true' ]]; then
-            run_en=true
-          elif [[ "${{ steps.changes.outputs.it_locale }}" == 'true' ]]; then
-            run_it=true
+          else
+            while IFS= read -r file; do
+              [[ -z "$file" ]] && continue
+              case "$file" in
+                makeCV.py|database.py|environment.yml|CV.tex|preamble.tex|publist.tex|talklist.tex|CV.tex.template|preamble.tex.template|publist.tex.template|talklist.tex.template|.github/workflows/main.yml)
+                  shared=true
+                  ;;
+                locales/en.json)
+                  en_locale=true
+                  ;;
+                locales/it.json)
+                  it_locale=true
+                  ;;
+                locales/*.json)
+                  shared=true
+                  ;;
+              esac
+            done < <(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+
+            if [[ "$shared" == "true" ]]; then
+              run_en=true
+              run_it=true
+            else
+              run_en=$en_locale
+              run_it=$it_locale
+            fi
           fi
 
           echo "run_en=$run_en" >> "$GITHUB_OUTPUT"
           echo "run_it=$run_it" >> "$GITHUB_OUTPUT"
 
-  build:
+  build_en:
     needs: detect-changes
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - lang: en
-            artifact_name: artifacts-en
-          - lang: it
-            artifact_name: artifacts-ita
-    if: >-
-      (matrix.lang == 'en' && needs.detect-changes.outputs.run_en == 'true') ||
-      (matrix.lang == 'it' && needs.detect-changes.outputs.run_it == 'true')
-
+    if: needs.detect-changes.outputs.run_en == 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -121,7 +118,7 @@ jobs:
           conda run --name buildcv python -c "import numpy, scipy"
 
       - name: Build conda environment (cache miss or invalid cache)
-        if: steps.cache-conda-env.outputs.cache-hit != 'true' || steps.validate-env.outcome != 'success'
+        if: steps.cache-conda-env.outputs.cache-hit != 'true' || steps.validate-env.outcome == 'failure'
         run: |
           conda env update --name buildcv --file environment.yml --prune || \
           conda env create --name buildcv --file environment.yml
@@ -130,10 +127,12 @@ jobs:
         run: conda run --name buildcv python --version
 
       - name: Generate CV content
-        run: conda run --name buildcv python makeCV.py --connected --lang ${{ matrix.lang }} --token ${{ secrets.ADS_TOKEN }}
+        env:
+          ADS_TOKEN: ${{ secrets.ADS_TOKEN }}
+        run: conda run --name buildcv python makeCV.py --connected --lang en
 
       - name: Generate short CV
-        run: conda run --name buildcv python makeCV.py --short --lang ${{ matrix.lang }}
+        run: conda run --name buildcv python makeCV.py --short --lang en
 
       - name: Compile LaTeX documents
         uses: dante-ev/latex-action@latest
@@ -155,13 +154,93 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.artifact_name }}
+          name: artifacts-en
+          path: output/
+
+  build_it:
+    needs: detect-changes
+    runs-on: ubuntu-latest
+    if: needs.detect-changes.outputs.run_it == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache Conda environment
+        id: cache-conda-env
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/conda_pkgs_dir
+            /usr/share/miniconda3/envs/buildcv
+          key: ${{ runner.os }}-conda-env-${{ hashFiles('environment.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-conda-env-
+
+      - name: Set up conda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          python-version: '3.11'
+          channels: conda-forge,defaults
+
+      - name: Configure conda package cache
+        run: conda config --add pkgs_dirs ~/conda_pkgs_dir
+
+      - name: Validate restored conda environment
+        id: validate-env
+        if: steps.cache-conda-env.outputs.cache-hit == 'true'
+        continue-on-error: true
+        run: |
+          conda run --name buildcv python --version
+          conda run --name buildcv python -c "import numpy, scipy"
+
+      - name: Build conda environment (cache miss or invalid cache)
+        if: steps.cache-conda-env.outputs.cache-hit != 'true' || steps.validate-env.outcome == 'failure'
+        run: |
+          conda env update --name buildcv --file environment.yml --prune || \
+          conda env create --name buildcv --file environment.yml
+
+      - name: Validate conda environment
+        run: conda run --name buildcv python --version
+
+      - name: Generate CV content
+        env:
+          ADS_TOKEN: ${{ secrets.ADS_TOKEN }}
+        run: conda run --name buildcv python makeCV.py --connected --lang it
+
+      - name: Generate short CV
+        run: conda run --name buildcv python makeCV.py --short --lang it
+
+      - name: Compile LaTeX documents
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: |
+            CV.tex
+            publist.tex
+            talklist.tex
+            CVshort.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+
+      - name: Prepare artifacts
+        run: |
+          mkdir -p output
+          cp CV.pdf publist.pdf talklist.pdf CVshort.pdf output/
+          cp preamble.tex CV.tex metricspapers.tex metricstalks.tex parsepapers.tex parsetalks.tex parsesupervision.tex parserefereeing.tex parsecodesdata.tex publist.tex talklist.tex CVshort.tex output/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts-ita
           path: output/
 
   deploy_en:
-    needs: [detect-changes, build]
+    needs: [detect-changes, build_en]
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.detect-changes.outputs.run_en == 'true'
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -182,9 +261,11 @@ jobs:
           force_orphan: true
 
   deploy_it:
-    needs: [detect-changes, build]
+    needs: [detect-changes, build_it]
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.detect-changes.outputs.run_it == 'true'
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
