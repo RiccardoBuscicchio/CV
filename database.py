@@ -22,31 +22,7 @@ if submitted:
     papers['submitted'] = {}
     papers['submitted']['label'] = 'Submitted short-author and collaboration papers which I have substantially contributed to'
     papers['submitted']['data'] = []
-
-    papers['submitted']['data'].append({
-    "title":    """Implications of the LISA stochastic signal from eccentric stellar mass black hole binaries in vacuum
-    """,
-    "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2605.05537 [gr-qc]",
-    "ads":      "",
-    "inspire":  "Chen:2026pmu",
-    "more":     "",
-    "supervised": "False"
-    })
  
-    papers['submitted']['data'].append({
-    "title":    """Fast pre-merger detection of massive black-hole binaries in LISA based on time-frequency excess power""",
-    "author":   "F. Nobili, M. Bellotti, R. Buscicchio, M. Dotti, A. Lupi",
-    "journal":  "",
-    "link":     "",
-    "arxiv":    "arXiv:2602.16792 [astro-ph.IM]",
-    "ads":      "2026arXiv260216792N",
-    "inspire":  "Nobili:2026cnr",
-    "more":     "",
-    "supervised": "True"
-    })
         
     papers['submitted']['data'].append({
     "title":    """samsara: A Continuous-Time Markov Chain Monte Carlo Sampler for
@@ -127,6 +103,31 @@ if published:
     papers['published'] = {}
     papers['published']['label'] = 'Short-author papers in major peer-reviewed journals'
     papers['published']['data'] = []
+
+
+    papers['published']['data'].append({
+    "title":    """Fast pre-merger detection of massive black-hole binaries in LISA based on time-frequency excess power""",
+    "author":   "F. Nobili, M. Bellotti, R. Buscicchio, M. Dotti, A. Lupi",
+    "journal":  "\prd, (2026) in press",
+    "link":     "",
+    "arxiv":    "arXiv:2602.16792 [astro-ph.IM]",
+    "ads":      "2026arXiv260216792N",
+    "inspire":  "Nobili:2026cnr",
+    "more":     "",
+    "supervised": "True"
+    })
+    
+    papers['published']['data'].append({
+    "title":    """Implications of the LISA stochastic signal from eccentric stellar mass black hole binaries in vacuum""",
+    "author":   "R. Chen, R. S. Chandramouli, F. Pozzoli, R. Buscicchio, E. Barausse",
+    "journal":  "\prd, (2026) in press",
+    "link":     "https://doi.org/10.1103/pbdv-rf6j",
+    "arxiv":    "arXiv:2605.05537 [gr-qc]",
+    "ads":      "2026arXiv260505537C",
+    "inspire":  "Chen:2026pmu",
+    "more":     "",
+    "supervised": "False"
+    })
 
     papers['published']['data'].append({
     "title":    """Accurate and efficient simulation-based inference for massive black-hole binaries with LISA""",
