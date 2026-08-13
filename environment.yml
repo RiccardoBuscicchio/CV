@@ -105,4 +105,3 @@ dependencies:
       - skywalker==0.0.18
       - tables==3.8.0
       - tqdm==4.65.0
-prefix: /home/riccardo/Software/anaconda3/envs/builcv

@@ -1,6 +1,5 @@
 # Auto-filled cv, publication list, and talk list
 ![main](https://github.com/RiccardoBuscicchio/CV/actions/workflows/main.yml/badge.svg?branch=main)
-![main_ita](https://github.com/RiccardoBuscicchio/CV/actions/workflows/main_ita.yml/badge.svg?branch=main)
 
 ## Products
 
@@ -39,9 +38,6 @@ To add a new language, see the [localization documentation](LOCALIZATION.md).
 
 The continuous integration workflow automatically builds and deploys the CV and related documents on every push to the main branch. The workflow has been optimized with comprehensive caching to significantly reduce build times. See [CI_OPTIMIZATION.md](CI_OPTIMIZATION.md) for details.
 
-### Workflows
+### Workflow
 
-- **main.yml**: Builds English version and deploys to `build` branch
-- **main_ita.yml**: Builds Italian version and deploys to `build_ita` branch
-
-Both workflows run on every push to the main branch.
+- **main.yml**: Unified language-aware workflow that selectively builds English/Italian CVs and deploys to `build` and `build_ita` branches.

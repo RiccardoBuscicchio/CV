@@ -912,6 +912,7 @@ if __name__ == "__main__":
     parser.add_argument("--lang", type=str, default="en", help="Language code for localization (e.g., 'en', 'it')")
     
     args = parser.parse_args()
+    token = args.token or os.getenv("ADS_TOKEN")
     
     # Load translations
     translations = load_translations(args.lang)
@@ -922,7 +923,7 @@ if __name__ == "__main__":
     
     if args.connected:
         # Set testing=True to avoid API limit
-        papers = ads_citations(papers,testing=args.testing, token=args.token)
+        papers = ads_citations(papers,testing=args.testing, token=token)
         papers = inspire_citations(papers,testing=args.testing)
         parsepapers(papers, translations=translations)
         parsetalks(talks, translations=translations)

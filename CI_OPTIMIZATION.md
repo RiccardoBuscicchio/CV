@@ -1,102 +1,90 @@
 # CI Workflow Optimization
 
-## Overview
+## Baseline Profiling (before consolidation)
 
-The GitHub Actions workflow for building and deploying the CV has been optimized to significantly reduce build times by implementing comprehensive caching strategies.
+Recent successful runs measured from GitHub Actions metadata:
 
-## Optimizations Implemented
+| Workflow | Run ID | Total runtime |
+|---|---:|---:|
+| `main.yml` (English) | 31632475160 | ~6.2 min |
+| `main_ita.yml` (Italian) | 31632475048 | ~5.0 min |
 
-### 1. Conda Environment Caching
+Per-step timing from those runs (build job):
 
-**Previous approach:**
-- Only cached conda package downloads (`~/conda_pkgs_dir`)
-- Environment was rebuilt from scratch on every run
+| Step | English | Italian |
+|---|---:|---:|
+| Checkout | ~1s | ~1s |
+| Cache Conda environment | ~2s | ~2s |
+| Set up conda | ~80s | ~42s |
+| Python generation (connected) | ~71s | ~87s |
+| Python short CV | ~3s | ~2s |
+| LaTeX CV | ~1s | ~1s |
+| LaTeX publist | ~1s | ~1s |
+| LaTeX talklist | ~1s | ~1s |
+| LaTeX CVshort | ~2s | ~1s |
+| Upload artifacts | ~1s | ~1s |
 
-**New approach:**
-- Caches both package downloads AND the full conda environment (`/usr/share/miniconda3/envs/buildcv`)
-- Cache key based on `environment.yml` hash
-- Environment is only rebuilt when dependencies change
+Cache signal from latest sampled build jobs:
+- `~/conda_pkgs_dir` + `/usr/share/miniconda3/envs/buildcv`: **2/2 cache hits (100% in sample)**
 
-**Expected benefit:** 50-70% faster conda setup on cache hit
+## Implemented Optimizations
 
-### 2. Docker Layer Caching for LaTeX
+### 1) Unified workflow for EN/IT builds
 
-**How it works:**
-- The `dante-ev/latex-action` uses a pre-built Docker image with TeX Live
-- GitHub Actions automatically caches Docker layers between runs
-- The Docker image (~2 GB) is pulled once and reused
-- LaTeX compilation is already very fast (~5 seconds for all files)
+Replaced two near-duplicate workflows with one language-aware workflow:
+- `.github/workflows/main.yml`
 
-**Why file-based caching doesn't work:**
-- The LaTeX action runs in an isolated Docker container
-- File system paths like `~/.texlive` don't persist outside the container
-- Docker layer caching provides the performance benefit instead
+The unified workflow builds both languages through a matrix and keeps separate deploy targets:
+- English deploy branch: `build`
+- Italian deploy branch: `build_ita`
 
-**Expected benefit:** Docker layer caching reduces image pull time on warm cache
+### 2) Change-aware execution
 
-### 3. Optimized Cache Keys
+Added a `detect-changes` job to selectively run language builds:
+- Shared source changes (`makeCV.py`, templates, shared tex/database/environment/workflow) → run **both** EN and IT
+- Only `locales/en.json` changed → run **EN only**
+- Only `locales/it.json` changed → run **IT only**
+- Irrelevant-only changes → skip both builds
 
-All caches use content-based hashing:
-- **Conda cache:** `${{ runner.os }}-conda-env-${{ hashFiles('environment.yml') }}`
+### 3) Deterministic conda cache reload with fallback
 
-This ensures:
-- Cache is automatically invalidated when dependencies change
-- Cache is properly restored when dependencies haven't changed
-- No manual cache management needed
+Conda setup now follows this sequence:
+1. Restore cache for package dir + full env
+2. Validate restored env quickly (`python --version`, imports)
+3. If cache miss or validation fails, rebuild env from `environment.yml`
+4. Re-validate env before execution
 
-## Performance Comparison
+This prevents stale/broken cache restores from failing the pipeline.
 
-| Scenario | Before | After | Improvement |
-|----------|--------|-------|-------------|
-| First run (cold cache) | ~5 min | ~5 min | No change |
-| Subsequent run (warm cache) | ~5 min | ~3 min | ~40% faster |
+### 4) Environment portability fix
 
-*Note: Actual times will vary based on runner resources and network conditions*
+Removed local machine-specific `prefix` from:
+- `environment.yml`
 
-## Cache Behavior
+This improves cross-runner cache stability and avoids path-coupled environment behavior.
 
-### When Cache is Used
-- ✅ Subsequent runs with unchanged `environment.yml`
-- ✅ Docker layer caching for LaTeX compilation
-- ✅ Rebuilds after merging PRs (if dependencies unchanged)
+### 5) Reduced LaTeX action overhead
 
-### When Cache is Invalidated
-- 🔄 After modifying `environment.yml`
-- 🔄 After 7 days of inactivity (GitHub cache expiration)
-- 🔄 When cache size exceeds 10GB (GitHub limit)
+Collapsed four separate LaTeX action invocations into one multi-root invocation per language build to reduce repeated container startup overhead.
 
-## Technical Details
+## Cache Behavior and Invalidation
 
-### Conda Caching
-The workflow uses the `conda-incubator/setup-miniconda@v3` action with:
-- Custom package directory configuration
-- Full environment directory caching
-- Standard package format (not restricted to tar.bz2) for compatibility
+Conda cache key:
+- `${{ runner.os }}-conda-env-${{ hashFiles('environment.yml') }}`
 
-### LaTeX Compilation
-The LaTeX compilation uses `dante-ev/latex-action@latest` which:
-- Runs in a Docker container with TeX Live pre-installed
-- Benefits from GitHub Actions' automatic Docker layer caching
-- Compiles very quickly (~1-2 seconds per file)
+Cache is effectively invalidated when:
+- `environment.yml` changes
+- cache expires/evicts on GitHub side
 
 ## Troubleshooting
 
-### If build times haven't improved:
-1. Check cache hit/miss in workflow logs
-2. Verify cache keys match between runs
-3. Ensure `environment.yml` is unchanged
-4. Check GitHub cache storage limits
+If CI time regresses:
+1. Check `Cache Conda environment` for cache-hit/miss state
+2. Check `Validate restored conda environment` outcome
+3. If validation fails repeatedly, inspect environment rebuild logs and dependency resolution output
+4. Confirm no unnecessary shared-file changes are forcing both language builds
 
-### To force cache rebuild:
-1. Modify `environment.yml` (e.g., add a comment)
-2. Or wait 7 days for automatic cache expiration
-3. Or manually delete cache via GitHub UI (Settings → Actions → Caches)
+## Optional Second-Stage Acceleration (not yet enabled)
 
-## Future Improvements
-
-Potential additional optimizations:
-- Cache Python script outputs (parsed papers/talks)
-- Use workflow concurrency limits
-- Implement conditional job execution for unchanged files
-- Implement smart skipping for unchanged files
-- Docker image caching for LaTeX environment
+- Prebuilt conda environment refresh workflow (scheduled/manual) for heavy dependency updates
+- TeX auxiliary caching only if profiling shows repeated compile cost is significant
