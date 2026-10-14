@@ -10,9 +10,9 @@
 \newcommand{\rsquo}{{\tt\char'023}}
 
 \moderncvstyle{banking}
-\moderncvcolor{green}
+\moderncvcolor{orange}
 
-\definecolor{color1}{rgb}{0.0, 0.6, 0.6}
+\definecolor{color1}{rgb}{0.76, 0.28, 0.023}
 \definecolor{mark_color}{rgb}{0.5, 0.5, 0.5}
 
 %\usepackage{cmbright}
