@@ -1,4 +1,4 @@
-\documentclass[colorlinks,linkcolor=teal,a4paper,11pt]{moderncv}
+\documentclass[colorlinks,linkcolor=color1,a4paper,11pt]{moderncv}
 \usepackage[english]{babel}	
 \usepackage{graphicx}
 \usepackage{amssymb}
@@ -12,7 +12,7 @@
 \moderncvstyle{banking}
 \moderncvcolor{orange}
 
-\definecolor{color1}{rgb}{0.76, 0.28, 0.023}
+\definecolor{color1}{HTML}{D94701}
 \definecolor{mark_color}{rgb}{0.5, 0.5, 0.5}
 
 %\usepackage{cmbright}
@@ -66,7 +66,7 @@
 
 \newcommand{\mytitle}[1]{\title{#1\vspace{0.15cm}}}
 
-\firstname{Riccardo}
+\firstname{\textcolor{color1}{Riccardo}}
 \familyname{Buscicchio}
 
 \extrainfo{\normalsize riccardo.buscicchio@gssi.it $\;\;\bullet\;\;$ \href{http://www.riccardobuscicchio.com}{www.riccardobuscicchio.com}  $\;\;\bullet\;\;$ \today}
